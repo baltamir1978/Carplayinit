@@ -22,7 +22,7 @@ struct PlayStartupSoundIntent: AudioPlaybackIntent {
 
         let chime: StartupSound?
         if let id = sound?.id {
-            chime = library.sound(id: id)
+            chime = library.soundOrBundled(id: id)
         } else {
             chime = library.selected
         }

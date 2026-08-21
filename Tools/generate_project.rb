@@ -127,6 +127,24 @@ widget.add_resources([brands_assets])
 
 app.add_resources([app_group.new_reference('Assets.xcassets')])
 
+# The startup clip lives in Ignition/Resources but is deliberately absent from the
+# repo (it is someone else's recording), so it cannot be a plain file reference: a
+# missing one would break the build for anyone who clones this. A script phase with
+# declared input and output copies it when it is there and does nothing when it is
+# not — and declaring the paths is also what gets it past the script sandbox.
+CLIP = 'startup-clip.m4a'.freeze
+copy_phase = app.new_shell_script_build_phase('Copy startup clip')
+copy_phase.input_paths = ["$(SRCROOT)/#{APP}/Resources/#{CLIP}"]
+copy_phase.output_paths = ["$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/#{CLIP}"]
+copy_phase.shell_script = <<~SH
+  if [ -f "$SCRIPT_INPUT_FILE_0" ]; then
+    mkdir -p "$(dirname "$SCRIPT_OUTPUT_FILE_0")"
+    cp -f "$SCRIPT_INPUT_FILE_0" "$SCRIPT_OUTPUT_FILE_0"
+  else
+    echo "note: sin clip propio en #{APP}/Resources; se usan los chimes sintetizados"
+  fi
+SH
+
 # Info.plist / entitlements: referenced so they show up in the navigator, never built.
 app_group.new_reference('Info.plist')
 app_group.new_reference("#{APP}.entitlements")

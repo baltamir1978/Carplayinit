@@ -29,7 +29,7 @@ struct GuideView: View {
 
             Section {
                 Step(number: "1", title: "Elige un sonido",
-                     detail: "Pestaña Sonidos → toca ▶︎ para escucharlo y el círculo de la derecha para dejarlo elegido.")
+                     detail: "Pestaña Sonidos → toca ▶︎ para escucharlo y el círculo de la derecha para dejarlo elegido. El pack Destacado es el clip que viene preparado de casa.")
                 Step(number: "2", title: "O trae el tuyo",
                      detail: "Sonidos → Importar un audio. Vale cualquier .m4a o .mp3 de Archivos. Se abre el recortador: arrastra sobre la onda para elegir el trozo (máx. 10 s), escúchalo y guárdalo.")
                 Step(number: "3", title: "¿Está dentro de un vídeo?",

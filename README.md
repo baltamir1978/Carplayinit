@@ -25,6 +25,10 @@ Build privado para tres coches concretos:
   *Editar widget* → elige diseño.
 - 🔊 **Sonido de arranque** al conectar (y opcionalmente al desconectar), con
   **24 chimes sintetizados** en seis packs e importación de audio propio.
+- ⭐️ **Clip propio de fábrica**: el audio que dejes preparado con
+  `Tools/prepare_clip.sh` aparece como pack *Destacado* y queda elegido de salida. El
+  archivo **no viaja en el repo** — es una grabación ajena —, así que sin él la app cae
+  sola en los chimes sintetizados.
 - ✂️ **Recorte con forma de onda**: al importar, eliges el fragmento arrastrando sobre la
   onda (hasta 10 s) en vez de quedarte con el principio del archivo. Los bordes llevan
   fundido, que es lo que evita el chasquido al cortar por el medio.
@@ -104,6 +108,24 @@ el coche y colocar el clip justo detrás. Dos caminos, y conviene tener los dos:
    cambio horas después. Gasta batería: es un ajuste, no un comportamiento impuesto.
 2. **Atajos** (`PlayStartupSoundIntent`): automatización *Al conectar CarPlay → Reproducir
    sonido de arranque*. Funciona con la app cerrada. Guía paso a paso en Ajustes → Atajos.
+
+## El clip de arranque propio
+
+```bash
+Tools/prepare_clip.sh ~/Downloads/mi-audio.mp3 [inicio] [duración]
+```
+
+Lo pasa a mono, recorta el fragmento (por defecto los primeros 8 s), le pone fundidos,
+lo nivela a −12 dBFS y lo deja en `Ignition/Resources/startup-clip.m4a`. No hace falta
+tocar el proyecto: una fase de build lo copia al bundle si está, y si no está avisa por
+consola y la app tira de los chimes sintetizados.
+
+Para afinar el trozo, repite el comando con otros segundos — por ejemplo
+`Tools/prepare_clip.sh mi-audio.mp3 3 4` coge cuatro segundos a partir del tercero.
+Un chime de conexión se agradece corto: por debajo de dos segundos.
+
+`Ignition/Resources/` está en el `.gitignore`: el repo es público y ese audio no es
+nuestro para redistribuirlo.
 
 ## Los emblemas
 

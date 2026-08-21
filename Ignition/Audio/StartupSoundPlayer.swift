@@ -12,7 +12,7 @@ final class StartupSoundPlayer: NSObject, ObservableObject {
     /// Plays whatever the user picked as their startup sound.
     func playSelected() {
         guard let id = SharedStore.selectedSoundID,
-              let sound = SoundLibrary.shared.sound(id: id) else { return }
+              let sound = SoundLibrary.shared.soundOrBundled(id: id) else { return }
         play(sound)
     }
 

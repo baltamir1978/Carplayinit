@@ -10,7 +10,18 @@ final class SoundLibrary {
     nonisolated static let importedPackID = "imported"
     /// What plays until the user chooses something else, and where deleting the
     /// selected import lands.
-    nonisolated static let fallbackSoundID = "engines-fanfare"
+    nonisolated static let fallbackSoundID = bundledClip?.id ?? "engines-fanfare"
+
+    /// A clip shipped inside the app, prepared with `Tools/prepare_clip.sh`.
+    /// Absent from the repo on purpose — it is someone else's recording — so the
+    /// whole feature degrades to the synthesised chimes when the file is not there.
+    nonisolated static let bundledClip: StartupSound? = {
+        guard Bundle.main.url(forResource: "startup-clip", withExtension: "m4a") != nil else {
+            return nil
+        }
+        return StartupSound(id: "featured-clip", name: "Mi clip", packID: "featured",
+                            storage: .bundle, fileName: "startup-clip.m4a", duration: 8)
+    }()
 
     private(set) var packs: [SoundPack] = []
     /// Set while the synthesised chimes are being rendered for the first time.
@@ -26,8 +37,14 @@ final class SoundLibrary {
         packs.lazy.flatMap(\.sounds).first { $0.id == id }
     }
 
+    /// The bundled clip is reachable before `packs` is built, which is what the
+    /// intent needs when Shortcuts wakes the app cold.
+    func soundOrBundled(id: String) -> StartupSound? {
+        sound(id: id) ?? (id == Self.bundledClip?.id ? Self.bundledClip : nil)
+    }
+
     var selected: StartupSound? {
-        SharedStore.selectedSoundID.flatMap(sound(id:))
+        SharedStore.selectedSoundID.flatMap(soundOrBundled(id:))
     }
 
     func select(_ sound: StartupSound) {
@@ -92,7 +109,13 @@ final class SoundLibrary {
     // MARK: - Building
 
     private func buildPacks() -> [SoundPack] {
-        var result = ChimeRecipes.all.map { group in
+        var result: [SoundPack] = []
+        if let clip = Self.bundledClip {
+            result.append(SoundPack(id: "featured", name: "Destacado",
+                                    subtitle: "El clip que traes de casa",
+                                    symbol: "star.fill", sounds: [clip]))
+        }
+        result += ChimeRecipes.all.map { group in
             SoundPack(
                 id: group.pack,
                 name: group.name,
