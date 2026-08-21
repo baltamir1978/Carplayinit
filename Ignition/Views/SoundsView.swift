@@ -6,6 +6,7 @@ struct SoundsView: View {
     @State private var library = SoundLibrary.shared
     @State private var player = StartupSoundPlayer.shared
     @State private var showingImporter = false
+    @State private var pendingImportURL: URL?
     @State private var showingMixer = false
     @State private var importError: String?
 
@@ -37,7 +38,7 @@ struct SoundsView: View {
                         showingMixer = true
                     }
                 } footer: {
-                    Text("Se recorta a 10 s y se nivela a −12 dBFS para que no pegue un susto en el coche. Los temas de Apple Music con DRM no se pueden importar: usa un archivo de la app Archivos.")
+                    Text("Eliges el trozo sobre la onda; máximo 10 s, y se nivela a −12 dBFS para que no pegue un susto en el coche. Los temas de Apple Music con DRM no se pueden importar: usa un archivo de la app Archivos.")
                 }
             }
             .navigationTitle("Sonidos")
@@ -49,17 +50,13 @@ struct SoundsView: View {
                 }
             }
             .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.audio]) { result in
+                // Straight to the trimmer: the fragment worth keeping is rarely the
+                // first seconds of the file.
                 guard case .success(let url) = result else { return }
-                Task {
-                    do {
-                        try await library.importSound(
-                            from: url,
-                            name: url.deletingPathExtension().lastPathComponent
-                        )
-                    } catch {
-                        importError = error.localizedDescription
-                    }
-                }
+                pendingImportURL = url
+            }
+            .sheet(item: $pendingImportURL) { url in
+                TrimSoundView(sourceURL: url)
             }
             .sheet(isPresented: $showingMixer) {
                 MixerView()

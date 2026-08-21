@@ -37,3 +37,9 @@ struct SoundPack: Identifiable, Hashable {
     var symbol: String
     var sounds: [StartupSound]
 }
+
+
+/// Lets a picked file drive `.sheet(item:)` without a wrapper type.
+extension URL: @retroactive Identifiable {
+    public var id: String { absoluteString }
+}

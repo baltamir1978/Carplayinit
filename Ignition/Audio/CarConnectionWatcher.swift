@@ -52,12 +52,15 @@ final class CarConnectionWatcher: ObservableObject {
         let center = NotificationCenter.default
         observers.append(center.addObserver(forName: AVAudioSession.routeChangeNotification,
                                             object: nil, queue: .main) { [weak self] note in
-            MainActor.assumeIsolated { self?.handleRouteChange(note) }
+            // Unwrap here: a `Notification` is not Sendable, a raw value is.
+            let reason = note.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt
+            MainActor.assumeIsolated { self?.handleRouteChange(reason: reason) }
         })
         // An interruption (a call, Siri) can leave the session deactivated; re-arm.
         observers.append(center.addObserver(forName: AVAudioSession.interruptionNotification,
                                             object: nil, queue: .main) { [weak self] note in
-            MainActor.assumeIsolated { self?.handleInterruption(note) }
+            let type = note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt
+            MainActor.assumeIsolated { self?.handleInterruption(type: type) }
         })
 
         if keepAliveEnabled { startKeepAlive() }
@@ -71,14 +74,13 @@ final class CarConnectionWatcher: ObservableObject {
 
     // MARK: - Route handling
 
-    private func handleRouteChange(_ note: Notification) {
+    private func handleRouteChange(reason reasonValue: UInt?) {
         let wasConnected = isConnectedToCar
         isConnectedToCar = Self.routeIsCar()
         currentRouteName = Self.routeDescription()
 
         guard SharedStore.startupSoundEnabled else { return }
 
-        let reasonValue = note.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt
         let reason = reasonValue.flatMap(AVAudioSession.RouteChangeReason.init) ?? .unknown
 
         switch (wasConnected, isConnectedToCar) {
@@ -92,9 +94,8 @@ final class CarConnectionWatcher: ObservableObject {
         }
     }
 
-    private func handleInterruption(_ note: Notification) {
-        let value = note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt
-        guard let type = value.flatMap(AVAudioSession.InterruptionType.init), type == .ended else { return }
+    private func handleInterruption(type typeValue: UInt?) {
+        guard let type = typeValue.flatMap(AVAudioSession.InterruptionType.init), type == .ended else { return }
         configureSession()
         if keepAliveEnabled { startKeepAlive() }
     }
@@ -118,7 +119,7 @@ final class CarConnectionWatcher: ObservableObject {
             // `.duckOthers` lets the chime sit on top of whatever is already playing
             // instead of stopping the user's music.
             try session.setCategory(.playback, mode: .default,
-                                    options: [.duckOthers, .allowBluetooth, .allowBluetoothA2DP])
+                                    options: [.duckOthers, .allowBluetoothHFP, .allowBluetoothA2DP])
             try session.setActive(true)
         } catch {
             NSLog("[Ignition] audio session error: \(error.localizedDescription)")

@@ -27,6 +27,26 @@ enum ChimeRecipes {
                          waveform: waveform, gain: gain, attack: 0.01, release: duration * 0.4)
     }
 
+    /// Bugle voice: brass-ish FM, slower attack than a bell.
+    private static func bugle(_ midi: Double, at start: Double, duration: Double,
+                              gain: Double = 0.8) -> ChimeSynth.Voice {
+        ChimeSynth.Voice(start: start, duration: duration, frequency: hz(midi),
+                         waveform: .fm(ratio: 1.0, index: 2.4), gain: gain,
+                         attack: 0.03, release: duration * 0.35)
+    }
+
+    /// Power chord: root, fifth and octave on square waves. Square is all odd
+    /// harmonics, which is most of what makes a distorted guitar sound distorted —
+    /// close enough without a waveshaper.
+    private static func power(_ midi: Double, at start: Double, duration: Double,
+                              gain: Double = 0.45) -> [ChimeSynth.Voice] {
+        [midi, midi + 7, midi + 12].enumerated().map { index, note in
+            ChimeSynth.Voice(start: start, duration: duration, frequency: hz(note),
+                             waveform: .square, gain: gain * (index == 0 ? 1 : 0.6),
+                             attack: 0.004, release: duration * 0.5)
+        }
+    }
+
     private static func blip(_ midi: Double, at start: Double, duration: Double = 0.09,
                              gain: Double = 0.55) -> ChimeSynth.Voice {
         ChimeSynth.Voice(start: start, duration: duration, frequency: hz(midi),
@@ -40,7 +60,8 @@ enum ChimeRecipes {
         ("sport", "Deportivos", "Barridos de escape y subidas de vueltas", "flame.fill", sport),
         ("electric", "Eléctricos", "Sintéticos, suaves, sin motor", "bolt.fill", electric),
         ("luxury", "Lujo", "Acordes cálidos de salón", "sparkles", luxury),
-        ("retro", "Retro", "Bips de 8 bits", "gamecontroller.fill", retro)
+        ("retro", "Retro", "Bips de 8 bits", "gamecontroller.fill", retro),
+        ("engines", "Arranque", "Fanfarria y guitarras, sintetizadas aquí", "flag.checkered", engines)
     ]
 
     // MARK: Classic
@@ -152,5 +173,47 @@ enum ChimeRecipes {
                              waveform: .square, gain: 0.4, attack: 0.005, release: 0.2),
             blip(84, at: 0.5, duration: 0.25, gain: 0.5)
         ])
+    ]
+
+    // MARK: Engines
+
+    /// Hand-made stand-ins for the "start your engines" idea: a bugle call over
+    /// power chords. Synthesised, so nothing here samples anyone's record.
+    static let engines: [ChimeSynth.Recipe] = [
+        .init(id: "engines-fanfare", name: "Enciende motores", packID: "engines", voices: [
+            // Bugle calls live on the natural harmonics — G, C, E, G reads as one.
+            bugle(67, at: 0, duration: 0.22),
+            bugle(72, at: 0.20, duration: 0.22),
+            bugle(76, at: 0.40, duration: 0.28),
+            bugle(79, at: 0.62, duration: 0.55, gain: 0.9)
+        ] + power(52, at: 1.05, duration: 0.75, gain: 0.5)),
+
+        .init(id: "engines-riff", name: "Riff", packID: "engines", voices:
+            // Alternating staccato chords, the hard-rock intro shape.
+            power(45, at: 0.00, duration: 0.13) +
+            power(45, at: 0.16, duration: 0.13) +
+            power(50, at: 0.32, duration: 0.13) +
+            power(45, at: 0.48, duration: 0.13) +
+            power(52, at: 0.64, duration: 0.13) +
+            power(45, at: 0.80, duration: 0.13) +
+            power(50, at: 0.96, duration: 0.42, gain: 0.55)
+        ),
+
+        .init(id: "engines-salute", name: "Saludo", packID: "engines", voices: [
+            bugle(60, at: 0, duration: 0.3),
+            bugle(64, at: 0.26, duration: 0.3),
+            bugle(67, at: 0.52, duration: 0.8, gain: 0.9),
+            ChimeSynth.Voice(start: 0.52, duration: 0.9, frequency: hz(72),
+                             waveform: .fm(ratio: 1.0, index: 1.8), gain: 0.4,
+                             attack: 0.05, release: 0.6)
+        ]),
+
+        .init(id: "engines-launch", name: "A rodar", packID: "engines", voices:
+            power(48, at: 0, duration: 0.5, gain: 0.5) + [
+                sweep(from: 110, to: 620, at: 0.35, duration: 0.6, gain: 0.55),
+                ChimeSynth.Voice(start: 0.9, duration: 0.3, frequency: 1, waveform: .noise,
+                                 gain: 0.22, attack: 0.005, release: 0.29)
+            ]
+        )
     ]
 }

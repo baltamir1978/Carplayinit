@@ -24,7 +24,16 @@ enum AudioNormalizer {
     }
 
     /// Imports `sourceURL`, returning a `StartupSound` backed by a normalised copy.
-    static func importSound(from sourceURL: URL, name: String) async throws -> StartupSound {
+    ///
+    /// `start` and `length` pick the fragment to keep. The default takes the first
+    /// seconds, but the good part of a clip taken off a video is rarely at the very
+    /// beginning — hence the trimmer in the UI.
+    static func importSound(from sourceURL: URL,
+                            name: String,
+                            start: TimeInterval = 0,
+                            length: TimeInterval? = nil,
+                            fadeIn: TimeInterval = 0.02,
+                            fadeOut: TimeInterval = 0.08) async throws -> StartupSound {
         let needsScope = sourceURL.startAccessingSecurityScopedResource()
         defer { if needsScope { sourceURL.stopAccessingSecurityScopedResource() } }
 
@@ -32,8 +41,12 @@ enum AudioNormalizer {
         guard let track = try? await asset.loadTracks(withMediaType: .audio).first else {
             throw ImportError.emptyAudio
         }
-        let duration = try await asset.load(.duration)
-        let trimmed = min(CMTimeGetSeconds(duration), maxDuration)
+        let total = CMTimeGetSeconds(try await asset.load(.duration))
+        guard total > 0 else { throw ImportError.emptyAudio }
+
+        let from = max(0, min(start, max(total - 0.1, 0)))
+        let trimmed = min(length ?? maxDuration, maxDuration, total - from)
+        guard trimmed > 0.05 else { throw ImportError.emptyAudio }
 
         let gain = try await peakGain(for: asset, track: track)
 
@@ -42,12 +55,26 @@ enum AudioNormalizer {
                                                            preferredTrackID: kCMPersistentTrackID_Invalid) else {
             throw ImportError.unreadable
         }
-        let range = CMTimeRange(start: .zero, duration: CMTime(seconds: trimmed, preferredTimescale: 600))
+        let range = CMTimeRange(start: CMTime(seconds: from, preferredTimescale: 600),
+                                duration: CMTime(seconds: trimmed, preferredTimescale: 600))
         try audioTrack.insertTimeRange(range, of: track, at: .zero)
 
-        // A single volume ramp is enough — we only ever scale the whole clip.
+        // Scale the whole clip, and fade the edges: cutting in the middle of a
+        // waveform leaves a step that a car speaker turns into an audible click.
         let params = AVMutableAudioMixInputParameters(track: audioTrack)
         params.setVolume(gain, at: .zero)
+        let clipEnd = CMTime(seconds: trimmed, preferredTimescale: 600)
+        if fadeIn > 0 {
+            params.setVolumeRamp(fromStartVolume: 0, toEndVolume: gain,
+                                 timeRange: CMTimeRange(start: .zero,
+                                                        duration: CMTime(seconds: min(fadeIn, trimmed / 3),
+                                                                         preferredTimescale: 600)))
+        }
+        if fadeOut > 0 {
+            let fade = CMTime(seconds: min(fadeOut, trimmed / 3), preferredTimescale: 600)
+            params.setVolumeRamp(fromStartVolume: gain, toEndVolume: 0,
+                                 timeRange: CMTimeRange(start: clipEnd - fade, duration: fade))
+        }
         let mix = AVMutableAudioMix()
         mix.inputParameters = [params]
 
@@ -146,6 +173,71 @@ enum AudioNormalizer {
         try? FileManager.default.removeItem(at: url)
         try await session.export(to: url, as: .m4a)
         return url
+    }
+
+    // MARK: - Waveform
+
+    struct Waveform {
+        /// Peak per bucket, 0…1, already scaled so the loudest bucket reaches 1.
+        var peaks: [Float]
+        var duration: TimeInterval
+    }
+
+    /// Reads the file once and reduces it to `buckets` peaks for drawing.
+    ///
+    /// Peak (not RMS) on purpose: the trimmer is used to find *where* something
+    /// happens, and transients are what the eye looks for.
+    static func waveform(for url: URL, buckets: Int = 240) async throws -> Waveform {
+        let needsScope = url.startAccessingSecurityScopedResource()
+        defer { if needsScope { url.stopAccessingSecurityScopedResource() } }
+
+        let asset = AVURLAsset(url: url)
+        guard let track = try? await asset.loadTracks(withMediaType: .audio).first else {
+            throw ImportError.emptyAudio
+        }
+        let duration = CMTimeGetSeconds(try await asset.load(.duration))
+        guard duration > 0, let reader = try? AVAssetReader(asset: asset) else {
+            throw ImportError.unreadable
+        }
+
+        let settings: [String: Any] = [
+            AVFormatIDKey: kAudioFormatLinearPCM,
+            AVLinearPCMBitDepthKey: 16,
+            AVLinearPCMIsFloatKey: false,
+            AVLinearPCMIsBigEndianKey: false,
+            AVLinearPCMIsNonInterleaved: false
+        ]
+        let output = AVAssetReaderTrackOutput(track: track, outputSettings: settings)
+        reader.add(output)
+        reader.startReading()
+
+        var all: [Float] = []
+        all.reserveCapacity(1 << 20)
+        while let buffer = output.copyNextSampleBuffer() {
+            guard let block = CMSampleBufferGetDataBuffer(buffer) else { continue }
+            let length = CMBlockBufferGetDataLength(block)
+            var bytes = [Int16](repeating: 0, count: length / 2)
+            CMBlockBufferCopyDataBytes(block, atOffset: 0, dataLength: length, destination: &bytes)
+            all.append(contentsOf: bytes.map { abs(Float($0) / Float(Int16.max)) })
+        }
+        reader.cancelReading()
+        guard !all.isEmpty else { throw ImportError.emptyAudio }
+
+        let perBucket = max(all.count / buckets, 1)
+        var peaks: [Float] = []
+        peaks.reserveCapacity(buckets)
+        var index = 0
+        while index < all.count {
+            let end = min(index + perBucket, all.count)
+            peaks.append(all[index..<end].max() ?? 0)
+            index = end
+        }
+
+        let loudest = peaks.max() ?? 1
+        if loudest > 0 {
+            peaks = peaks.map { $0 / loudest }
+        }
+        return Waveform(peaks: peaks, duration: duration)
     }
 
     /// Linear gain that puts the loudest sample at `targetPeakDB`, capped so we

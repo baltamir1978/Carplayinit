@@ -85,9 +85,7 @@ struct VehicleEditorView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
-                PhotosPicker(selection: $photoItem, matching: .images) {
-                    Label(photo == nil ? "Elegir foto" : "Cambiar foto", systemImage: "photo")
-                }
+                photoPicker
                 if photo != nil {
                     Button("Quitar foto", systemImage: "trash", role: .destructive) {
                         draft = garage.removePhoto(from: draft)
@@ -137,6 +135,15 @@ struct VehicleEditorView: View {
             Text("Se borrarán también sus diseños de widget.")
         }
         .wrappedInNavigationStack(isNew)
+    }
+
+    /// The title is resolved before the picker's closure so nothing main-actor
+    /// isolated gets captured by it.
+    private var photoPicker: some View {
+        let title = photo == nil ? "Elegir foto" : "Cambiar foto"
+        return PhotosPicker(selection: $photoItem, matching: .images) {
+            Label(title, systemImage: "photo")
+        }
     }
 
     private func save() {

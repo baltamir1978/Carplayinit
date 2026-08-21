@@ -6,7 +6,8 @@ import Observation
 @Observable
 final class SoundLibrary {
     static let shared = SoundLibrary()
-    static let importedPackID = "imported"
+    /// `nonisolated`: the normaliser tags sounds with it off the main actor.
+    nonisolated static let importedPackID = "imported"
 
     private(set) var packs: [SoundPack] = []
     /// Set while the synthesised chimes are being rendered for the first time.
@@ -58,8 +59,10 @@ final class SoundLibrary {
 
     // MARK: - Imports
 
-    func importSound(from url: URL, name: String) async throws {
-        let sound = try await AudioNormalizer.importSound(from: url, name: name)
+    func importSound(from url: URL, name: String,
+                     start: TimeInterval = 0, length: TimeInterval? = nil) async throws {
+        let sound = try await AudioNormalizer.importSound(from: url, name: name,
+                                                          start: start, length: length)
         SharedStore.importedSounds.append(sound)
         packs = buildPacks()
     }

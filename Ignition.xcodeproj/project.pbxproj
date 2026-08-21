@@ -7,68 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07B5848396E221CA5E879C83 /* StartupSoundIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9927E2096EE7989875820C /* StartupSoundIntents.swift */; };
-		083AD320D604C53DE45C5700 /* ShortcutsGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7B2AD44D0BD76A071EF5A /* ShortcutsGuideView.swift */; };
-		08E9464DA1A0C07FFDA1EE85 /* IgnitionWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192302C08D67FA9260ADC35B /* IgnitionWidgetBundle.swift */; };
-		11619984FD674687ABDD28F9 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = B3405063314EC80AD9B719B6 /* brands.json */; };
-		11C6B0D2BDDDF1311CDD52A5 /* StartupSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902534D85FF3036CE5EC36E /* StartupSoundPlayer.swift */; };
-		13831DCA781B72CCC9DCE4D4 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CF3D3196D6EC59F26B94D /* ColorHex.swift */; };
-		1673A0794DB9A7BD79283A82 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273EEAC433C81B6B9018B86 /* SelectDesignIntent.swift */; };
-		1BBD27BB8E150DE3DA5E3755 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50D2A91B847A877A805F76 /* Garage.swift */; };
-		26E2A9C952C5CDFE69A5776F /* ChimeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A9D95D1B1BDE34BE5E0C8B /* ChimeRecipes.swift */; };
-		2B3B2266131811B2035C0E4D /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B9F128CF3404692C8A8186 /* Brands.xcassets */; };
-		326C21BB457869988AF2E42A /* SoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C37761F252D1CDFFDA2DB /* SoundsView.swift */; };
-		3C7EB83959B4E932827BE5D1 /* WidgetEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA537A72D796DEAC24A870DE /* WidgetEditorView.swift */; };
-		4C1AF3DBA262BA04FF7016B6 /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21B59594370AA2D7619921 /* StartupSound.swift */; };
-		4F49B47D7950089A27398254 /* IgnitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EF15039082FE618375929 /* IgnitionApp.swift */; };
-		4FCCF559C7463B8C36B48E03 /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C91CE878CA6D2CBCB7C1A /* CarWidgetCard.swift */; };
-		543FD3683D895B3824980E31 /* GarageSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36D6C5DC9E1EAEC19E6CA /* GarageSeed.swift */; };
-		5A74D4F8CE2B999C596D54D8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADEBFBA78388EF7790C81 /* RootView.swift */; };
-		753B933D82090B63883B345F /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E8825D95964BAC7CBAFE1 /* SoundLibrary.swift */; };
-		755A67824EDF062BBEAC02C5 /* CarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B933DDABCE04025C4A5669 /* CarWidget.swift */; };
-		7D0A6DAF52C0B070145C804C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C250ED9F30C15CAFC4A71B0E /* Assets.xcassets */; };
-		82B5C891297D2CF3D196F0C0 /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B9B0FAC2F98B1A7404609B /* WidgetDesign.swift */; };
-		82EE9FA5A89DBC14C787503A /* VehicleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECB8F3751AC8C8683D685A /* VehicleEditorView.swift */; };
-		8DEF28FF2DB1331605A1AF1B /* CarConnectionWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79784547B8DF66609DE6EBE9 /* CarConnectionWatcher.swift */; };
-		8F5A6D090A8A78E2767CBBE3 /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4CBFBC41536630B99A52AA /* VehicleProfile.swift */; };
-		9D84832EFA0B49414FE665E5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCF78474555D2E6DBAE441 /* SettingsView.swift */; };
-		A4037D81E63CD589FA07D222 /* ChimeSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FA2FB40A64DCF47AB3463 /* ChimeSynth.swift */; };
-		BBFA9A292243E98F4BE0ED92 /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C91CE878CA6D2CBCB7C1A /* CarWidgetCard.swift */; };
-		BC1233F75DBF82D1AF8137D0 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CF3D3196D6EC59F26B94D /* ColorHex.swift */; };
-		BC5BCE49FA83A84FB610DF69 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = B3405063314EC80AD9B719B6 /* brands.json */; };
-		BECE677A2D5D12EB5D8E3FB3 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD13AFA97C8B242F1038E62 /* Brand.swift */; };
-		BEE3DC5B2EA519EA7EDF9983 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273EEAC433C81B6B9018B86 /* SelectDesignIntent.swift */; };
-		C3A11198F385C1E11968B9BA /* AudioNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0FD2A165B63779BBAC1AA /* AudioNormalizer.swift */; };
-		C72398CF44D2CD320323D0A0 /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B9F128CF3404692C8A8186 /* Brands.xcassets */; };
-		C7839F4677F667A0DE96E741 /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F8037C9D4EEDEBF15F0290 /* GarageView.swift */; };
-		CB7F3FC0A19CA33242710EDD /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4CBFBC41536630B99A52AA /* VehicleProfile.swift */; };
-		D611EC259E4C3088DAD3AA98 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99393FE3F83B3E64E70449 /* SharedStore.swift */; };
-		D6C217B006F121A638465032 /* IgnitionWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B9C38DD18270B3436C7B48B /* IgnitionWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D78E96FE9CA464BFB18D8954 /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21B59594370AA2D7619921 /* StartupSound.swift */; };
-		E28BEE7BCEA3317825D7313F /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD13AFA97C8B242F1038E62 /* Brand.swift */; };
-		E345CF88675DE26D9BB5DFD8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672286AC2F3675E8257EC03A /* GuideView.swift */; };
-		E4C6CDA1B0ACE6FBE839380B /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B9B0FAC2F98B1A7404609B /* WidgetDesign.swift */; };
-		F8B7DED7DCA18FD3F4097614 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99393FE3F83B3E64E70449 /* SharedStore.swift */; };
+		0A4B5FBB52685DEA9330578B /* AudioNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5837CFEE383CCCCA2E0CD3 /* AudioNormalizer.swift */; };
+		0AA809F94395F245FF3922F3 /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D0DCEAE11003ECF77516F /* Brands.xcassets */; };
+		0D52A255B484F1122B34DC92 /* SoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6194E19F9B0AE796896E1 /* SoundsView.swift */; };
+		12D2DB94EFD998E8F88DAF4E /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848A5DC2748AFFBD95FB1D8 /* StartupSound.swift */; };
+		14B339FF86E7A41524E41770 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1CFCA572B3245AE353B06 /* SettingsView.swift */; };
+		1576076A0DAD29E45C93141D /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE5E67D1E691CF8829E5B7 /* ColorHex.swift */; };
+		1CC17C0FD051C32153FAB414 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = 30C434C5A2CA44BB8FFFC222 /* brands.json */; };
+		1E4AD39671F323EF522C9D9F /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D0DCEAE11003ECF77516F /* Brands.xcassets */; };
+		1FF37DCC6D8BEE451930BC34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEF0D06A032E538464619E9 /* Assets.xcassets */; };
+		356ACB3743248B686D0C175F /* CarConnectionWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F547C06D0889E3EFFF1E95 /* CarConnectionWatcher.swift */; };
+		3A922D62D8168495D838BAE9 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C041676BB5EC089A6A2FB9B /* Brand.swift */; };
+		3DF873118414D8BD3AF19630 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF7A0D5FAB0A6BFD29D52E /* GuideView.swift */; };
+		528526AC3D1675F912C90691 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE5E67D1E691CF8829E5B7 /* ColorHex.swift */; };
+		5E84420E195B044E7147ED52 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = 30C434C5A2CA44BB8FFFC222 /* brands.json */; };
+		729475E832099E97F1115A49 /* ChimeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFF48F5C95FACD2457106E /* ChimeRecipes.swift */; };
+		79418427A77C57CA3AA5AA37 /* StartupSoundIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EB47B7112FC5E062E6C99 /* StartupSoundIntents.swift */; };
+		7B1AB9FA8361B95746EFC269 /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9A19D7F87310888DC896 /* VehicleProfile.swift */; };
+		7D2FA411D16403BEC474953D /* ChimeSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699875CC4748D0160231257 /* ChimeSynth.swift */; };
+		81162EEA4E8A018B529B0D90 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E2B0A11FD67293663AC69 /* SelectDesignIntent.swift */; };
+		998BAC6CAB82593F4E0F8743 /* TrimSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEEC6EBB676C9C71F68DBF /* TrimSoundView.swift */; };
+		9B331FE39B6C7F18EE243F04 /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28126B39D843349EB0D121B /* WidgetDesign.swift */; };
+		9C387F9B4FD9105AF958B8ED /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD05916DA72189F4830F42 /* SharedStore.swift */; };
+		9E14260884953BE581E3A763 /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5E3D2DA4CBC5E311007C3 /* SoundLibrary.swift */; };
+		9FC40B688C7B0B75C5AD0500 /* IgnitionWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CC4D4EE5A1604FD715ADC /* IgnitionWidgetBundle.swift */; };
+		A0DC4E750FE7D6FF47E23675 /* WidgetEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76D33A8518BE7073186962 /* WidgetEditorView.swift */; };
+		A3043F94D1A386DE52E464C3 /* IgnitionWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 202846F966CBA50985651F11 /* IgnitionWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A422B88AD98764E64DBAD6B1 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C041676BB5EC089A6A2FB9B /* Brand.swift */; };
+		AE1A89F7800B4914F39C44FA /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B8C62B5B395910DCEBA89 /* Garage.swift */; };
+		AE75F06578A4CA3C74714307 /* StartupSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F8A6B941FB96608475988 /* StartupSoundPlayer.swift */; };
+		B0D8A7A7D1F8A41F13EBE395 /* ShortcutsGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609013411A7DEA1654B66740 /* ShortcutsGuideView.swift */; };
+		B33758EFED12C2A347C89932 /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F511ED5165E134E26F14ADD /* CarWidgetCard.swift */; };
+		BFDCCDBF0C986AF570052650 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD05916DA72189F4830F42 /* SharedStore.swift */; };
+		C5CF3315FEE2BD677034935B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706362C85F773C3ECEB1258 /* RootView.swift */; };
+		C82CC7FA0210C3A1BEFFFA45 /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848A5DC2748AFFBD95FB1D8 /* StartupSound.swift */; };
+		CABC8759AB6C34740F733E4E /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9A19D7F87310888DC896 /* VehicleProfile.swift */; };
+		D33DA7032B47067D13B9B4C0 /* IgnitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB4BB64126F8EAF2B41DD7 /* IgnitionApp.swift */; };
+		D3A66ADA3EE9BFCA70CF2D1C /* CarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930415A298808C6BD8C0A221 /* CarWidget.swift */; };
+		E17CB3BD9F35BA07E62020C2 /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28126B39D843349EB0D121B /* WidgetDesign.swift */; };
+		E3CEAE52DC6866E5A5C2FFAF /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F511ED5165E134E26F14ADD /* CarWidgetCard.swift */; };
+		E514EED0A4D2CB2F494C29F6 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E2B0A11FD67293663AC69 /* SelectDesignIntent.swift */; };
+		E5BE19F4130FC6A69348391F /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D9D6C5A3D1A3106BB81EB /* GarageView.swift */; };
+		E8DA22E315DC6CEACAFEB69A /* GarageSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9D802F1C1AC54912CD0E1 /* GarageSeed.swift */; };
+		F6301F07E4FF0570E5CB4EB5 /* VehicleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF927E62FD98544B9111B29A /* VehicleEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		868F26059F37EE49D57D54B8 /* PBXContainerItemProxy */ = {
+		A53BD03BF50416468203A966 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ACD4FE46564356A77A72395E /* Project object */;
+			containerPortal = 5CFCC2699098A3D14ADFC3E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7DD2DB949C00EF475E877D09;
+			remoteGlobalIDString = 09AD46DE6F6628DFD1F12E0F;
 			remoteInfo = IgnitionWidget;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		204A9338AF298311D66A41CB /* Embed Foundation Extensions */ = {
+		B4D5B3EA4064AA5811789E72 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D6C217B006F121A638465032 /* IgnitionWidget.appex in Embed Foundation Extensions */,
+				A3043F94D1A386DE52E464C3 /* IgnitionWidget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,55 +77,56 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		095AE9F910A15F4E1890871A /* Ignition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ignition.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1902534D85FF3036CE5EC36E /* StartupSoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundPlayer.swift; sourceTree = "<group>"; };
-		192302C08D67FA9260ADC35B /* IgnitionWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IgnitionWidgetBundle.swift; sourceTree = "<group>"; };
-		1E779452DAB2BDD59D2C09C6 /* IgnitionWidget.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = IgnitionWidget.entitlements; sourceTree = "<group>"; };
-		26B8AF4A5215E868CA155426 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		2B8FA2FB40A64DCF47AB3463 /* ChimeSynth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeSynth.swift; sourceTree = "<group>"; };
-		2BDCF78474555D2E6DBAE441 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		44DADEBFBA78388EF7790C81 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		47BD3A84B5A8E16101F759DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50DFB0C0FAC6538955732AEB /* Ignition.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Ignition.entitlements; sourceTree = "<group>"; };
-		55F7B2AD44D0BD76A071EF5A /* ShortcutsGuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShortcutsGuideView.swift; sourceTree = "<group>"; };
-		609CF3D3196D6EC59F26B94D /* ColorHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
-		672286AC2F3675E8257EC03A /* GuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
-		6D50D2A91B847A877A805F76 /* Garage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
-		72D36D6C5DC9E1EAEC19E6CA /* GarageSeed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageSeed.swift; sourceTree = "<group>"; };
-		79784547B8DF66609DE6EBE9 /* CarConnectionWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarConnectionWatcher.swift; sourceTree = "<group>"; };
-		7B9C38DD18270B3436C7B48B /* IgnitionWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IgnitionWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		842EF15039082FE618375929 /* IgnitionApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IgnitionApp.swift; sourceTree = "<group>"; };
-		891C37761F252D1CDFFDA2DB /* SoundsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundsView.swift; sourceTree = "<group>"; };
-		8E21B59594370AA2D7619921 /* StartupSound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSound.swift; sourceTree = "<group>"; };
-		8E887A769DD4B74327551992 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90F8037C9D4EEDEBF15F0290 /* GarageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
-		93F0FD2A165B63779BBAC1AA /* AudioNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioNormalizer.swift; sourceTree = "<group>"; };
-		94B9B0FAC2F98B1A7404609B /* WidgetDesign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetDesign.swift; sourceTree = "<group>"; };
-		96B9F128CF3404692C8A8186 /* Brands.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Brands.xcassets; sourceTree = "<group>"; };
-		A0A9D95D1B1BDE34BE5E0C8B /* ChimeRecipes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeRecipes.swift; sourceTree = "<group>"; };
-		A3B933DDABCE04025C4A5669 /* CarWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidget.swift; sourceTree = "<group>"; };
-		B3405063314EC80AD9B719B6 /* brands.json */ = {isa = PBXFileReference; includeInIndex = 1; path = brands.json; sourceTree = "<group>"; };
-		BBD13AFA97C8B242F1038E62 /* Brand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
-		BEECB8F3751AC8C8683D685A /* VehicleEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleEditorView.swift; sourceTree = "<group>"; };
-		C250ED9F30C15CAFC4A71B0E /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C273EEAC433C81B6B9018B86 /* SelectDesignIntent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectDesignIntent.swift; sourceTree = "<group>"; };
-		DA537A72D796DEAC24A870DE /* WidgetEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetEditorView.swift; sourceTree = "<group>"; };
-		E06E8825D95964BAC7CBAFE1 /* SoundLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
-		EA9927E2096EE7989875820C /* StartupSoundIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundIntents.swift; sourceTree = "<group>"; };
-		EC99393FE3F83B3E64E70449 /* SharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
-		FB4CBFBC41536630B99A52AA /* VehicleProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleProfile.swift; sourceTree = "<group>"; };
-		FF8C91CE878CA6D2CBCB7C1A /* CarWidgetCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidgetCard.swift; sourceTree = "<group>"; };
+		0225C4247E7326CA9BAEAB5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0DBB4BB64126F8EAF2B41DD7 /* IgnitionApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IgnitionApp.swift; sourceTree = "<group>"; };
+		157B8C62B5B395910DCEBA89 /* Garage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
+		198C07C09025F03A93157570 /* Ignition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ignition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CA5E3D2DA4CBC5E311007C3 /* SoundLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
+		202846F966CBA50985651F11 /* IgnitionWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IgnitionWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CA8BB9DE92A41A2192B55E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212F8A6B941FB96608475988 /* StartupSoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundPlayer.swift; sourceTree = "<group>"; };
+		30C434C5A2CA44BB8FFFC222 /* brands.json */ = {isa = PBXFileReference; includeInIndex = 1; path = brands.json; sourceTree = "<group>"; };
+		37F547C06D0889E3EFFF1E95 /* CarConnectionWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarConnectionWatcher.swift; sourceTree = "<group>"; };
+		3848A5DC2748AFFBD95FB1D8 /* StartupSound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSound.swift; sourceTree = "<group>"; };
+		3ED6194E19F9B0AE796896E1 /* SoundsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundsView.swift; sourceTree = "<group>"; };
+		45B5D53055EDD8AC0AF713F7 /* Ignition.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Ignition.entitlements; sourceTree = "<group>"; };
+		50CFF48F5C95FACD2457106E /* ChimeRecipes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeRecipes.swift; sourceTree = "<group>"; };
+		51BEEC6EBB676C9C71F68DBF /* TrimSoundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrimSoundView.swift; sourceTree = "<group>"; };
+		5C041676BB5EC089A6A2FB9B /* Brand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		5F511ED5165E134E26F14ADD /* CarWidgetCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidgetCard.swift; sourceTree = "<group>"; };
+		609013411A7DEA1654B66740 /* ShortcutsGuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShortcutsGuideView.swift; sourceTree = "<group>"; };
+		6D6D9D6C5A3D1A3106BB81EB /* GarageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
+		7FEF0D06A032E538464619E9 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		855E2B0A11FD67293663AC69 /* SelectDesignIntent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectDesignIntent.swift; sourceTree = "<group>"; };
+		8CBF7A0D5FAB0A6BFD29D52E /* GuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		917CC4D4EE5A1604FD715ADC /* IgnitionWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IgnitionWidgetBundle.swift; sourceTree = "<group>"; };
+		930415A298808C6BD8C0A221 /* CarWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidget.swift; sourceTree = "<group>"; };
+		936AABB61BACB5C3920E0399 /* IgnitionWidget.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = IgnitionWidget.entitlements; sourceTree = "<group>"; };
+		A5B1E06DBED11BCD2B73671D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB76D33A8518BE7073186962 /* WidgetEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetEditorView.swift; sourceTree = "<group>"; };
+		AF927E62FD98544B9111B29A /* VehicleEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleEditorView.swift; sourceTree = "<group>"; };
+		BD5837CFEE383CCCCA2E0CD3 /* AudioNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioNormalizer.swift; sourceTree = "<group>"; };
+		D0AF9A19D7F87310888DC896 /* VehicleProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleProfile.swift; sourceTree = "<group>"; };
+		DF4D0DCEAE11003ECF77516F /* Brands.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Brands.xcassets; sourceTree = "<group>"; };
+		DFA1CFCA572B3245AE353B06 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E699875CC4748D0160231257 /* ChimeSynth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeSynth.swift; sourceTree = "<group>"; };
+		E9EE5E67D1E691CF8829E5B7 /* ColorHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		F28126B39D843349EB0D121B /* WidgetDesign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetDesign.swift; sourceTree = "<group>"; };
+		F5DD05916DA72189F4830F42 /* SharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		F706362C85F773C3ECEB1258 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FAE9D802F1C1AC54912CD0E1 /* GarageSeed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageSeed.swift; sourceTree = "<group>"; };
+		FF5EB47B7112FC5E062E6C99 /* StartupSoundIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundIntents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B538EDF21C4932E008FF5F4 /* Frameworks */ = {
+		2B74F8827928B00BDC7A008D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0C414976EE8A62FFF244EC7 /* Frameworks */ = {
+		46086EB82EB0FF8938BE1066 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,64 +136,140 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BEE2CE7C404DE362CB27E5D /* Ignition */ = {
+		06F9215AD895CEE8314869E9 /* IgnitionWidget */ = {
 			isa = PBXGroup;
 			children = (
-				126C48C8EE797276300F30CA /* Audio */,
-				842EF15039082FE618375929 /* IgnitionApp.swift */,
-				0ED90DB36D2031C90CF55A78 /* Intents */,
-				E7F058D5398A3177B9CB1770 /* Model */,
-				22AF17663D8C5B7B1DAD79F7 /* Resources */,
-				BBC3FCBA0D90BC82734DF9F1 /* Views */,
-				C250ED9F30C15CAFC4A71B0E /* Assets.xcassets */,
-				8E887A769DD4B74327551992 /* Info.plist */,
-				50DFB0C0FAC6538955732AEB /* Ignition.entitlements */,
+				930415A298808C6BD8C0A221 /* CarWidget.swift */,
+				917CC4D4EE5A1604FD715ADC /* IgnitionWidgetBundle.swift */,
+				A5B1E06DBED11BCD2B73671D /* Info.plist */,
+				936AABB61BACB5C3920E0399 /* IgnitionWidget.entitlements */,
 			);
-			name = Ignition;
-			path = Ignition;
+			name = IgnitionWidget;
+			path = IgnitionWidget;
 			sourceTree = "<group>";
 		};
-		0ED90DB36D2031C90CF55A78 /* Intents */ = {
+		3B4F41F645569F138EE42345 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				EA9927E2096EE7989875820C /* StartupSoundIntents.swift */,
-			);
-			name = Intents;
-			path = Intents;
-			sourceTree = "<group>";
-		};
-		126C48C8EE797276300F30CA /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				93F0FD2A165B63779BBAC1AA /* AudioNormalizer.swift */,
-				79784547B8DF66609DE6EBE9 /* CarConnectionWatcher.swift */,
-				A0A9D95D1B1BDE34BE5E0C8B /* ChimeRecipes.swift */,
-				2B8FA2FB40A64DCF47AB3463 /* ChimeSynth.swift */,
-				E06E8825D95964BAC7CBAFE1 /* SoundLibrary.swift */,
-				1902534D85FF3036CE5EC36E /* StartupSoundPlayer.swift */,
+				BD5837CFEE383CCCCA2E0CD3 /* AudioNormalizer.swift */,
+				37F547C06D0889E3EFFF1E95 /* CarConnectionWatcher.swift */,
+				50CFF48F5C95FACD2457106E /* ChimeRecipes.swift */,
+				E699875CC4748D0160231257 /* ChimeSynth.swift */,
+				1CA5E3D2DA4CBC5E311007C3 /* SoundLibrary.swift */,
+				212F8A6B941FB96608475988 /* StartupSoundPlayer.swift */,
 			);
 			name = Audio;
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		2033D7482BA09B82D639CDE7 /* Shared */ = {
+		5727F8C4D84C83F57B7198B7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BBD13AFA97C8B242F1038E62 /* Brand.swift */,
-				FF8C91CE878CA6D2CBCB7C1A /* CarWidgetCard.swift */,
-				609CF3D3196D6EC59F26B94D /* ColorHex.swift */,
-				C273EEAC433C81B6B9018B86 /* SelectDesignIntent.swift */,
-				EC99393FE3F83B3E64E70449 /* SharedStore.swift */,
-				8E21B59594370AA2D7619921 /* StartupSound.swift */,
-				FB4CBFBC41536630B99A52AA /* VehicleProfile.swift */,
-				94B9B0FAC2F98B1A7404609B /* WidgetDesign.swift */,
-				B3405063314EC80AD9B719B6 /* brands.json */,
+				5C041676BB5EC089A6A2FB9B /* Brand.swift */,
+				5F511ED5165E134E26F14ADD /* CarWidgetCard.swift */,
+				E9EE5E67D1E691CF8829E5B7 /* ColorHex.swift */,
+				855E2B0A11FD67293663AC69 /* SelectDesignIntent.swift */,
+				F5DD05916DA72189F4830F42 /* SharedStore.swift */,
+				3848A5DC2748AFFBD95FB1D8 /* StartupSound.swift */,
+				D0AF9A19D7F87310888DC896 /* VehicleProfile.swift */,
+				F28126B39D843349EB0D121B /* WidgetDesign.swift */,
+				30C434C5A2CA44BB8FFFC222 /* brands.json */,
 			);
 			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		22AF17663D8C5B7B1DAD79F7 /* Resources */ = {
+		76D7AA2C43AE27C76A58D8BC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0225C4247E7326CA9BAEAB5A /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7A691BE5AAC262E22806000A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D6D9D6C5A3D1A3106BB81EB /* GarageView.swift */,
+				8CBF7A0D5FAB0A6BFD29D52E /* GuideView.swift */,
+				F706362C85F773C3ECEB1258 /* RootView.swift */,
+				DFA1CFCA572B3245AE353B06 /* SettingsView.swift */,
+				609013411A7DEA1654B66740 /* ShortcutsGuideView.swift */,
+				3ED6194E19F9B0AE796896E1 /* SoundsView.swift */,
+				51BEEC6EBB676C9C71F68DBF /* TrimSoundView.swift */,
+				AF927E62FD98544B9111B29A /* VehicleEditorView.swift */,
+				AB76D33A8518BE7073186962 /* WidgetEditorView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		83E2CD35D89366722A3B90BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76D7AA2C43AE27C76A58D8BC /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C1CE225A451CB08183A1BDF /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				FF5EB47B7112FC5E062E6C99 /* StartupSoundIntents.swift */,
+			);
+			name = Intents;
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		8DAFD1B9D13A77C22874B60C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				157B8C62B5B395910DCEBA89 /* Garage.swift */,
+				FAE9D802F1C1AC54912CD0E1 /* GarageSeed.swift */,
+			);
+			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB95EF68FF6813CCF3574CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				198C07C09025F03A93157570 /* Ignition.app */,
+				202846F966CBA50985651F11 /* IgnitionWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADA16FB507FB55D830751169 = {
+			isa = PBXGroup;
+			children = (
+				ACB95EF68FF6813CCF3574CF /* Products */,
+				83E2CD35D89366722A3B90BA /* Frameworks */,
+				C3A18B0C8B9E26CC2728EBEB /* Ignition */,
+				06F9215AD895CEE8314869E9 /* IgnitionWidget */,
+				5727F8C4D84C83F57B7198B7 /* Shared */,
+				ED8D9FD70C4297B48FDE3597 /* Brands */,
+			);
+			sourceTree = "<group>";
+		};
+		C3A18B0C8B9E26CC2728EBEB /* Ignition */ = {
+			isa = PBXGroup;
+			children = (
+				3B4F41F645569F138EE42345 /* Audio */,
+				0DBB4BB64126F8EAF2B41DD7 /* IgnitionApp.swift */,
+				8C1CE225A451CB08183A1BDF /* Intents */,
+				8DAFD1B9D13A77C22874B60C /* Model */,
+				EC7AAFF4966AFBF39D332301 /* Resources */,
+				7A691BE5AAC262E22806000A /* Views */,
+				7FEF0D06A032E538464619E9 /* Assets.xcassets */,
+				20CA8BB9DE92A41A2192B55E /* Info.plist */,
+				45B5D53055EDD8AC0AF713F7 /* Ignition.entitlements */,
+			);
+			name = Ignition;
+			path = Ignition;
+			sourceTree = "<group>";
+		};
+		EC7AAFF4966AFBF39D332301 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -199,100 +277,25 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		4166BF82129139F7686E930C /* iOS */ = {
+		ED8D9FD70C4297B48FDE3597 /* Brands */ = {
 			isa = PBXGroup;
 			children = (
-				26B8AF4A5215E868CA155426 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8388E406397086F6410B3D67 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				095AE9F910A15F4E1890871A /* Ignition.app */,
-				7B9C38DD18270B3436C7B48B /* IgnitionWidget.appex */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		87761556FD374F1010FCEF63 /* Brands */ = {
-			isa = PBXGroup;
-			children = (
-				96B9F128CF3404692C8A8186 /* Brands.xcassets */,
+				DF4D0DCEAE11003ECF77516F /* Brands.xcassets */,
 			);
 			name = Brands;
 			path = Brands;
 			sourceTree = "<group>";
 		};
-		B50CA80E73AD762F2AEA7B91 /* IgnitionWidget */ = {
-			isa = PBXGroup;
-			children = (
-				A3B933DDABCE04025C4A5669 /* CarWidget.swift */,
-				192302C08D67FA9260ADC35B /* IgnitionWidgetBundle.swift */,
-				47BD3A84B5A8E16101F759DF /* Info.plist */,
-				1E779452DAB2BDD59D2C09C6 /* IgnitionWidget.entitlements */,
-			);
-			name = IgnitionWidget;
-			path = IgnitionWidget;
-			sourceTree = "<group>";
-		};
-		BBC3FCBA0D90BC82734DF9F1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				90F8037C9D4EEDEBF15F0290 /* GarageView.swift */,
-				672286AC2F3675E8257EC03A /* GuideView.swift */,
-				44DADEBFBA78388EF7790C81 /* RootView.swift */,
-				2BDCF78474555D2E6DBAE441 /* SettingsView.swift */,
-				55F7B2AD44D0BD76A071EF5A /* ShortcutsGuideView.swift */,
-				891C37761F252D1CDFFDA2DB /* SoundsView.swift */,
-				BEECB8F3751AC8C8683D685A /* VehicleEditorView.swift */,
-				DA537A72D796DEAC24A870DE /* WidgetEditorView.swift */,
-			);
-			name = Views;
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C1E1B5D870E1ED35A482F5AB = {
-			isa = PBXGroup;
-			children = (
-				8388E406397086F6410B3D67 /* Products */,
-				CEE1ED67A95A0BF313F0821F /* Frameworks */,
-				0BEE2CE7C404DE362CB27E5D /* Ignition */,
-				B50CA80E73AD762F2AEA7B91 /* IgnitionWidget */,
-				2033D7482BA09B82D639CDE7 /* Shared */,
-				87761556FD374F1010FCEF63 /* Brands */,
-			);
-			sourceTree = "<group>";
-		};
-		CEE1ED67A95A0BF313F0821F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4166BF82129139F7686E930C /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E7F058D5398A3177B9CB1770 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6D50D2A91B847A877A805F76 /* Garage.swift */,
-				72D36D6C5DC9E1EAEC19E6CA /* GarageSeed.swift */,
-			);
-			name = Model;
-			path = Model;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DD2DB949C00EF475E877D09 /* IgnitionWidget */ = {
+		09AD46DE6F6628DFD1F12E0F /* IgnitionWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77992F624795236E30F3713F /* Build configuration list for PBXNativeTarget "IgnitionWidget" */;
+			buildConfigurationList = 23A497FE221B6C3B930E863F /* Build configuration list for PBXNativeTarget "IgnitionWidget" */;
 			buildPhases = (
-				88A32EFA4F862F8943296DC1 /* Sources */,
-				D0C414976EE8A62FFF244EC7 /* Frameworks */,
-				7C5613C478CF3A40F7C811D2 /* Resources */,
+				FE25711796435E9F9FAEC3A4 /* Sources */,
+				2B74F8827928B00BDC7A008D /* Frameworks */,
+				372A5B6C759F3589025CC7AE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -300,38 +303,38 @@
 			);
 			name = IgnitionWidget;
 			productName = IgnitionWidget;
-			productReference = 7B9C38DD18270B3436C7B48B /* IgnitionWidget.appex */;
+			productReference = 202846F966CBA50985651F11 /* IgnitionWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		B5BEE36C005C87CEFB46BF78 /* Ignition */ = {
+		2947B7312F5421C775787A83 /* Ignition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47039C23E6F9FF084E8A2650 /* Build configuration list for PBXNativeTarget "Ignition" */;
+			buildConfigurationList = 0A1A97C6BE2FF8E06D2E0DC4 /* Build configuration list for PBXNativeTarget "Ignition" */;
 			buildPhases = (
-				0E8514A0F4661858A5C7A692 /* Sources */,
-				3B538EDF21C4932E008FF5F4 /* Frameworks */,
-				DE9EAACDCE8034BC8D9FF455 /* Resources */,
-				204A9338AF298311D66A41CB /* Embed Foundation Extensions */,
+				B64A8AA221F9C063C2CA7B80 /* Sources */,
+				46086EB82EB0FF8938BE1066 /* Frameworks */,
+				0F91F5A35897D1486DDD28A1 /* Resources */,
+				B4D5B3EA4064AA5811789E72 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4EAFD7D5FC152C464FB3FA95 /* PBXTargetDependency */,
+				D21C8E7E258DBE1E3B0E797F /* PBXTargetDependency */,
 			);
 			name = Ignition;
 			productName = Ignition;
-			productReference = 095AE9F910A15F4E1890871A /* Ignition.app */;
+			productReference = 198C07C09025F03A93157570 /* Ignition.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ACD4FE46564356A77A72395E /* Project object */ = {
+		5CFCC2699098A3D14ADFC3E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 			};
-			buildConfigurationList = 9180315794E685DFFF342D17 /* Build configuration list for PBXProject "Ignition" */;
+			buildConfigurationList = 6321E583CD8AE66A77806DB4 /* Build configuration list for PBXProject "Ignition" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -339,181 +342,161 @@
 				en,
 				Base,
 			);
-			mainGroup = C1E1B5D870E1ED35A482F5AB;
+			mainGroup = ADA16FB507FB55D830751169;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8388E406397086F6410B3D67 /* Products */;
+			productRefGroup = ACB95EF68FF6813CCF3574CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5BEE36C005C87CEFB46BF78 /* Ignition */,
-				7DD2DB949C00EF475E877D09 /* IgnitionWidget */,
+				2947B7312F5421C775787A83 /* Ignition */,
+				09AD46DE6F6628DFD1F12E0F /* IgnitionWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7C5613C478CF3A40F7C811D2 /* Resources */ = {
+		0F91F5A35897D1486DDD28A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5BCE49FA83A84FB610DF69 /* brands.json in Resources */,
-				2B3B2266131811B2035C0E4D /* Brands.xcassets in Resources */,
+				1CC17C0FD051C32153FAB414 /* brands.json in Resources */,
+				1E4AD39671F323EF522C9D9F /* Brands.xcassets in Resources */,
+				1FF37DCC6D8BEE451930BC34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE9EAACDCE8034BC8D9FF455 /* Resources */ = {
+		372A5B6C759F3589025CC7AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11619984FD674687ABDD28F9 /* brands.json in Resources */,
-				C72398CF44D2CD320323D0A0 /* Brands.xcassets in Resources */,
-				7D0A6DAF52C0B070145C804C /* Assets.xcassets in Resources */,
+				5E84420E195B044E7147ED52 /* brands.json in Resources */,
+				0AA809F94395F245FF3922F3 /* Brands.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E8514A0F4661858A5C7A692 /* Sources */ = {
+		B64A8AA221F9C063C2CA7B80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3A11198F385C1E11968B9BA /* AudioNormalizer.swift in Sources */,
-				8DEF28FF2DB1331605A1AF1B /* CarConnectionWatcher.swift in Sources */,
-				26E2A9C952C5CDFE69A5776F /* ChimeRecipes.swift in Sources */,
-				A4037D81E63CD589FA07D222 /* ChimeSynth.swift in Sources */,
-				753B933D82090B63883B345F /* SoundLibrary.swift in Sources */,
-				11C6B0D2BDDDF1311CDD52A5 /* StartupSoundPlayer.swift in Sources */,
-				4F49B47D7950089A27398254 /* IgnitionApp.swift in Sources */,
-				07B5848396E221CA5E879C83 /* StartupSoundIntents.swift in Sources */,
-				1BBD27BB8E150DE3DA5E3755 /* Garage.swift in Sources */,
-				543FD3683D895B3824980E31 /* GarageSeed.swift in Sources */,
-				C7839F4677F667A0DE96E741 /* GarageView.swift in Sources */,
-				E345CF88675DE26D9BB5DFD8 /* GuideView.swift in Sources */,
-				5A74D4F8CE2B999C596D54D8 /* RootView.swift in Sources */,
-				9D84832EFA0B49414FE665E5 /* SettingsView.swift in Sources */,
-				083AD320D604C53DE45C5700 /* ShortcutsGuideView.swift in Sources */,
-				326C21BB457869988AF2E42A /* SoundsView.swift in Sources */,
-				82EE9FA5A89DBC14C787503A /* VehicleEditorView.swift in Sources */,
-				3C7EB83959B4E932827BE5D1 /* WidgetEditorView.swift in Sources */,
-				BECE677A2D5D12EB5D8E3FB3 /* Brand.swift in Sources */,
-				BBFA9A292243E98F4BE0ED92 /* CarWidgetCard.swift in Sources */,
-				BC1233F75DBF82D1AF8137D0 /* ColorHex.swift in Sources */,
-				BEE3DC5B2EA519EA7EDF9983 /* SelectDesignIntent.swift in Sources */,
-				D611EC259E4C3088DAD3AA98 /* SharedStore.swift in Sources */,
-				D78E96FE9CA464BFB18D8954 /* StartupSound.swift in Sources */,
-				8F5A6D090A8A78E2767CBBE3 /* VehicleProfile.swift in Sources */,
-				82B5C891297D2CF3D196F0C0 /* WidgetDesign.swift in Sources */,
+				0A4B5FBB52685DEA9330578B /* AudioNormalizer.swift in Sources */,
+				356ACB3743248B686D0C175F /* CarConnectionWatcher.swift in Sources */,
+				729475E832099E97F1115A49 /* ChimeRecipes.swift in Sources */,
+				7D2FA411D16403BEC474953D /* ChimeSynth.swift in Sources */,
+				9E14260884953BE581E3A763 /* SoundLibrary.swift in Sources */,
+				AE75F06578A4CA3C74714307 /* StartupSoundPlayer.swift in Sources */,
+				D33DA7032B47067D13B9B4C0 /* IgnitionApp.swift in Sources */,
+				79418427A77C57CA3AA5AA37 /* StartupSoundIntents.swift in Sources */,
+				AE1A89F7800B4914F39C44FA /* Garage.swift in Sources */,
+				E8DA22E315DC6CEACAFEB69A /* GarageSeed.swift in Sources */,
+				E5BE19F4130FC6A69348391F /* GarageView.swift in Sources */,
+				3DF873118414D8BD3AF19630 /* GuideView.swift in Sources */,
+				C5CF3315FEE2BD677034935B /* RootView.swift in Sources */,
+				14B339FF86E7A41524E41770 /* SettingsView.swift in Sources */,
+				B0D8A7A7D1F8A41F13EBE395 /* ShortcutsGuideView.swift in Sources */,
+				0D52A255B484F1122B34DC92 /* SoundsView.swift in Sources */,
+				998BAC6CAB82593F4E0F8743 /* TrimSoundView.swift in Sources */,
+				F6301F07E4FF0570E5CB4EB5 /* VehicleEditorView.swift in Sources */,
+				A0DC4E750FE7D6FF47E23675 /* WidgetEditorView.swift in Sources */,
+				3A922D62D8168495D838BAE9 /* Brand.swift in Sources */,
+				B33758EFED12C2A347C89932 /* CarWidgetCard.swift in Sources */,
+				528526AC3D1675F912C90691 /* ColorHex.swift in Sources */,
+				81162EEA4E8A018B529B0D90 /* SelectDesignIntent.swift in Sources */,
+				9C387F9B4FD9105AF958B8ED /* SharedStore.swift in Sources */,
+				C82CC7FA0210C3A1BEFFFA45 /* StartupSound.swift in Sources */,
+				7B1AB9FA8361B95746EFC269 /* VehicleProfile.swift in Sources */,
+				E17CB3BD9F35BA07E62020C2 /* WidgetDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88A32EFA4F862F8943296DC1 /* Sources */ = {
+		FE25711796435E9F9FAEC3A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755A67824EDF062BBEAC02C5 /* CarWidget.swift in Sources */,
-				08E9464DA1A0C07FFDA1EE85 /* IgnitionWidgetBundle.swift in Sources */,
-				E28BEE7BCEA3317825D7313F /* Brand.swift in Sources */,
-				4FCCF559C7463B8C36B48E03 /* CarWidgetCard.swift in Sources */,
-				13831DCA781B72CCC9DCE4D4 /* ColorHex.swift in Sources */,
-				1673A0794DB9A7BD79283A82 /* SelectDesignIntent.swift in Sources */,
-				F8B7DED7DCA18FD3F4097614 /* SharedStore.swift in Sources */,
-				4C1AF3DBA262BA04FF7016B6 /* StartupSound.swift in Sources */,
-				CB7F3FC0A19CA33242710EDD /* VehicleProfile.swift in Sources */,
-				E4C6CDA1B0ACE6FBE839380B /* WidgetDesign.swift in Sources */,
+				D3A66ADA3EE9BFCA70CF2D1C /* CarWidget.swift in Sources */,
+				9FC40B688C7B0B75C5AD0500 /* IgnitionWidgetBundle.swift in Sources */,
+				A422B88AD98764E64DBAD6B1 /* Brand.swift in Sources */,
+				E3CEAE52DC6866E5A5C2FFAF /* CarWidgetCard.swift in Sources */,
+				1576076A0DAD29E45C93141D /* ColorHex.swift in Sources */,
+				E514EED0A4D2CB2F494C29F6 /* SelectDesignIntent.swift in Sources */,
+				BFDCCDBF0C986AF570052650 /* SharedStore.swift in Sources */,
+				12D2DB94EFD998E8F88DAF4E /* StartupSound.swift in Sources */,
+				CABC8759AB6C34740F733E4E /* VehicleProfile.swift in Sources */,
+				9B331FE39B6C7F18EE243F04 /* WidgetDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4EAFD7D5FC152C464FB3FA95 /* PBXTargetDependency */ = {
+		D21C8E7E258DBE1E3B0E797F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IgnitionWidget;
-			target = 7DD2DB949C00EF475E877D09 /* IgnitionWidget */;
-			targetProxy = 868F26059F37EE49D57D54B8 /* PBXContainerItemProxy */;
+			target = 09AD46DE6F6628DFD1F12E0F /* IgnitionWidget */;
+			targetProxy = A53BD03BF50416468203A966 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2409A409894EFC5AA9B6D61F /* Debug */ = {
+		4D3D4435D3462A550133EA9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = Ignition/Ignition.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKMR84FU58;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Ignition/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		6ECA5B7731CB63BD44136644 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = Ignition/Ignition.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKMR84FU58;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Ignition/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9B1CA1BC865D8E7B88AFDCD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_ENTITLEMENTS = IgnitionWidget/IgnitionWidget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKMR84FU58;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = IgnitionWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition.IgnitionWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A41A91EB96BBA16BC7AA92AA /* Debug */ = {
+		70AC602D85613DF3C18C2933 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -575,7 +558,58 @@
 			};
 			name = Debug;
 		};
-		D141D498482D6C98F25E2576 /* Debug */ = {
+		A5107352C2597D85E64D7871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Ignition/Ignition.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Ignition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4C4FCA92A35B11F64097256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = IgnitionWidget/IgnitionWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IgnitionWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition.IgnitionWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C67335518EEDE51AAC15CAD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -599,92 +633,62 @@
 			};
 			name = Debug;
 		};
-		E88BE0CF0BE633FFB883CF3C /* Release */ = {
+		D79AC652DC01CD3C011CCAE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Ignition/Ignition.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Ignition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Ignition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		47039C23E6F9FF084E8A2650 /* Build configuration list for PBXNativeTarget "Ignition" */ = {
+		0A1A97C6BE2FF8E06D2E0DC4 /* Build configuration list for PBXNativeTarget "Ignition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ECA5B7731CB63BD44136644 /* Release */,
-				2409A409894EFC5AA9B6D61F /* Debug */,
+				A5107352C2597D85E64D7871 /* Release */,
+				D79AC652DC01CD3C011CCAE1 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77992F624795236E30F3713F /* Build configuration list for PBXNativeTarget "IgnitionWidget" */ = {
+		23A497FE221B6C3B930E863F /* Build configuration list for PBXNativeTarget "IgnitionWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B1CA1BC865D8E7B88AFDCD1 /* Release */,
-				D141D498482D6C98F25E2576 /* Debug */,
+				C4C4FCA92A35B11F64097256 /* Release */,
+				C67335518EEDE51AAC15CAD4 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9180315794E685DFFF342D17 /* Build configuration list for PBXProject "Ignition" */ = {
+		6321E583CD8AE66A77806DB4 /* Build configuration list for PBXProject "Ignition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A41A91EB96BBA16BC7AA92AA /* Debug */,
-				E88BE0CF0BE633FFB883CF3C /* Release */,
+				70AC602D85613DF3C18C2933 /* Debug */,
+				4D3D4435D3462A550133EA9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ACD4FE46564356A77A72395E /* Project object */;
+	rootObject = 5CFCC2699098A3D14ADFC3E4 /* Project object */;
 }

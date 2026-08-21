@@ -24,7 +24,10 @@ Build privado para tres coches concretos:
   Configurables desde el propio widget (`AppIntentConfiguration`): mantén pulsado →
   *Editar widget* → elige diseño.
 - 🔊 **Sonido de arranque** al conectar (y opcionalmente al desconectar), con
-  **20 chimes sintetizados** en cinco packs e importación de audio propio.
+  **24 chimes sintetizados** en seis packs e importación de audio propio.
+- ✂️ **Recorte con forma de onda**: al importar, eliges el fragmento arrastrando sobre la
+  onda (hasta 10 s) en vez de quedarte con el principio del archivo. Los bordes llevan
+  fundido, que es lo que evita el chasquido al cortar por el medio.
 - 🎚️ **Nivelado a −12 dBFS**: todo lo que suena, generado o importado, sale al mismo
   nivel. Las unidades de a bordo reproducen los avisos bastante más alto que la música;
   un clip masterizado a 0 dBFS es un susto a las siete de la mañana.
@@ -60,8 +63,13 @@ salpicadero de cualquier coche compatible.
 
 1. Pestaña **Sonidos** → ▶︎ para escuchar, el círculo de la derecha para dejarlo elegido.
 2. **Importar un audio** para traer el tuyo: cualquier `.m4a` o `.mp3` de la app Archivos.
-   Se recorta a 10 s y se nivela a −12 dBFS solo. Los temas de Apple Music llevan DRM y no
-   se pueden importar.
+   Se abre el recortador: arrastra sobre la onda para elegir el trozo (máx. 10 s), escúchalo
+   y guárdalo. Se nivela a −12 dBFS solo. Los temas de Apple Music llevan DRM y no se pueden
+   importar.
+
+   ¿Sacar el audio de un vídeo? En el iPhone, sin apps de terceros: guarda el vídeo en
+   Fotos y crea un atajo con **Codificar contenido multimedia → Sólo audio: sí**, que deja
+   un `.m4a` en Archivos listo para importar.
 3. **Ajustes → Volumen**, y *Probar ahora* para oírlo sin salir de casa.
 
 ### Para que suene con la app cerrada

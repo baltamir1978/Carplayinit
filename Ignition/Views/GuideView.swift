@@ -31,8 +31,10 @@ struct GuideView: View {
                 Step(number: "1", title: "Elige un sonido",
                      detail: "Pestaña Sonidos → toca ▶︎ para escucharlo y el círculo de la derecha para dejarlo elegido.")
                 Step(number: "2", title: "O trae el tuyo",
-                     detail: "Sonidos → Importar un audio. Vale cualquier .m4a o .mp3 que tengas en Archivos. Se recorta a 10 segundos y se nivela solo.")
-                Step(number: "3", title: "Ajusta el volumen",
+                     detail: "Sonidos → Importar un audio. Vale cualquier .m4a o .mp3 de Archivos. Se abre el recortador: arrastra sobre la onda para elegir el trozo (máx. 10 s), escúchalo y guárdalo.")
+                Step(number: "3", title: "¿Está dentro de un vídeo?",
+                     detail: "Guarda el vídeo en Fotos y monta un atajo con «Codificar contenido multimedia» y «Sólo audio» activado: deja un .m4a en Archivos listo para importar.")
+                Step(number: "4", title: "Ajusta el volumen",
                      detail: "Ajustes → Volumen, y «Probar ahora» para oírlo sin salir de casa.")
                 InfoNote("Los temas comprados o descargados de Apple Music llevan DRM y no se pueden importar: tiene que ser un archivo suelto en la app Archivos.")
             } header: {
