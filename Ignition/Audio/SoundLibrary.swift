@@ -8,6 +8,9 @@ final class SoundLibrary {
     static let shared = SoundLibrary()
     /// `nonisolated`: the normaliser tags sounds with it off the main actor.
     nonisolated static let importedPackID = "imported"
+    /// What plays until the user chooses something else, and where deleting the
+    /// selected import lands.
+    nonisolated static let fallbackSoundID = "engines-fanfare"
 
     private(set) var packs: [SoundPack] = []
     /// Set while the synthesised chimes are being rendered for the first time.
@@ -53,7 +56,7 @@ final class SoundLibrary {
 
         packs = buildPacks()
         if SharedStore.selectedSoundID == nil {
-            SharedStore.selectedSoundID = ChimeRecipes.classic.first?.id
+            SharedStore.selectedSoundID = Self.fallbackSoundID
         }
     }
 
@@ -81,7 +84,7 @@ final class SoundLibrary {
         if let url = sound.url { try? FileManager.default.removeItem(at: url) }
         SharedStore.importedSounds.removeAll { $0.id == sound.id }
         if SharedStore.selectedSoundID == sound.id {
-            SharedStore.selectedSoundID = ChimeRecipes.classic.first?.id
+            SharedStore.selectedSoundID = Self.fallbackSoundID
         }
         packs = buildPacks()
     }
