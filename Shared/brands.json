@@ -6,7 +6,17 @@
     "primaryHex": "#0B2E5C",
     "secondaryHex": "#14181C",
     "accentHex": "#8FA5BF",
-    "models": ["Dolphin", "Dolphin Surf", "Atto 3", "Seal", "Seal U", "Sealion 7", "Han", "Tang"]
+    "models": [
+      "Dolphin",
+      "Dolphin G DM-i",
+      "Dolphin Surf",
+      "Atto 3",
+      "Seal",
+      "Seal U",
+      "Sealion 7",
+      "Han",
+      "Tang"
+    ]
   },
   {
     "id": "leapmotor",
@@ -15,7 +25,12 @@
     "primaryHex": "#12304A",
     "secondaryHex": "#0C1418",
     "accentHex": "#5FD3C4",
-    "models": ["T03", "C10", "B10", "C16"]
+    "models": [
+      "T03",
+      "C10",
+      "B10",
+      "C16"
+    ]
   },
   {
     "id": "landrover",
@@ -24,6 +39,16 @@
     "primaryHex": "#2F3E2A",
     "secondaryHex": "#14180F",
     "accentHex": "#C9C2B2",
-    "models": ["Defender 90", "Defender 110", "Defender 130", "Discovery", "Discovery Sport", "Range Rover", "Range Rover Sport", "Evoque", "Velar"]
+    "models": [
+      "Defender 90",
+      "Defender 110",
+      "Defender 130",
+      "Discovery",
+      "Discovery Sport",
+      "Range Rover",
+      "Range Rover Sport",
+      "Evoque",
+      "Velar"
+    ]
   }
 ]

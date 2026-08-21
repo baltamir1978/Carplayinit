@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import AVFoundation
 
 /// The chime catalog the UI talks to: built-in packs plus whatever the user imported.
 @MainActor
@@ -16,11 +17,13 @@ final class SoundLibrary {
     /// Absent from the repo on purpose — it is someone else's recording — so the
     /// whole feature degrades to the synthesised chimes when the file is not there.
     nonisolated static let bundledClip: StartupSound? = {
-        guard Bundle.main.url(forResource: "startup-clip", withExtension: "m4a") != nil else {
+        guard let url = Bundle.main.url(forResource: "startup-clip", withExtension: "m4a") else {
             return nil
         }
+        // Read the real length: the clip travels whole, so it is whatever the file says.
+        let duration = (try? AVAudioPlayer(contentsOf: url))?.duration ?? 0
         return StartupSound(id: "featured-clip", name: "Mi clip", packID: "featured",
-                            storage: .bundle, fileName: "startup-clip.m4a", duration: 8)
+                            storage: .bundle, fileName: "startup-clip.m4a", duration: duration)
     }()
 
     private(set) var packs: [SoundPack] = []

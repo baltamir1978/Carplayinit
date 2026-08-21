@@ -21,10 +21,13 @@ enum GarageSeed {
             bodyColorHex: "#3E4A3B",   // verde mate
             finish: .matte
         )
+        // El Dolphin G DM-i es el híbrido enchufable del segmento B: modelo
+        // distinto del Dolphin eléctrico y del Dolphin Surf.
         let dolphin = VehicleProfile(
             brandID: "byd",
-            model: "Dolphin",
+            model: "Dolphin G DM-i",
             year: 2024,
+            nickname: "Dolphin G",
             bodyColorHex: "#8C9195",   // gris
             finish: .gloss
         )

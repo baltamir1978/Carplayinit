@@ -3,14 +3,17 @@
 #
 #   Tools/prepare_clip.sh <archivo> [inicio_seg] [duración_seg]
 #
-# Mono, recortado, con fundidos cortos y nivelado a -12 dBFS — el mismo trato que
-# recibe cualquier audio importado desde la app, hecho aquí para que el clip pueda
-# viajar dentro del bundle.
+# Sin inicio ni duración coge el archivo entero. Mono, con fundidos cortos y
+# nivelado a -12 dBFS — el mismo trato que recibe cualquier audio importado desde
+# la app, hecho aquí para que el clip pueda viajar dentro del bundle.
+#
+# El límite de 10 s del importador de la app no se aplica aquí: un clip que viaja
+# en el bundle puede durar lo que haga falta.
 set -euo pipefail
 
 SOURCE="${1:?uso: prepare_clip.sh <archivo> [inicio] [duración]}"
 START="${2:-0}"
-LENGTH="${3:-8}"
+LENGTH="${3:-0}"   # 0 = hasta el final
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/Ignition/Resources/startup-clip.m4a"
 TMP="$(mktemp -d)"
@@ -27,7 +30,7 @@ with wave.open(src) as w:
     samples = list(struct.unpack("<%dh" % frames, w.readframes(frames)))
 
 begin = min(int(start * rate), frames - 1)
-end = min(begin + int(length * rate), frames)
+end = frames if length <= 0 else min(begin + int(length * rate), frames)
 cut = samples[begin:end]
 if not cut:
     raise SystemExit("el fragmento está fuera del archivo")

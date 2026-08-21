@@ -10,7 +10,7 @@ Build privado para tres coches concretos:
 | Coche | Pintura |
 |---|---|
 | Land Rover Defender 110 | verde mate (`#3E4A3B`, acabado mate) |
-| BYD Dolphin | gris (`#8C9195`, brillo) |
+| BYD Dolphin G DM-i | gris (`#8C9195`, brillo) |
 | Leapmotor T03 | azul claro (`#A9CDE6`, brillo) |
 
 ## Qué hace
@@ -116,13 +116,14 @@ Tools/prepare_clip.sh ~/Downloads/mi-audio.mp3 [inicio] [duración]
 ```
 
 Lo pasa a mono, recorta el fragmento (por defecto los primeros 8 s), le pone fundidos,
-lo nivela a −12 dBFS y lo deja en `Ignition/Resources/startup-clip.m4a`. No hace falta
+lo nivela a −12 dBFS y lo deja en `Ignition/Resources/startup-clip.m4a`. Sin inicio ni
+duración coge el archivo **entero**: el límite de 10 s del importador de la app no aplica
+a un clip que viaja dentro del bundle. No hace falta
 tocar el proyecto: una fase de build lo copia al bundle si está, y si no está avisa por
 consola y la app tira de los chimes sintetizados.
 
-Para afinar el trozo, repite el comando con otros segundos — por ejemplo
+Para quedarte sólo con un trozo, pásale los segundos — por ejemplo
 `Tools/prepare_clip.sh mi-audio.mp3 3 4` coge cuatro segundos a partir del tercero.
-Un chime de conexión se agradece corto: por debajo de dos segundos.
 
 `Ignition/Resources/` está en el `.gitignore`: el repo es público y ese audio no es
 nuestro para redistribuirlo.
