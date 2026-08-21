@@ -1,0 +1,29 @@
+[
+  {
+    "id": "byd",
+    "name": "BYD",
+    "country": "CN",
+    "primaryHex": "#0B2E5C",
+    "secondaryHex": "#14181C",
+    "accentHex": "#8FA5BF",
+    "models": ["Dolphin", "Dolphin Surf", "Atto 3", "Seal", "Seal U", "Sealion 7", "Han", "Tang"]
+  },
+  {
+    "id": "leapmotor",
+    "name": "Leapmotor",
+    "country": "CN",
+    "primaryHex": "#12304A",
+    "secondaryHex": "#0C1418",
+    "accentHex": "#5FD3C4",
+    "models": ["T03", "C10", "B10", "C16"]
+  },
+  {
+    "id": "landrover",
+    "name": "Land Rover",
+    "country": "GB",
+    "primaryHex": "#2F3E2A",
+    "secondaryHex": "#14180F",
+    "accentHex": "#C9C2B2",
+    "models": ["Defender 90", "Defender 110", "Defender 130", "Discovery", "Discovery Sport", "Range Rover", "Range Rover Sport", "Evoque", "Velar"]
+  }
+]

@@ -1,0 +1,10 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+.DS_Store
+
+# El proyecto se genera con Tools/generate_project.rb; descomenta si prefieres no versionarlo.
+# Ignition.xcodeproj/
