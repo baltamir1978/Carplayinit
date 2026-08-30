@@ -15,7 +15,7 @@ SOURCE="${1:?uso: prepare_clip.sh <archivo> [inicio] [duración]}"
 START="${2:-0}"
 LENGTH="${3:-0}"   # 0 = hasta el final
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="$ROOT/Ignition/Resources/startup-clip.m4a"
+OUT="$ROOT/Carplayinit/Resources/startup-clip.m4a"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 

@@ -7,7 +7,7 @@ import AVFoundation
 struct PlayStartupSoundIntent: AudioPlaybackIntent {
     static let title: LocalizedStringResource = "Reproducir sonido de arranque"
     static let description = IntentDescription(
-        "Reproduce el sonido de arranque elegido en Ignition. Úsalo en una automatización «Al conectar CarPlay»."
+        "Reproduce el sonido de arranque elegido en Carplayinit. Úsalo en una automatización «Al conectar CarPlay»."
     )
     /// Audio intents must not bounce to the app — that would steal focus in the car.
     static let openAppWhenRun: Bool = false
@@ -72,7 +72,7 @@ struct SoundQuery: EntityQuery {
 }
 
 /// Ready-made shortcut so the automation can be built in two taps.
-struct IgnitionShortcuts: AppShortcutsProvider {
+struct CarplayinitShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: PlayStartupSoundIntent(),

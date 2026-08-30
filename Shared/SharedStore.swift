@@ -8,7 +8,7 @@ import WidgetKit
 /// Small, structured values live in `UserDefaults`; binaries (car photos, imported
 /// chimes) live in the group container so the widget can read them without copying.
 enum SharedStore {
-    static let suiteName = "group.Altamirano.Ignition"
+    static let suiteName = "group.Altamirano.Carplayinit"
 
     private enum Key {
         static let vehicles = "vehicles"
@@ -44,7 +44,7 @@ enum SharedStore {
 
     static var vehicles: [VehicleProfile] {
         get { decode([VehicleProfile].self, Key.vehicles) ?? [] }
-        set { encode(newValue, Key.vehicles) }
+        set { encode(newValue, Key.vehicles); reloadWidgets() }
     }
 
     static func vehicle(id: UUID?) -> VehicleProfile? {
@@ -56,7 +56,7 @@ enum SharedStore {
 
     static var designs: [WidgetDesign] {
         get { decode([WidgetDesign].self, Key.designs) ?? [] }
-        set { encode(newValue, Key.designs) }
+        set { encode(newValue, Key.designs); reloadWidgets() }
     }
 
     static func design(id: UUID?) -> WidgetDesign? {
@@ -109,9 +109,10 @@ enum SharedStore {
         return try? JSONDecoder().decode(type, from: data)
     }
 
+    /// Widget reloads are *not* done here: only cars and designs reach the
+    /// dashboard, and a reload for every imported chime is work for nobody.
     private static func encode<T: Encodable>(_ value: T, _ key: String) {
         guard let data = try? JSONEncoder().encode(value) else { return }
         defaults?.set(data, forKey: key)
-        reloadWidgets()
     }
 }

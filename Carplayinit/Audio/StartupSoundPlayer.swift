@@ -18,7 +18,7 @@ final class StartupSoundPlayer: NSObject, ObservableObject {
 
     func play(_ sound: StartupSound) {
         guard let url = sound.url, FileManager.default.fileExists(atPath: url.path) else {
-            NSLog("[Ignition] missing audio for \(sound.id)")
+            NSLog("[Carplayinit] missing audio for \(sound.id)")
             return
         }
         do {
@@ -36,7 +36,7 @@ final class StartupSoundPlayer: NSObject, ObservableObject {
             self.player = player
             playingSoundID = sound.id
         } catch {
-            NSLog("[Ignition] playback error: \(error.localizedDescription)")
+            NSLog("[Carplayinit] playback error: \(error.localizedDescription)")
         }
     }
 

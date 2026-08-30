@@ -36,7 +36,6 @@ final class Garage {
         guard let index = vehicles.firstIndex(where: { $0.id == vehicle.id }) else { return }
         vehicles[index] = vehicle
         SharedStore.vehicles = vehicles
-        SharedStore.reloadWidgets()
     }
 
     func delete(_ vehicle: VehicleProfile) {

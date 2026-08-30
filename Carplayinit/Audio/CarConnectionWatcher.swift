@@ -122,7 +122,7 @@ final class CarConnectionWatcher: ObservableObject {
                                     options: [.duckOthers, .allowBluetoothHFP, .allowBluetoothA2DP])
             try session.setActive(true)
         } catch {
-            NSLog("[Ignition] audio session error: \(error.localizedDescription)")
+            NSLog("[Carplayinit] audio session error: \(error.localizedDescription)")
         }
     }
 
@@ -138,7 +138,7 @@ final class CarConnectionWatcher: ObservableObject {
             player.play()
             keepAlivePlayer = player
         } catch {
-            NSLog("[Ignition] keep-alive failed: \(error.localizedDescription)")
+            NSLog("[Carplayinit] keep-alive failed: \(error.localizedDescription)")
         }
     }
 

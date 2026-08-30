@@ -30,19 +30,15 @@ struct VehicleEditorView: View {
                         Text(brand.name).tag(brand.id)
                     }
                 }
-                .onChange(of: draft.brandID) { _, newValue in
-                    // Keep the model consistent with the marque.
-                    if let models = BrandCatalog.brand(id: newValue)?.models,
-                       !models.contains(draft.model) {
-                        draft.model = models.first ?? ""
-                    }
+                .onChange(of: draft.brandID) { oldValue, newValue in
+                    // Only follow the marque while the model came from its own
+                    // list: a model typed by hand is the user's, not a leftover.
+                    let previous = BrandCatalog.brand(id: oldValue)?.models ?? []
+                    guard draft.model.isEmpty || previous.contains(draft.model) else { return }
+                    draft.model = BrandCatalog.brand(id: newValue)?.models.first ?? ""
                 }
 
-                Picker("Modelo", selection: $draft.model) {
-                    ForEach(brand?.models ?? [], id: \.self) { model in
-                        Text(model).tag(model)
-                    }
-                }
+                modelField
 
                 TextField("Nombre (opcional)", text: $draft.nickname)
                     .textInputAutocapitalization(.words)
@@ -50,8 +46,17 @@ struct VehicleEditorView: View {
                 TextField("Matrícula", text: $draft.plate)
                     .textInputAutocapitalization(.characters)
                     .autocorrectionDisabled()
+
+                TextField("País de la matrícula", text: Binding(
+                    get: { draft.plateCountry ?? VehicleProfile.defaultPlateCountry },
+                    set: { draft.plateCountry = $0.uppercased() }
+                ))
+                .textInputAutocapitalization(.characters)
+                .autocorrectionDisabled()
             } header: {
                 Text("Coche")
+            } footer: {
+                Text("El modelo se escribe libre: la lista es sólo un atajo. El país es el de la banda azul de la matrícula (E, F, P, D…).")
             }
 
             Section("Pintura") {
@@ -135,6 +140,25 @@ struct VehicleEditorView: View {
             Text("Se borrarán también sus diseños de widget.")
         }
         .wrappedInNavigationStack(isNew)
+    }
+
+    /// Free text, with the marque's catalog hanging off a menu. A picker alone
+    /// meant a car outside the catalog simply could not be added.
+    private var modelField: some View {
+        HStack {
+            TextField("Modelo", text: $draft.model)
+                .textInputAutocapitalization(.words)
+            if let models = brand?.models, !models.isEmpty {
+                Menu {
+                    ForEach(models, id: \.self) { model in
+                        Button(model) { draft.model = model }
+                    }
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .foregroundStyle(Color.accentColor)
+                }
+            }
+        }
     }
 
     /// The title is resolved before the picker's closure so nothing main-actor

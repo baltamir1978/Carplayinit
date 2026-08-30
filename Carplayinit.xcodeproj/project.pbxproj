@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08E988C6A3DDF3586C5721C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC336877F21907A0362A5431 /* SettingsView.swift */; };
+		098DB8D05F9CC1D3B1E6E305 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BBBD4E6454ADA4207D733 /* SelectDesignIntent.swift */; };
+		191E25B6822CEB352838FD1A /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40A637857A196A5B84144EC /* Garage.swift */; };
+		1E1D116E208E1604429C776A /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE34BF3DF401243606031FC7 /* ColorHex.swift */; };
+		1F1A5BEBD5014AF2DB732D55 /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01107BD104A95787FE9B64D6 /* WidgetDesign.swift */; };
+		2D962D3491C15C73F7376EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB091C2ECD91BC947BBBAEF /* Assets.xcassets */; };
+		2DF6AAC4EBFC299A63AD4169 /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E70000D416630B534D6ED4 /* StartupSound.swift */; };
+		4B508CBC9919150825DC7DBF /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9D9FBAC147EF78D5C02BC /* VehicleProfile.swift */; };
+		4F32694BE3B616265D334DC8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B526645066D65BCDAF78F23 /* GuideView.swift */; };
+		523365C6D60CC2FFF1ED7425 /* SelectDesignIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BBBD4E6454ADA4207D733 /* SelectDesignIntent.swift */; };
+		539524B2C567C6BAC8CB6293 /* GarageSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D50AC932CAFD72F44E2D74 /* GarageSeed.swift */; };
+		54D1910225E25797A6FB9E46 /* LegacyMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BAC27AC6FC4564FEC562F /* LegacyMigration.swift */; };
+		56DA2ACFEFDE0ADB601867A6 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = 986110C2CA6623B8EFADB709 /* brands.json */; };
+		57C3A8CE1FF13A6E157EE542 /* StartupSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E70000D416630B534D6ED4 /* StartupSound.swift */; };
+		5D55BE1069976A80C24305E7 /* WidgetEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC0F6CE38A91EF8D6753A7 /* WidgetEditorView.swift */; };
+		5E55ED6B11BF747F11F9C723 /* VehicleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CF3C48D34B3B854EF7B5E /* VehicleEditorView.swift */; };
+		72DC02A7091105CEFB69ECB0 /* CarplayinitWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0ABD00B639176687212FF165 /* CarplayinitWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		740F6351BF0E16D6CAE79B26 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C941E1A7B555F9058329CA /* Brand.swift */; };
+		77E7DDDF9A32C7A9D6A2B2F6 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E311E8C09F7FEB9EF224F6 /* SharedStore.swift */; };
+		7CDE686417BF66997B74E3A9 /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14922AD9572A5F22F6566AC /* CarWidgetCard.swift */; };
+		7D75CF4536CBD45E967874FB /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB3C4818913B8711C5A129 /* GarageView.swift */; };
+		801C6DF3EF55CB7BE8FF71A9 /* TrimSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0ECE069607B8D3EC813A3 /* TrimSoundView.swift */; };
+		8121AE0091220EB122543F0A /* WidgetDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01107BD104A95787FE9B64D6 /* WidgetDesign.swift */; };
+		84BFA1D9E017455BC563D650 /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D9E8902CA8851458C63A4C /* Brands.xcassets */; };
+		8A72627AA71FBD7135883B1B /* CarConnectionWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF40F6E45EBBDA823F5E67 /* CarConnectionWatcher.swift */; };
+		901442B270F80DB1904407C1 /* CarWidgetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14922AD9572A5F22F6566AC /* CarWidgetCard.swift */; };
+		9335696C0AC5748B3ED422D5 /* ShortcutsGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0176F1661BC33BD3C5C3F5 /* ShortcutsGuideView.swift */; };
+		9B00B166E613B1E191BE0EAD /* Brands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D9E8902CA8851458C63A4C /* Brands.xcassets */; };
+		9FFADE819B186787BDCEF298 /* CarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3ED19A94AA119817F6618E /* CarWidget.swift */; };
+		A218ED72B65778B64F7FD5DE /* CarplayinitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DEE8388457AF6AA70C90D /* CarplayinitApp.swift */; };
+		A63846D1F669CEB27A0674D4 /* CarplayinitWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A710CE7420A6E745DD750 /* CarplayinitWidgetBundle.swift */; };
+		B304F2E5CBC23D2534C3447C /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C941E1A7B555F9058329CA /* Brand.swift */; };
+		BFBF5A0FC27FE9C03BE7178E /* SoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D7200245D8D0F9167D387E /* SoundsView.swift */; };
+		C42785ED848CFCC28C09E609 /* ChimeSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D52FEE487FB72C98498A53 /* ChimeSynth.swift */; };
+		D68926FB883083A7B5E59668 /* brands.json in Resources */ = {isa = PBXBuildFile; fileRef = 986110C2CA6623B8EFADB709 /* brands.json */; };
+		D7582A80D8404E2B86F043A8 /* ChimeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8621AAC1407B9DE5B4532E /* ChimeRecipes.swift */; };
+		D945ABDDA323405FA74CA1F5 /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE975B043E59B3522EB26E /* SoundLibrary.swift */; };
+		E16902BE469757759D950CE8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B425188E4CBB4326B5D54 /* RootView.swift */; };
+		E1DDEB43AAE4FEF4A5A5E005 /* StartupSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0623A0C3D67936A4ADEBA03 /* StartupSoundPlayer.swift */; };
+		EB3EC6A7DDA82C2DE7831F7E /* StartupSoundIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B422F4257210CA1A5E99D9C /* StartupSoundIntents.swift */; };
+		F142B31E358E8BB398D6875D /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE34BF3DF401243606031FC7 /* ColorHex.swift */; };
+		F7B960F8446C1EFB451A58D1 /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9D9FBAC147EF78D5C02BC /* VehicleProfile.swift */; };
+		FF113244788582C3635EB6D6 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E311E8C09F7FEB9EF224F6 /* SharedStore.swift */; };
+		FF2D46D01F3F5D71494689FC /* AudioNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198C9E9FAD81E455125315E /* AudioNormalizer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5AAAF16F4D5DB1918A21034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADE3B56883D148703EA078C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41D37EEB1F01B0737A0EBED0;
+			remoteInfo = CarplayinitWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1F3FC7EBAB840BB82A03028 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				72DC02A7091105CEFB69ECB0 /* CarplayinitWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01107BD104A95787FE9B64D6 /* WidgetDesign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetDesign.swift; sourceTree = "<group>"; };
+		08C325F0129A61AEF36F6ECF /* Carplayinit.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Carplayinit.entitlements; sourceTree = "<group>"; };
+		0A2A710CE7420A6E745DD750 /* CarplayinitWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarplayinitWidgetBundle.swift; sourceTree = "<group>"; };
+		0ABD00B639176687212FF165 /* CarplayinitWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CarplayinitWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D4DB1E10513F567B678D295 /* Carplayinit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carplayinit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FBE975B043E59B3522EB26E /* SoundLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
+		13E311E8C09F7FEB9EF224F6 /* SharedStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		1B526645066D65BCDAF78F23 /* GuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		2642DB4522EA52FF3811541C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CB92D9D35904AF6D580DEE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E8621AAC1407B9DE5B4532E /* ChimeRecipes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeRecipes.swift; sourceTree = "<group>"; };
+		4C8816D1A9AC28B5BDA76769 /* CarplayinitWidget.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = CarplayinitWidget.entitlements; sourceTree = "<group>"; };
+		5198C9E9FAD81E455125315E /* AudioNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioNormalizer.swift; sourceTree = "<group>"; };
+		52D50AC932CAFD72F44E2D74 /* GarageSeed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageSeed.swift; sourceTree = "<group>"; };
+		53BF40F6E45EBBDA823F5E67 /* CarConnectionWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarConnectionWatcher.swift; sourceTree = "<group>"; };
+		64E70000D416630B534D6ED4 /* StartupSound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSound.swift; sourceTree = "<group>"; };
+		65C941E1A7B555F9058329CA /* Brand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		6B8DEE8388457AF6AA70C90D /* CarplayinitApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarplayinitApp.swift; sourceTree = "<group>"; };
+		755BAC27AC6FC4564FEC562F /* LegacyMigration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LegacyMigration.swift; sourceTree = "<group>"; };
+		7CC0ECE069607B8D3EC813A3 /* TrimSoundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrimSoundView.swift; sourceTree = "<group>"; };
+		89D9E8902CA8851458C63A4C /* Brands.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Brands.xcassets; sourceTree = "<group>"; };
+		8A3ED19A94AA119817F6618E /* CarWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidget.swift; sourceTree = "<group>"; };
+		8B422F4257210CA1A5E99D9C /* StartupSoundIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundIntents.swift; sourceTree = "<group>"; };
+		8CFC0F6CE38A91EF8D6753A7 /* WidgetEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetEditorView.swift; sourceTree = "<group>"; };
+		97D7200245D8D0F9167D387E /* SoundsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundsView.swift; sourceTree = "<group>"; };
+		986110C2CA6623B8EFADB709 /* brands.json */ = {isa = PBXFileReference; includeInIndex = 1; path = brands.json; sourceTree = "<group>"; };
+		A3D52FEE487FB72C98498A53 /* ChimeSynth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChimeSynth.swift; sourceTree = "<group>"; };
+		AF0176F1661BC33BD3C5C3F5 /* ShortcutsGuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShortcutsGuideView.swift; sourceTree = "<group>"; };
+		B9FB3C4818913B8711C5A129 /* GarageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
+		BFC9D9FBAC147EF78D5C02BC /* VehicleProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleProfile.swift; sourceTree = "<group>"; };
+		C0623A0C3D67936A4ADEBA03 /* StartupSoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartupSoundPlayer.swift; sourceTree = "<group>"; };
+		C13CF3C48D34B3B854EF7B5E /* VehicleEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VehicleEditorView.swift; sourceTree = "<group>"; };
+		CC336877F21907A0362A5431 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CFFE8E735683EB8C594EE2F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D40A637857A196A5B84144EC /* Garage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
+		D76BBBD4E6454ADA4207D733 /* SelectDesignIntent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectDesignIntent.swift; sourceTree = "<group>"; };
+		DE34BF3DF401243606031FC7 /* ColorHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		E98B425188E4CBB4326B5D54 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		EBB091C2ECD91BC947BBBAEF /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F14922AD9572A5F22F6566AC /* CarWidgetCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarWidgetCard.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CC82D713968B446A07A5C36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72EB1437B45FE1EF34F41A62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05EAC5FAB2EED5FC9C717395 /* Carplayinit */ = {
+			isa = PBXGroup;
+			children = (
+				A22D62F722441A138BA4416A /* Audio */,
+				6B8DEE8388457AF6AA70C90D /* CarplayinitApp.swift */,
+				3222E33C5BCAA77B02D0081C /* Intents */,
+				87A2D6765FF4D3DDB07CA33D /* Model */,
+				B7560D77832448C28C148BAF /* Resources */,
+				79EB7EFCB0574F7EA45E13D2 /* Views */,
+				EBB091C2ECD91BC947BBBAEF /* Assets.xcassets */,
+				3CB92D9D35904AF6D580DEE3 /* Info.plist */,
+				08C325F0129A61AEF36F6ECF /* Carplayinit.entitlements */,
+			);
+			name = Carplayinit;
+			path = Carplayinit;
+			sourceTree = "<group>";
+		};
+		2CF02B1597CF5A40F60C5F6E /* Brands */ = {
+			isa = PBXGroup;
+			children = (
+				89D9E8902CA8851458C63A4C /* Brands.xcassets */,
+			);
+			name = Brands;
+			path = Brands;
+			sourceTree = "<group>";
+		};
+		2F940DFD8BF39B91B859C7EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A414D1F499E6E2758BB36CF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3222E33C5BCAA77B02D0081C /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				8B422F4257210CA1A5E99D9C /* StartupSoundIntents.swift */,
+			);
+			name = Intents;
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		4D8E877154ABB92AD6365272 /* CarplayinitWidget */ = {
+			isa = PBXGroup;
+			children = (
+				8A3ED19A94AA119817F6618E /* CarWidget.swift */,
+				0A2A710CE7420A6E745DD750 /* CarplayinitWidgetBundle.swift */,
+				2642DB4522EA52FF3811541C /* Info.plist */,
+				4C8816D1A9AC28B5BDA76769 /* CarplayinitWidget.entitlements */,
+			);
+			name = CarplayinitWidget;
+			path = CarplayinitWidget;
+			sourceTree = "<group>";
+		};
+		667C57F2A0AC5C17C36ADDEC = {
+			isa = PBXGroup;
+			children = (
+				E4E2310B606C05791A8849DF /* Products */,
+				2F940DFD8BF39B91B859C7EB /* Frameworks */,
+				05EAC5FAB2EED5FC9C717395 /* Carplayinit */,
+				4D8E877154ABB92AD6365272 /* CarplayinitWidget */,
+				755B66F4E4D6562AA59FFB73 /* Shared */,
+				2CF02B1597CF5A40F60C5F6E /* Brands */,
+			);
+			sourceTree = "<group>";
+		};
+		755B66F4E4D6562AA59FFB73 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				65C941E1A7B555F9058329CA /* Brand.swift */,
+				F14922AD9572A5F22F6566AC /* CarWidgetCard.swift */,
+				DE34BF3DF401243606031FC7 /* ColorHex.swift */,
+				D76BBBD4E6454ADA4207D733 /* SelectDesignIntent.swift */,
+				13E311E8C09F7FEB9EF224F6 /* SharedStore.swift */,
+				64E70000D416630B534D6ED4 /* StartupSound.swift */,
+				BFC9D9FBAC147EF78D5C02BC /* VehicleProfile.swift */,
+				01107BD104A95787FE9B64D6 /* WidgetDesign.swift */,
+				986110C2CA6623B8EFADB709 /* brands.json */,
+			);
+			name = Shared;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		79EB7EFCB0574F7EA45E13D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9FB3C4818913B8711C5A129 /* GarageView.swift */,
+				1B526645066D65BCDAF78F23 /* GuideView.swift */,
+				E98B425188E4CBB4326B5D54 /* RootView.swift */,
+				CC336877F21907A0362A5431 /* SettingsView.swift */,
+				AF0176F1661BC33BD3C5C3F5 /* ShortcutsGuideView.swift */,
+				97D7200245D8D0F9167D387E /* SoundsView.swift */,
+				7CC0ECE069607B8D3EC813A3 /* TrimSoundView.swift */,
+				C13CF3C48D34B3B854EF7B5E /* VehicleEditorView.swift */,
+				8CFC0F6CE38A91EF8D6753A7 /* WidgetEditorView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		87A2D6765FF4D3DDB07CA33D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40A637857A196A5B84144EC /* Garage.swift */,
+				52D50AC932CAFD72F44E2D74 /* GarageSeed.swift */,
+				755BAC27AC6FC4564FEC562F /* LegacyMigration.swift */,
+			);
+			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A414D1F499E6E2758BB36CF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CFFE8E735683EB8C594EE2F1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A22D62F722441A138BA4416A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5198C9E9FAD81E455125315E /* AudioNormalizer.swift */,
+				53BF40F6E45EBBDA823F5E67 /* CarConnectionWatcher.swift */,
+				3E8621AAC1407B9DE5B4532E /* ChimeRecipes.swift */,
+				A3D52FEE487FB72C98498A53 /* ChimeSynth.swift */,
+				0FBE975B043E59B3522EB26E /* SoundLibrary.swift */,
+				C0623A0C3D67936A4ADEBA03 /* StartupSoundPlayer.swift */,
+			);
+			name = Audio;
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		B7560D77832448C28C148BAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E4E2310B606C05791A8849DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D4DB1E10513F567B678D295 /* Carplayinit.app */,
+				0ABD00B639176687212FF165 /* CarplayinitWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41D37EEB1F01B0737A0EBED0 /* CarplayinitWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F9985B540B9B5A9B8D0EE3B /* Build configuration list for PBXNativeTarget "CarplayinitWidget" */;
+			buildPhases = (
+				5B32B690265D808D393C21E4 /* Sources */,
+				72EB1437B45FE1EF34F41A62 /* Frameworks */,
+				9FC91B5A4E86B708C9BDB79E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarplayinitWidget;
+			productName = CarplayinitWidget;
+			productReference = 0ABD00B639176687212FF165 /* CarplayinitWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5EF3D8AF35122EF716C62B9C /* Carplayinit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB0F3D37DF557C32805BE1A9 /* Build configuration list for PBXNativeTarget "Carplayinit" */;
+			buildPhases = (
+				B57AB563C8DA7219DF880ADF /* Sources */,
+				4CC82D713968B446A07A5C36 /* Frameworks */,
+				5A0DC8DF6E8347EF63E8C97E /* Resources */,
+				D79F57332675F60BEEF8992B /* Copy startup clip */,
+				F1F3FC7EBAB840BB82A03028 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BDD6B97BB2A7F42FD80079D /* PBXTargetDependency */,
+			);
+			name = Carplayinit;
+			productName = Carplayinit;
+			productReference = 0D4DB1E10513F567B678D295 /* Carplayinit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADE3B56883D148703EA078C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 3EA6956FB8A187CC7207ADD4 /* Build configuration list for PBXProject "Carplayinit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 667C57F2A0AC5C17C36ADDEC;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E4E2310B606C05791A8849DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EF3D8AF35122EF716C62B9C /* Carplayinit */,
+				41D37EEB1F01B0737A0EBED0 /* CarplayinitWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A0DC8DF6E8347EF63E8C97E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68926FB883083A7B5E59668 /* brands.json in Resources */,
+				84BFA1D9E017455BC563D650 /* Brands.xcassets in Resources */,
+				2D962D3491C15C73F7376EF7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FC91B5A4E86B708C9BDB79E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DA2ACFEFDE0ADB601867A6 /* brands.json in Resources */,
+				9B00B166E613B1E191BE0EAD /* Brands.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D79F57332675F60BEEF8992B /* Copy startup clip */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carplayinit/Resources/startup-clip.m4a",
+			);
+			name = "Copy startup clip";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/startup-clip.m4a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"$SCRIPT_INPUT_FILE_0\" ]; then\n  mkdir -p \"$(dirname \"$SCRIPT_OUTPUT_FILE_0\")\"\n  cp -f \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\nelse\n  echo \"note: sin clip propio en Carplayinit/Resources; se usan los chimes sintetizados\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B32B690265D808D393C21E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFADE819B186787BDCEF298 /* CarWidget.swift in Sources */,
+				A63846D1F669CEB27A0674D4 /* CarplayinitWidgetBundle.swift in Sources */,
+				740F6351BF0E16D6CAE79B26 /* Brand.swift in Sources */,
+				7CDE686417BF66997B74E3A9 /* CarWidgetCard.swift in Sources */,
+				F142B31E358E8BB398D6875D /* ColorHex.swift in Sources */,
+				098DB8D05F9CC1D3B1E6E305 /* SelectDesignIntent.swift in Sources */,
+				FF113244788582C3635EB6D6 /* SharedStore.swift in Sources */,
+				2DF6AAC4EBFC299A63AD4169 /* StartupSound.swift in Sources */,
+				4B508CBC9919150825DC7DBF /* VehicleProfile.swift in Sources */,
+				8121AE0091220EB122543F0A /* WidgetDesign.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B57AB563C8DA7219DF880ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2D46D01F3F5D71494689FC /* AudioNormalizer.swift in Sources */,
+				8A72627AA71FBD7135883B1B /* CarConnectionWatcher.swift in Sources */,
+				D7582A80D8404E2B86F043A8 /* ChimeRecipes.swift in Sources */,
+				C42785ED848CFCC28C09E609 /* ChimeSynth.swift in Sources */,
+				D945ABDDA323405FA74CA1F5 /* SoundLibrary.swift in Sources */,
+				E1DDEB43AAE4FEF4A5A5E005 /* StartupSoundPlayer.swift in Sources */,
+				A218ED72B65778B64F7FD5DE /* CarplayinitApp.swift in Sources */,
+				EB3EC6A7DDA82C2DE7831F7E /* StartupSoundIntents.swift in Sources */,
+				191E25B6822CEB352838FD1A /* Garage.swift in Sources */,
+				539524B2C567C6BAC8CB6293 /* GarageSeed.swift in Sources */,
+				54D1910225E25797A6FB9E46 /* LegacyMigration.swift in Sources */,
+				7D75CF4536CBD45E967874FB /* GarageView.swift in Sources */,
+				4F32694BE3B616265D334DC8 /* GuideView.swift in Sources */,
+				E16902BE469757759D950CE8 /* RootView.swift in Sources */,
+				08E988C6A3DDF3586C5721C4 /* SettingsView.swift in Sources */,
+				9335696C0AC5748B3ED422D5 /* ShortcutsGuideView.swift in Sources */,
+				BFBF5A0FC27FE9C03BE7178E /* SoundsView.swift in Sources */,
+				801C6DF3EF55CB7BE8FF71A9 /* TrimSoundView.swift in Sources */,
+				5E55ED6B11BF747F11F9C723 /* VehicleEditorView.swift in Sources */,
+				5D55BE1069976A80C24305E7 /* WidgetEditorView.swift in Sources */,
+				B304F2E5CBC23D2534C3447C /* Brand.swift in Sources */,
+				901442B270F80DB1904407C1 /* CarWidgetCard.swift in Sources */,
+				1E1D116E208E1604429C776A /* ColorHex.swift in Sources */,
+				523365C6D60CC2FFF1ED7425 /* SelectDesignIntent.swift in Sources */,
+				77E7DDDF9A32C7A9D6A2B2F6 /* SharedStore.swift in Sources */,
+				57C3A8CE1FF13A6E157EE542 /* StartupSound.swift in Sources */,
+				F7B960F8446C1EFB451A58D1 /* VehicleProfile.swift in Sources */,
+				1F1A5BEBD5014AF2DB732D55 /* WidgetDesign.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BDD6B97BB2A7F42FD80079D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CarplayinitWidget;
+			target = 41D37EEB1F01B0737A0EBED0 /* CarplayinitWidget */;
+			targetProxy = A5AAAF16F4D5DB1918A21034 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2BAD7DF065E2229D7DF4FBFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		366D7295917575277C61A633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = CarplayinitWidget/CarplayinitWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CarplayinitWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Carplayinit.CarplayinitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		456593E0975126E08B1DE860 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Carplayinit/Carplayinit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Carplayinit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Carplayinit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61C14AD301DE6D108918497C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BE99576691ABACFEC2C63F15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = CarplayinitWidget/CarplayinitWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CarplayinitWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Carplayinit.CarplayinitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE30E481EEE1866B0AF50689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Carplayinit/Carplayinit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JKMR84FU58;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Carplayinit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Altamirano.Carplayinit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EA6956FB8A187CC7207ADD4 /* Build configuration list for PBXProject "Carplayinit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C14AD301DE6D108918497C /* Debug */,
+				2BAD7DF065E2229D7DF4FBFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F9985B540B9B5A9B8D0EE3B /* Build configuration list for PBXNativeTarget "CarplayinitWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366D7295917575277C61A633 /* Release */,
+				BE99576691ABACFEC2C63F15 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB0F3D37DF557C32805BE1A9 /* Build configuration list for PBXNativeTarget "Carplayinit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				456593E0975126E08B1DE860 /* Release */,
+				DE30E481EEE1866B0AF50689 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADE3B56883D148703EA078C8 /* Project object */;
+}

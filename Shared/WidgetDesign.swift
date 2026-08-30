@@ -15,10 +15,10 @@ enum WidgetLayout: String, Codable, CaseIterable, Identifiable {
 
     var localizedName: String {
         switch self {
-        case .badge:   return String(localized: "layout.badge", defaultValue: "Emblema")
-        case .photo:   return String(localized: "layout.photo", defaultValue: "Foto")
-        case .plate:   return String(localized: "layout.plate", defaultValue: "Matrícula")
-        case .minimal: return String(localized: "layout.minimal", defaultValue: "Mínimo")
+        case .badge:   return "Emblema"
+        case .photo:   return "Foto"
+        case .plate:   return "Matrícula"
+        case .minimal: return "Mínimo"
         }
     }
 }
@@ -35,11 +35,11 @@ enum BackgroundKind: String, Codable, CaseIterable, Identifiable {
 
     var localizedName: String {
         switch self {
-        case .brandGradient: return String(localized: "bg.gradient", defaultValue: "Degradado de marca")
-        case .solid:         return String(localized: "bg.solid", defaultValue: "Color sólido")
-        case .photo:         return String(localized: "bg.photo", defaultValue: "Foto del coche")
-        case .carbon:        return String(localized: "bg.carbon", defaultValue: "Fibra de carbono")
-        case .bodyColor:     return String(localized: "bg.body", defaultValue: "Color del coche")
+        case .brandGradient: return "Degradado de marca"
+        case .solid:         return "Color sólido"
+        case .photo:         return "Foto del coche"
+        case .carbon:        return "Fibra de carbono"
+        case .bodyColor:     return "Color del coche"
         }
     }
 }

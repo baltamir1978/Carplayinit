@@ -8,7 +8,6 @@ struct SoundsView: View {
     @State private var showingImporter = false
     @State private var pendingImportURL: URL?
     @State private var showingMixer = false
-    @State private var importError: String?
 
     var body: some View {
         NavigationStack {
@@ -60,13 +59,6 @@ struct SoundsView: View {
             }
             .sheet(isPresented: $showingMixer) {
                 MixerView()
-            }
-            .alert("No se pudo importar", isPresented: Binding(
-                get: { importError != nil }, set: { if !$0 { importError = nil } }
-            )) {
-                Button("Vale", role: .cancel) {}
-            } message: {
-                Text(importError ?? "")
             }
         }
     }

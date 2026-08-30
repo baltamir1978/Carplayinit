@@ -2,7 +2,7 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct IgnitionWidgetBundle: WidgetBundle {
+struct CarplayinitWidgetBundle: WidgetBundle {
     var body: some Widget {
         CarWidget()
     }

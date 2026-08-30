@@ -187,6 +187,11 @@ enum AudioNormalizer {
     ///
     /// Peak (not RMS) on purpose: the trimmer is used to find *where* something
     /// happens, and transients are what the eye looks for.
+    ///
+    /// The reduction happens *while* reading. Holding the decoded file in memory
+    /// first is what a four-minute import would die of: a track off the Files app
+    /// is easily a hundred megabytes of `Float` once decoded, and the widget's
+    /// host is not the only process here with a tight budget.
     static func waveform(for url: URL, buckets: Int = 240) async throws -> Waveform {
         let needsScope = url.startAccessingSecurityScopedResource()
         defer { if needsScope { url.stopAccessingSecurityScopedResource() } }
@@ -200,6 +205,17 @@ enum AudioNormalizer {
             throw ImportError.unreadable
         }
 
+        // The reader keeps the source's rate and channel count, so the format
+        // description tells us how many samples are coming — that is what sizes
+        // the buckets without a first pass over the file.
+        var sampleRate = 44_100.0
+        var channels = 2.0
+        if let description = try? await track.load(.formatDescriptions).first,
+           let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(description)?.pointee {
+            if asbd.mSampleRate > 0 { sampleRate = asbd.mSampleRate }
+            if asbd.mChannelsPerFrame > 0 { channels = Double(asbd.mChannelsPerFrame) }
+        }
+
         let settings: [String: Any] = [
             AVFormatIDKey: kAudioFormatLinearPCM,
             AVLinearPCMBitDepthKey: 16,
@@ -211,27 +227,35 @@ enum AudioNormalizer {
         reader.add(output)
         reader.startReading()
 
-        var all: [Float] = []
-        all.reserveCapacity(1 << 20)
+        var peaks: [Float] = []
+        peaks.reserveCapacity(buckets * 2)
+        var samplesPerBucket = max(Int(duration * sampleRate * channels) / buckets, 1)
+        var bucketPeak: Float = 0
+        var inBucket = 0
+
         while let buffer = output.copyNextSampleBuffer() {
             guard let block = CMSampleBufferGetDataBuffer(buffer) else { continue }
             let length = CMBlockBufferGetDataLength(block)
             var bytes = [Int16](repeating: 0, count: length / 2)
             CMBlockBufferCopyDataBytes(block, atOffset: 0, dataLength: length, destination: &bytes)
-            all.append(contentsOf: bytes.map { abs(Float($0) / Float(Int16.max)) })
+            for sample in bytes {
+                bucketPeak = max(bucketPeak, abs(Float(sample) / Float(Int16.max)))
+                inBucket += 1
+                guard inBucket == samplesPerBucket else { continue }
+                peaks.append(bucketPeak)
+                bucketPeak = 0
+                inBucket = 0
+                // The estimate fell short (VBR, a container that lies): halve the
+                // resolution and carry on rather than grow without a bound.
+                if peaks.count == buckets * 2 {
+                    peaks = stride(from: 0, to: peaks.count, by: 2).map { max(peaks[$0], peaks[$0 + 1]) }
+                    samplesPerBucket *= 2
+                }
+            }
         }
         reader.cancelReading()
-        guard !all.isEmpty else { throw ImportError.emptyAudio }
-
-        let perBucket = max(all.count / buckets, 1)
-        var peaks: [Float] = []
-        peaks.reserveCapacity(buckets)
-        var index = 0
-        while index < all.count {
-            let end = min(index + perBucket, all.count)
-            peaks.append(all[index..<end].max() ?? 0)
-            index = end
-        }
+        if inBucket > 0 { peaks.append(bucketPeak) }
+        guard !peaks.isEmpty else { throw ImportError.emptyAudio }
 
         let loudest = peaks.max() ?? 1
         if loudest > 0 {

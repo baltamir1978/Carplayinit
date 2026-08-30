@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Builds Ignition.xcodeproj from the source tree.
+# Builds Carplayinit.xcodeproj from the source tree.
 #
 # The project file is generated, not hand-edited: adding a Swift file means adding
 # a file, not touching a 3000-line pbxproj. Idempotent — it recreates the project
@@ -9,9 +9,9 @@
 require 'xcodeproj'
 require 'fileutils'
 
-APP            = 'Ignition'.freeze
-WIDGET         = 'IgnitionWidget'.freeze
-BUNDLE_ID      = 'Altamirano.Ignition'.freeze
+APP            = 'Carplayinit'.freeze
+WIDGET         = 'CarplayinitWidget'.freeze
+BUNDLE_ID      = 'Altamirano.Carplayinit'.freeze
 TEAM           = ENV.fetch('DEVELOPMENT_TEAM', 'JKMR84FU58').freeze
 DEPLOYMENT     = '26.5'.freeze
 MARKETING      = '1.0'.freeze
@@ -127,7 +127,7 @@ widget.add_resources([brands_assets])
 
 app.add_resources([app_group.new_reference('Assets.xcassets')])
 
-# The startup clip lives in Ignition/Resources but is deliberately absent from the
+# The startup clip lives in Carplayinit/Resources but is deliberately absent from the
 # repo (it is someone else's recording), so it cannot be a plain file reference: a
 # missing one would break the build for anyone who clones this. A script phase with
 # declared input and output copies it when it is there and does nothing when it is

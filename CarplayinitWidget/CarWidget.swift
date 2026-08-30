@@ -13,7 +13,9 @@ struct CarEntry: TimelineEntry {
     static let placeholder = CarEntry(
         date: Date(),
         design: WidgetDesign(name: "Mi coche", layout: .badge, background: .brandGradient),
-        vehicle: VehicleProfile(brandID: "bmw", model: "Serie 3", year: 2021),
+        // A marque that is actually in `brands.json`: the gallery placeholder is
+        // the first thing anyone sees, and an unknown id renders as "??".
+        vehicle: VehicleProfile(brandID: "landrover", model: "Defender 110", year: 2024),
         photo: nil
     )
 }

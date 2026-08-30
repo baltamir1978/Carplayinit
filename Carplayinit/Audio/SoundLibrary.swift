@@ -68,7 +68,7 @@ final class SoundLibrary {
                     do {
                         try ChimeSynth.file(for: recipe)
                     } catch {
-                        NSLog("[Ignition] could not render \(recipe.id): \(error.localizedDescription)")
+                        NSLog("[Carplayinit] could not render \(recipe.id): \(error.localizedDescription)")
                     }
                 }
             }

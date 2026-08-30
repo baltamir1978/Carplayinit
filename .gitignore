@@ -7,10 +7,10 @@ xcuserdata/
 .DS_Store
 
 # El proyecto se genera con Tools/generate_project.rb; descomenta si prefieres no versionarlo.
-# Ignition.xcodeproj/
+# Carplayinit.xcodeproj/
 
 # El clip de arranque es una grabación de terceros: se queda en local, fuera del
 # repo público. Se regenera con Tools/prepare_clip.sh <archivo> [inicio] [duración].
-Ignition/Resources/*.m4a
-Ignition/Resources/*.mp3
-Ignition/Resources/*.wav
+Carplayinit/Resources/*.m4a
+Carplayinit/Resources/*.mp3
+Carplayinit/Resources/*.wav

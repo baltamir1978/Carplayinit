@@ -1,13 +1,15 @@
 import SwiftUI
 
 @main
-struct IgnitionApp: App {
+struct CarplayinitApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .task {
+                    // Antes del seed: si hay garaje que rescatar, no se planta nada.
+                    LegacyMigration.runIfNeeded()
                     GarageSeed.installIfNeeded()
                     Garage.shared.reload()
                     // Renders the built-in chimes once, then it is a no-op.

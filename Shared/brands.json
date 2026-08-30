@@ -38,7 +38,7 @@
     "country": "GB",
     "primaryHex": "#2F3E2A",
     "secondaryHex": "#14180F",
-    "accentHex": "#C9C2B2",
+    "accentHex": "#9CB07E",
     "models": [
       "Defender 90",
       "Defender 110",
@@ -47,8 +47,390 @@
       "Discovery Sport",
       "Range Rover",
       "Range Rover Sport",
-      "Evoque",
-      "Velar"
+      "Range Rover Evoque",
+      "Range Rover Velar"
+    ]
+  },
+  {
+    "id": "audi",
+    "name": "Audi",
+    "country": "DE",
+    "primaryHex": "#1B1C1E",
+    "secondaryHex": "#0B0B0C",
+    "accentHex": "#BB0A30",
+    "models": [
+      "A1",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "Q2",
+      "Q3",
+      "Q4 e-tron",
+      "Q5",
+      "Q7",
+      "Q8 e-tron"
+    ]
+  },
+  {
+    "id": "bmw",
+    "name": "BMW",
+    "country": "DE",
+    "primaryHex": "#0C3B6E",
+    "secondaryHex": "#0A1420",
+    "accentHex": "#6BA3D6",
+    "models": [
+      "Serie 1",
+      "Serie 2",
+      "Serie 3",
+      "Serie 4",
+      "Serie 5",
+      "X1",
+      "X3",
+      "X5",
+      "i4",
+      "iX1",
+      "iX3"
+    ]
+  },
+  {
+    "id": "citroen",
+    "name": "Citroën",
+    "country": "FR",
+    "primaryHex": "#8B1E27",
+    "secondaryHex": "#1A1214",
+    "accentHex": "#D64550",
+    "models": [
+      "C3",
+      "C3 Aircross",
+      "C4",
+      "C4 X",
+      "C5 Aircross",
+      "Berlingo",
+      "ë-C3"
+    ]
+  },
+  {
+    "id": "cupra",
+    "name": "Cupra",
+    "country": "ES",
+    "primaryHex": "#2C2A28",
+    "secondaryHex": "#111010",
+    "accentHex": "#C4A484",
+    "models": [
+      "Formentor",
+      "Born",
+      "Leon",
+      "Ateca",
+      "Terramar",
+      "Tavascan"
+    ]
+  },
+  {
+    "id": "dacia",
+    "name": "Dacia",
+    "country": "RO",
+    "primaryHex": "#153F2E",
+    "secondaryHex": "#0C1A14",
+    "accentHex": "#6EC1A0",
+    "models": [
+      "Sandero",
+      "Sandero Stepway",
+      "Duster",
+      "Jogger",
+      "Spring",
+      "Bigster"
+    ]
+  },
+  {
+    "id": "fiat",
+    "name": "Fiat",
+    "country": "IT",
+    "primaryHex": "#8A1C22",
+    "secondaryHex": "#170F10",
+    "accentHex": "#D97078",
+    "models": [
+      "500",
+      "500e",
+      "600",
+      "Panda",
+      "Tipo",
+      "Doblò"
+    ]
+  },
+  {
+    "id": "ford",
+    "name": "Ford",
+    "country": "US",
+    "primaryHex": "#00437A",
+    "secondaryHex": "#0A1520",
+    "accentHex": "#6FA8D6",
+    "models": [
+      "Fiesta",
+      "Focus",
+      "Puma",
+      "Kuga",
+      "Explorer",
+      "Mustang Mach-E",
+      "Ranger",
+      "Transit"
+    ]
+  },
+  {
+    "id": "hyundai",
+    "name": "Hyundai",
+    "country": "KR",
+    "primaryHex": "#00287A",
+    "secondaryHex": "#0B1020",
+    "accentHex": "#7A9CD6",
+    "models": [
+      "i10",
+      "i20",
+      "i30",
+      "Bayon",
+      "Kona",
+      "Tucson",
+      "Santa Fe",
+      "Ioniq 5",
+      "Ioniq 6"
+    ]
+  },
+  {
+    "id": "kia",
+    "name": "Kia",
+    "country": "KR",
+    "primaryHex": "#7A1220",
+    "secondaryHex": "#160C10",
+    "accentHex": "#D66878",
+    "models": [
+      "Picanto",
+      "Rio",
+      "Ceed",
+      "Stonic",
+      "XCeed",
+      "Niro",
+      "Sportage",
+      "Sorento",
+      "EV3",
+      "EV6",
+      "EV9"
+    ]
+  },
+  {
+    "id": "mercedes",
+    "name": "Mercedes-Benz",
+    "country": "DE",
+    "primaryHex": "#1C2226",
+    "secondaryHex": "#0A0D0F",
+    "accentHex": "#B9C3C9",
+    "models": [
+      "Clase A",
+      "Clase B",
+      "Clase C",
+      "Clase E",
+      "CLA",
+      "GLA",
+      "GLB",
+      "GLC",
+      "GLE",
+      "EQA",
+      "EQB"
+    ]
+  },
+  {
+    "id": "mg",
+    "name": "MG",
+    "country": "GB",
+    "primaryHex": "#8C1420",
+    "secondaryHex": "#180D10",
+    "accentHex": "#D4707C",
+    "models": [
+      "MG3",
+      "MG4",
+      "MG5",
+      "ZS",
+      "HS",
+      "Marvel R",
+      "Cyberster"
+    ]
+  },
+  {
+    "id": "nissan",
+    "name": "Nissan",
+    "country": "JP",
+    "primaryHex": "#7A1418",
+    "secondaryHex": "#160C0D",
+    "accentHex": "#D46E72",
+    "models": [
+      "Micra",
+      "Juke",
+      "Qashqai",
+      "X-Trail",
+      "Ariya",
+      "Leaf",
+      "Townstar"
+    ]
+  },
+  {
+    "id": "opel",
+    "name": "Opel",
+    "country": "DE",
+    "primaryHex": "#B0A000",
+    "secondaryHex": "#171505",
+    "accentHex": "#E8DC60",
+    "models": [
+      "Corsa",
+      "Astra",
+      "Mokka",
+      "Crossland",
+      "Grandland",
+      "Combo",
+      "Frontera"
+    ]
+  },
+  {
+    "id": "peugeot",
+    "name": "Peugeot",
+    "country": "FR",
+    "primaryHex": "#1B3A5C",
+    "secondaryHex": "#0B141C",
+    "accentHex": "#7FA6C4",
+    "models": [
+      "208",
+      "2008",
+      "308",
+      "3008",
+      "408",
+      "5008",
+      "Partner",
+      "Rifter"
+    ]
+  },
+  {
+    "id": "renault",
+    "name": "Renault",
+    "country": "FR",
+    "primaryHex": "#C6A700",
+    "secondaryHex": "#1A1705",
+    "accentHex": "#F0DE70",
+    "models": [
+      "Clio",
+      "Captur",
+      "Megane",
+      "Arkana",
+      "Austral",
+      "Scenic",
+      "Espace",
+      "Kangoo",
+      "5 E-Tech"
+    ]
+  },
+  {
+    "id": "seat",
+    "name": "SEAT",
+    "country": "ES",
+    "primaryHex": "#A61B29",
+    "secondaryHex": "#180C0F",
+    "accentHex": "#DE7280",
+    "models": [
+      "Ibiza",
+      "Arona",
+      "Leon",
+      "Ateca",
+      "Tarraco",
+      "Mii"
+    ]
+  },
+  {
+    "id": "skoda",
+    "name": "Škoda",
+    "country": "CZ",
+    "primaryHex": "#0E3A2A",
+    "secondaryHex": "#081712",
+    "accentHex": "#4FBF95",
+    "models": [
+      "Fabia",
+      "Scala",
+      "Octavia",
+      "Superb",
+      "Kamiq",
+      "Karoq",
+      "Kodiaq",
+      "Enyaq",
+      "Elroq"
+    ]
+  },
+  {
+    "id": "tesla",
+    "name": "Tesla",
+    "country": "US",
+    "primaryHex": "#8C1119",
+    "secondaryHex": "#170B0D",
+    "accentHex": "#E0646E",
+    "models": [
+      "Model 3",
+      "Model Y",
+      "Model S",
+      "Model X",
+      "Cybertruck"
+    ]
+  },
+  {
+    "id": "toyota",
+    "name": "Toyota",
+    "country": "JP",
+    "primaryHex": "#9C1620",
+    "secondaryHex": "#180C0E",
+    "accentHex": "#DE6C76",
+    "models": [
+      "Aygo X",
+      "Yaris",
+      "Yaris Cross",
+      "Corolla",
+      "C-HR",
+      "RAV4",
+      "bZ4X",
+      "Hilux",
+      "Proace"
+    ]
+  },
+  {
+    "id": "volkswagen",
+    "name": "Volkswagen",
+    "country": "DE",
+    "primaryHex": "#0B2E64",
+    "secondaryHex": "#0A1220",
+    "accentHex": "#7196C6",
+    "models": [
+      "Polo",
+      "T-Cross",
+      "Golf",
+      "T-Roc",
+      "Taigo",
+      "Tiguan",
+      "Passat",
+      "Touran",
+      "ID.3",
+      "ID.4",
+      "ID.7"
+    ]
+  },
+  {
+    "id": "volvo",
+    "name": "Volvo",
+    "country": "SE",
+    "primaryHex": "#12325A",
+    "secondaryHex": "#0A141F",
+    "accentHex": "#7C9CC4",
+    "models": [
+      "EX30",
+      "EX40",
+      "XC40",
+      "XC60",
+      "XC90",
+      "EX90",
+      "V60",
+      "V90"
     ]
   }
 ]

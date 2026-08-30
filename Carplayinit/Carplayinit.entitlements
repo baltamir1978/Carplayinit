@@ -4,6 +4,8 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
+		<string>group.Altamirano.Carplayinit</string>
+		<!-- Sólo para la migración de una vez desde la versión llamada Ignition. -->
 		<string>group.Altamirano.Ignition</string>
 	</array>
 </dict>

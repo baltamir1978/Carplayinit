@@ -164,7 +164,9 @@ struct CarWidgetCard: View {
                     .lineLimit(1)
             }
             if design.showsPlate, let plate = vehicle?.plate, !plate.isEmpty {
-                PlateBadge(text: plate, compact: true).padding(.top, 4)
+                PlateBadge(text: plate, compact: true,
+                           country: vehicle?.plateBandCode ?? VehicleProfile.defaultPlateCountry)
+                    .padding(.top, 4)
             }
             if design.showsClock { clock }
         }
@@ -179,7 +181,8 @@ struct CarWidgetCard: View {
                 BrandMark(brand: brand, size: 34, tint: foreground)
             }
             PlateBadge(text: vehicle?.plate.isEmpty == false ? vehicle!.plate : "0000 XXX",
-                       compact: false)
+                       compact: false,
+                       country: vehicle?.plateBandCode ?? VehicleProfile.defaultPlateCountry)
             if design.showsModel {
                 Text(vehicle?.subtitle ?? "")
                     .font(.system(size: 11, weight: .semibold))
@@ -226,6 +229,8 @@ struct CarWidgetCard: View {
 struct PlateBadge: View {
     let text: String
     var compact: Bool
+    /// Country letters on the band. Spain by default, editable per car.
+    var country: String = VehicleProfile.defaultPlateCountry
 
     private var height: CGFloat { compact ? 22 : 34 }
 
@@ -233,7 +238,10 @@ struct PlateBadge: View {
         HStack(spacing: 0) {
             VStack(spacing: 1) {
                 Text("★").font(.system(size: height * 0.22)).opacity(0.9)
-                Text("E").font(.system(size: height * 0.3, weight: .bold))
+                Text(country)
+                    .font(.system(size: height * 0.3, weight: .bold))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
             }
             .foregroundStyle(.white)
             .frame(width: height * 0.42, height: height)

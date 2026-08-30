@@ -10,7 +10,7 @@ struct GuideView: View {
                 Step(number: "1", title: "Crea tu diseño",
                      detail: "Garaje → toca un widget para abrir el editor. Elige composición, fondo y qué datos se ven. La vista previa es exactamente lo que verás en el coche.")
                 Step(number: "2", title: "Pon el widget en el iPhone",
-                     detail: "Mantén pulsada la pantalla de inicio → + arriba a la izquierda → busca «Ignition» → añade el widget pequeño.")
+                     detail: "Mantén pulsada la pantalla de inicio → + arriba a la izquierda → busca «Carplayinit» → añade el widget pequeño.")
                 Step(number: "3", title: "Elige el diseño en el widget",
                      detail: "Mantén pulsado el widget ya colocado → Editar widget → Diseño. Cada widget puede llevar un coche distinto.")
             } header: {
@@ -21,7 +21,7 @@ struct GuideView: View {
                 Step(number: "1", title: "Activa los widgets del coche",
                      detail: "En el iPhone: Ajustes → General → CarPlay → tu coche → Personalizar. Ahí decides qué widgets salen en el salpicadero.")
                 Step(number: "2", title: "Colócalo en el salpicadero",
-                     detail: "Con el coche conectado, en la pantalla de CarPlay mantén pulsado el widget del panel y elige Ignition.")
+                     detail: "Con el coche conectado, en la pantalla de CarPlay mantén pulsado el widget del panel y elige Carplayinit.")
                 InfoNote("Necesitas iOS 26 o posterior. Desde esa versión CarPlay muestra los widgets del iPhone en cualquier coche compatible, sin apps especiales.")
             } header: {
                 Label("En el coche", systemImage: "car.fill")
@@ -43,9 +43,9 @@ struct GuideView: View {
 
             Section {
                 Step(number: "1", title: "Con la app en marcha",
-                     detail: "Ignition reconoce el momento en que el móvil entra en el coche y suelta el clip. Para que funcione con la app en segundo plano, activa Ajustes → Mantener a la escucha (gasta algo de batería).")
+                     detail: "Carplayinit reconoce el momento en que el móvil entra en el coche y suelta el clip. Para que funcione con la app en segundo plano, activa Ajustes → Mantener a la escucha (gasta algo de batería).")
                 Step(number: "2", title: "Con la app cerrada",
-                     detail: "Monta la automatización de Atajos: Ajustes → Automatización con Atajos. Se dispara siempre, aunque Ignition lleve días sin abrirse.")
+                     detail: "Monta la automatización de Atajos: Ajustes → Automatización con Atajos. Se dispara siempre, aunque Carplayinit lleve días sin abrirse.")
                 InfoNote("CarPlay hace sonar su propio aviso de conexión antes que el tuyo. No hay forma de silenciarlo desde una app: el clip entra justo detrás.")
             } header: {
                 Label("Cuándo suena", systemImage: "bolt.horizontal.fill")

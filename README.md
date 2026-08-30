@@ -1,11 +1,12 @@
-# Ignition
+# Carplayinit
 
 App de iOS para personalizar el coche desde el iPhone: **widgets de coche** que iOS 26
 lleva al salpicadero de CarPlay y un **sonido de arranque** propio al conectarse.
 
 **Versión actual: 1.0** · iOS 26.5 · Xcode 26
 
-Build privado para tres coches concretos:
+El garaje viene precargado con tres coches concretos, pero la marca sale de un
+catálogo de 24 y el modelo se escribe libre: cualquier coche cabe.
 
 | Coche | Pintura |
 |---|---|
@@ -15,7 +16,8 @@ Build privado para tres coches concretos:
 
 ## Qué hace
 
-- 🚗 **Garaje**: marca, modelo, matrícula, foto y **color de carrocería con acabado**
+- 🚗 **Garaje**: marca (24 en el catálogo), modelo en texto libre, matrícula con su
+  país, foto y **color de carrocería con acabado**
   (brillo / satinado / mate). El mate no es sólo un color plano: se dibuja sin reflejo
   especular y con grano, que es lo que lo hace leer como mate en pantalla.
 - 🧩 **Widgets** (WidgetKit, `systemSmall` y `systemMedium`) con cuatro composiciones —
@@ -49,7 +51,7 @@ La app lleva estas mismas instrucciones dentro: **Garaje → ? (arriba a la izqu
 
 1. **Garaje** → toca un widget para abrir el editor: composición, fondo y qué datos se ven.
    La vista previa es exactamente lo que se verá en el coche.
-2. En la pantalla de inicio del iPhone, mantén pulsado → **+** → busca *Ignition* → añade el
+2. En la pantalla de inicio del iPhone, mantén pulsado → **+** → busca *Carplayinit* → añade el
    widget pequeño.
 3. Mantén pulsado el widget ya colocado → **Editar widget → Diseño**. Cada widget puede
    llevar un coche distinto.
@@ -58,7 +60,7 @@ La app lleva estas mismas instrucciones dentro: **Garaje → ? (arriba a la izqu
 
 1. **Ajustes → General → CarPlay → tu coche → Personalizar** para elegir qué widgets salen
    en el salpicadero.
-2. Con el coche conectado, mantén pulsado el widget del panel de CarPlay y elige *Ignition*.
+2. Con el coche conectado, mantén pulsado el widget del panel de CarPlay y elige *Carplayinit*.
 
 Requiere **iOS 26 o posterior**: es la versión que lleva los widgets del iPhone al
 salpicadero de cualquier coche compatible.
@@ -80,7 +82,7 @@ salpicadero de cualquier coche compatible.
 
 - **Ajustes → Mantener a la escucha**: la app sigue atenta en segundo plano. Gasta batería.
 - **Ajustes → Automatización con Atajos**: automatización *Al conectar CarPlay → Reproducir
-  sonido de arranque*. Se dispara aunque Ignition lleve días sin abrirse. Es la opción a
+  sonido de arranque*. Se dispara aunque Carplayinit lleve días sin abrirse. Es la opción a
   prueba de balas y conviene tener las dos.
 
 ## Los widgets en el coche
@@ -98,7 +100,7 @@ Tool → Simulator*, y en el simulador *I/O → External Displays → CarPlay*).
 ## El sonido de arranque, sin humo
 
 No existe API pública para sustituir el aviso de conexión de CarPlay: **el de Apple suena
-siempre primero**. Lo que hace Ignition es reconocer el momento en que el móvil entra en
+siempre primero**. Lo que hace Carplayinit es reconocer el momento en que el móvil entra en
 el coche y colocar el clip justo detrás. Dos caminos, y conviene tener los dos:
 
 1. **Dentro de la app** (`CarConnectionWatcher`): escucha
@@ -116,7 +118,7 @@ Tools/prepare_clip.sh ~/Downloads/mi-audio.mp3 [inicio] [duración]
 ```
 
 Lo pasa a mono, recorta el fragmento (por defecto los primeros 8 s), le pone fundidos,
-lo nivela a −12 dBFS y lo deja en `Ignition/Resources/startup-clip.m4a`. Sin inicio ni
+lo nivela a −12 dBFS y lo deja en `Carplayinit/Resources/startup-clip.m4a`. Sin inicio ni
 duración coge el archivo **entero**: el límite de 10 s del importador de la app no aplica
 a un clip que viaja dentro del bundle. No hace falta
 tocar el proyecto: una fase de build lo copia al bundle si está, y si no está avisa por
@@ -125,7 +127,7 @@ consola y la app tira de los chimes sintetizados.
 Para quedarte sólo con un trozo, pásale los segundos — por ejemplo
 `Tools/prepare_clip.sh mi-audio.mp3 3 4` coge cuatro segundos a partir del tercero.
 
-`Ignition/Resources/` está en el `.gitignore`: el repo es público y ese audio no es
+`Carplayinit/Resources/` está en el `.gitignore`: el repo es público y ese audio no es
 nuestro para redistribuirlo.
 
 ## Los emblemas
@@ -138,27 +140,28 @@ sin tocar código.
 ## Estructura
 
 ```
-Carplay/
-├── Ignition.xcodeproj          # generado por Tools/generate_project.rb
-├── Ignition/                   # target principal
-│   ├── IgnitionApp.swift
+Carplayinit/
+├── Carplayinit.xcodeproj          # generado por Tools/generate_project.rb
+├── Carplayinit/                   # target principal
+│   ├── CarplayinitApp.swift
 │   ├── Model/
 │   │   ├── Garage.swift        # coches y diseños, sobre el App Group
-│   │   └── GarageSeed.swift    # los tres coches precargados
+│   │   ├── GarageSeed.swift    # los tres coches precargados
+│   │   └── LegacyMigration.swift  # rescate de los datos de la versión «Ignition»
 │   ├── Audio/
 │   │   ├── CarConnectionWatcher.swift   # detección de coche + keep-alive
 │   │   ├── StartupSoundPlayer.swift
 │   │   ├── ChimeSynth.swift             # síntesis y escritura WAV
-│   │   ├── ChimeRecipes.swift           # los 20 chimes, como datos
+│   │   ├── ChimeRecipes.swift           # los 24 chimes, como datos
 │   │   ├── AudioNormalizer.swift        # import, recorte, −12 dBFS, mezcla
 │   │   └── SoundLibrary.swift
 │   ├── Intents/StartupSoundIntents.swift
 │   └── Views/                  # Garaje, editor de coche, editor de widget, sonidos, ajustes
-├── IgnitionWidget/             # extensión WidgetKit
+├── CarplayinitWidget/             # extensión WidgetKit
 ├── Shared/                     # compilado en AMBOS targets
 │   ├── brands.json             # catálogo de marcas (recurso de los dos bundles)
 │   ├── Brand.swift  VehicleProfile.swift  WidgetDesign.swift  StartupSound.swift
-│   ├── SharedStore.swift       # App Group: group.Altamirano.Ignition
+│   ├── SharedStore.swift       # App Group: group.Altamirano.Carplayinit
 │   ├── CarWidgetCard.swift     # la vista del widget, compartida con la vista previa
 │   └── SelectDesignIntent.swift
 ├── Brands/Brands.xcassets      # huecos para los emblemas
@@ -172,12 +175,19 @@ emblemas se copian a los dos *bundles*.
 ## Compilar
 
 ```bash
-ruby Tools/generate_project.rb     # regenera Ignition.xcodeproj desde el árbol
-open Ignition.xcodeproj
+ruby Tools/generate_project.rb     # regenera Carplayinit.xcodeproj desde el árbol
+open Carplayinit.xcodeproj
 ```
 
 El `.xcodeproj` está generado, no editado a mano: añadir un archivo Swift es añadirlo a su
 carpeta y volver a ejecutar el script.
 
 Capabilities ya configuradas en los entitlements: **App Groups**
-(`group.Altamirano.Ignition`) en los dos targets y **Background Modes → Audio** en la app.
+(`group.Altamirano.Carplayinit`) en los dos targets y **Background Modes → Audio** en la app.
+
+La app declara además el App Group antiguo `group.Altamirano.Ignition`, y sólo por eso:
+esta app se llamó Ignition, y renombrarla cambió el grupo — que para iOS es otro
+contenedor, con el garaje y los sonidos importados dentro. `LegacyMigration` los copia
+la primera vez que arranca y no vuelve a tocarlo. Si nunca tuviste Ignition instalada,
+no hay nada que copiar y puedes quitar esa línea de
+`Carplayinit/Carplayinit.entitlements`.
