@@ -60,23 +60,60 @@ enum SpeechSynth {
 
     // MARK: - Voice picking
 
+    /// Every Spanish voice installed, best first — what the picker offers.
+    static func spanishVoices() -> [AVSpeechSynthesisVoice] {
+        AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language.hasPrefix("es") }
+            .sorted { rank($0) > rank($1) }
+    }
+
+    /// A voice the user pinned by hand, if any. Beats every heuristic below:
+    /// which voice sounds right is a matter of taste, not of ranking.
+    static func preferredIdentifier(for kind: VoiceKind) -> String? {
+        UserDefaults.standard.string(forKey: "voice_\(kind.rawValue)")
+    }
+
+    static func setPreferredIdentifier(_ identifier: String?, for kind: VoiceKind) {
+        let key = "voice_\(kind.rawValue)"
+        if let identifier {
+            UserDefaults.standard.set(identifier, forKey: key)
+        } else {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
+    }
+
     /// The best Spanish voice of that gender the phone actually has.
     ///
     /// Quality first, then Castilian over the Latin American variants — and if the
     /// phone has no voice of the asked gender, any Spanish voice will do: the pitch
     /// is what carries the difference anyway.
     static func voice(for kind: VoiceKind) -> AVSpeechSynthesisVoice? {
-        let spanish = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.hasPrefix("es") }
+        if let identifier = preferredIdentifier(for: kind),
+           let pinned = AVSpeechSynthesisVoice(identifier: identifier) {
+            return pinned
+        }
+        let spanish = spanishVoices()
         guard !spanish.isEmpty else { return nil }
         let matching = spanish.filter { $0.gender == kind.gender }
-        return (matching.isEmpty ? spanish : matching).max { rank($0) < rank($1) }
+        return (matching.isEmpty ? spanish : matching).first
     }
 
     /// True when the phone has no voice of that gender and the pitch is doing all
     /// the work — worth telling the user, who can install more voices.
     static func isSubstituting(_ kind: VoiceKind) -> Bool {
-        let spanish = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.hasPrefix("es") }
-        return !spanish.isEmpty && !spanish.contains { $0.gender == kind.gender }
+        guard let voice = voice(for: kind) else { return false }
+        return voice.gender != kind.gender
+    }
+
+    /// "Paulina · es-MX · Mejorada" — so it is never a mystery which voice is talking.
+    static func describe(_ voice: AVSpeechSynthesisVoice) -> String {
+        let quality: String
+        switch voice.quality {
+        case .premium:  quality = "Premium"
+        case .enhanced: quality = "Mejorada"
+        default:        quality = "Compacta"
+        }
+        return "\(voice.name) · \(voice.language) · \(quality)"
     }
 
     private static func rank(_ voice: AVSpeechSynthesisVoice) -> Int {

@@ -128,9 +128,12 @@ un respiro después del *handshake* o se come las primeras notas.
 permite que un texto hablado pase por la misma cadena que cualquier importación:
 recorte, fundidos y −12 dBFS.
 
-Qué voz suene depende de las que tenga instaladas el iPhone: se elige la mejor voz
-española del género pedido —calidad primero, castellano antes que las variantes
-latinoamericanas— y si no hay ninguna de ese género se usa la que haya.
+Qué voz suene depende de las que tenga instaladas el iPhone: por defecto se elige la
+mejor voz española del género pedido —calidad primero, castellano antes que las
+variantes latinoamericanas— y si no hay ninguna de ese género se usa la que haya. Pero
+la heurística no manda: en la propia pantalla se puede fijar una voz concreta, porque
+cuál suena bien es cuestión de gusto y no de ranking. La elección se recuerda por
+carácter, y debajo se ve siempre cuál está sonando.
 
 **El tono no es fijo, depende de la voz que salga.** Midiendo la frecuencia
 fundamental del audio ya renderizado: bajar una voz femenina para que suene masculina

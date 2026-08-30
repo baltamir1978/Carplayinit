@@ -13,6 +13,8 @@ struct SpeechSoundView: View {
     @State private var isSaving = false
     @State private var error: String?
     @State private var previewer = AVSpeechSynthesizer()
+    /// "" = automática. Guardado por voz, así que cada una recuerda la suya.
+    @State private var voiceID: String = ""
 
     private var trimmed: String { text.trimmingCharacters(in: .whitespacesAndNewlines) }
 
@@ -39,11 +41,29 @@ struct SpeechSoundView: View {
                         // Cada voz trae su propia velocidad: es la mitad de su carácter.
                         stopPreview()
                         rate = Double(newValue.defaultRate)
+                        voiceID = SpeechSynth.preferredIdentifier(for: newValue) ?? ""
                     }
 
                     Text(kind.character)
                         .font(.caption)
                         .foregroundStyle(.secondary)
+
+                    Picker("Cuál", selection: $voiceID) {
+                        Text("Automática").tag("")
+                        ForEach(SpeechSynth.spanishVoices(), id: \.identifier) { voice in
+                            Text(SpeechSynth.describe(voice)).tag(voice.identifier)
+                        }
+                    }
+                    .onChange(of: voiceID) { _, newValue in
+                        stopPreview()
+                        SpeechSynth.setPreferredIdentifier(newValue.isEmpty ? nil : newValue, for: kind)
+                    }
+
+                    if let sonando = SpeechSynth.voice(for: kind) {
+                        LabeledContent("Suena", value: SpeechSynth.describe(sonando))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
 
                     LabeledContent("Velocidad") {
                         Slider(value: $rate,
@@ -87,6 +107,7 @@ struct SpeechSoundView: View {
                     Button("Cancelar") { dismiss() }
                 }
             }
+            .task { voiceID = SpeechSynth.preferredIdentifier(for: kind) ?? "" }
             .onDisappear(perform: stopPreview)
             .alert("No se pudo crear", isPresented: Binding(
                 get: { error != nil }, set: { if !$0 { error = nil } }
