@@ -46,6 +46,13 @@ que evita el chasquido de cortar por el medio.
 caprichoso: las unidades de a bordo reproducen los avisos bastante más alto que la música,
 y un clip masterizado a 0 dBFS es un susto a las siete de la mañana.
 
+**Texto a voz.** Escribes lo que quieres oír y el iPhone lo dice, con dos caracteres:
+una voz **grave y pausada** y otra **cálida y lenta**. Las dos van por debajo de la
+velocidad del sistema a propósito — un sonido de arranque se oye una vez y sobre ruido
+de motor, y correr es lo que lo hace ininteligible. El tono hace el resto: pasado ~1.2
+un pitch alto no suena sensual, suena a ardilla, así que el carácter lo lleva la
+lentitud y no el agudo. El resultado se nivela y se guarda como un sonido más.
+
 **Mezclador de dos pistas**, por si el clip hay que montarlo: una principal sobre una base
 de música, con *ducking* y fundidos.
 
@@ -79,7 +86,9 @@ Simulator*, y allí *I/O → External Displays → CarPlay*.
 2. **Importar un audio** trae cualquier `.m4a` o `.mp3` de la app Archivos. Se abre el
    recortador, eliges el trozo, lo escuchas y lo guardas. Los temas de Apple Music llevan
    DRM y no se pueden importar.
-3. **Ajustes → Volumen** y *Probar ahora*, para oírlo sin salir de casa.
+3. **Escribir lo que diga** genera el sonido a partir de un texto: eliges voz y
+   velocidad, lo escuchas y lo guardas.
+4. **Ajustes → Volumen** y *Probar ahora*, para oírlo sin salir de casa.
 
 ¿Sacar el audio de un vídeo, sin apps de terceros? Guarda el vídeo en Fotos y crea un
 atajo con **Codificar contenido multimedia → Sólo audio: sí**: deja un `.m4a` en Archivos
@@ -113,6 +122,16 @@ cuando la app ya está en marcha, y para el resto está la automatización de At
 
 Entre la conexión y el clip hay 900 ms de espera a propósito. La unidad de a bordo necesita
 un respiro después del *handshake* o se come las primeras notas.
+
+### Las voces
+
+`AVSpeechSynthesizer.write` devuelve PCM en vez de reproducirlo, y eso es lo que
+permite que un texto hablado pase por la misma cadena que cualquier importación:
+recorte, fundidos y −12 dBFS. Qué voz suene depende de las que tenga instalado el
+iPhone: se elige la mejor voz española del género pedido —calidad primero, castellano
+antes que las variantes latinoamericanas— y si no hay ninguna de ese género, se usa la
+que haya y el tono hace el trabajo. La app lo avisa cuando eso pasa, y dice dónde
+instalar más: *Ajustes → Accesibilidad → Contenido hablado → Voces*.
 
 ### Los chimes están sintetizados, no grabados
 
@@ -192,6 +211,7 @@ Carplayinit/
 │   │   ├── StartupSoundPlayer.swift
 │   │   ├── ChimeSynth.swift           # síntesis y escritura WAV
 │   │   ├── ChimeRecipes.swift         # los 24 chimes, como datos
+│   │   ├── SpeechSynth.swift          # texto a voz, con las dos voces
 │   │   ├── AudioNormalizer.swift      # import, recorte, −12 dBFS, mezcla
 │   │   └── SoundLibrary.swift
 │   ├── Intents/StartupSoundIntents.swift

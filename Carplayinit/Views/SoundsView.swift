@@ -8,6 +8,7 @@ struct SoundsView: View {
     @State private var showingImporter = false
     @State private var pendingImportURL: URL?
     @State private var showingMixer = false
+    @State private var showingSpeech = false
 
     var body: some View {
         NavigationStack {
@@ -29,6 +30,9 @@ struct SoundsView: View {
                     }
                     Button("Mezclar dos pistas", systemImage: "waveform.badge.plus") {
                         showingMixer = true
+                    }
+                    Button("Escribir lo que diga", systemImage: "text.bubble.fill") {
+                        showingSpeech = true
                     }
                 } footer: {
                     Text("Eliges el trozo sobre la onda; hasta 60 s, y se nivela a −12 dBFS para que no pegue un susto en el coche. Los temas de Apple Music con DRM no se pueden importar: usa un archivo de la app Archivos.")
@@ -53,6 +57,9 @@ struct SoundsView: View {
             }
             .sheet(isPresented: $showingMixer) {
                 MixerView()
+            }
+            .sheet(isPresented: $showingSpeech) {
+                SpeechSoundView()
             }
         }
     }

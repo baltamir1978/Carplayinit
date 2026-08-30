@@ -32,9 +32,11 @@ struct GuideView: View {
                      detail: "Pestaña Sonidos → toca ▶︎ para escucharlo y el círculo de la derecha para dejarlo elegido. El pack Destacado es el clip que viene preparado de casa.")
                 Step(number: "2", title: "O trae el tuyo",
                      detail: "Sonidos → Importar un audio. Vale cualquier .m4a o .mp3 de Archivos. Se abre el recortador: arrastra sobre la onda para elegir el trozo (máx. 60 s), escúchalo y guárdalo.")
-                Step(number: "3", title: "¿Está dentro de un vídeo?",
+                Step(number: "3", title: "O escribe lo que quieres oír",
+                     detail: "Sonidos → Escribir lo que diga. Escribes el texto, eliges voz —grave y pausada, o cálida y lenta— y velocidad, lo escuchas y queda guardado como un sonido más.")
+                Step(number: "4", title: "¿Está dentro de un vídeo?",
                      detail: "Guarda el vídeo en Fotos y monta un atajo con «Codificar contenido multimedia» y «Sólo audio» activado: deja un .m4a en Archivos listo para importar.")
-                Step(number: "4", title: "Ajusta el volumen",
+                Step(number: "5", title: "Ajusta el volumen",
                      detail: "Ajustes → Volumen, y «Probar ahora» para oírlo sin salir de casa.")
                 InfoNote("Los temas comprados o descargados de Apple Music llevan DRM y no se pueden importar: tiene que ser un archivo suelto en la app Archivos.")
             } header: {

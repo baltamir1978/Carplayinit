@@ -116,6 +116,19 @@ final class SoundLibrary {
         packs = buildPacks()
     }
 
+    /// Speaks `text` and stores it like any other import: same trim, same fades,
+    /// same −12 dBFS, so it sits at the level of everything else in the list.
+    func makeSpokenSound(text: String, kind: SpeechSynth.VoiceKind, rate: Float) async throws {
+        let rendered = try await SpeechSynth.render(text: text, kind: kind, rate: rate)
+        defer { try? FileManager.default.removeItem(at: rendered) }
+
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let name = trimmed.count > 28 ? trimmed.prefix(27) + "…" : trimmed[...]
+        let sound = try await AudioNormalizer.importSound(from: rendered, name: String(name))
+        SharedStore.importedSounds.append(sound)
+        packs = buildPacks()
+    }
+
     func deleteImported(_ sound: StartupSound) {
         if let url = sound.url { try? FileManager.default.removeItem(at: url) }
         SharedStore.importedSounds.removeAll { $0.id == sound.id }
