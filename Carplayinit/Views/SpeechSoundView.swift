@@ -59,9 +59,9 @@ struct SpeechSoundView: View {
                     Text("Voz")
                 } footer: {
                     if SpeechSynth.isSubstituting(kind) {
-                        Text("Tu iPhone no tiene ninguna voz \(kind.localizedName.lowercased()) en español instalada, así que se usa la que hay con el tono cambiado. Para una de verdad: Ajustes → Accesibilidad → Contenido hablado → Voces → Español.")
+                        Text("Tu iPhone no tiene instalada ninguna voz \(kind.localizedName.lowercased()) en español, así que suena la que hay con el tono forzado — y se nota. Instálala en Ajustes → Accesibilidad → Contenido hablado → Voces → Español: Jorge o Álvaro para la masculina, Mónica o Marisol para la femenina.")
                     } else {
-                        Text("Se puede añadir más voces, y mejores, en Ajustes → Accesibilidad → Contenido hablado → Voces → Español.")
+                        Text("Las voces de serie suenan a robot. En Ajustes → Accesibilidad → Contenido hablado → Voces → Español puedes descargar las «Mejorada» o «Premium», que son otra cosa.")
                     }
                 }
 

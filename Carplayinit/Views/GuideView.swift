@@ -34,9 +34,11 @@ struct GuideView: View {
                      detail: "Sonidos → Importar un audio. Vale cualquier .m4a o .mp3 de Archivos. Se abre el recortador: arrastra sobre la onda para elegir el trozo (máx. 60 s), escúchalo y guárdalo.")
                 Step(number: "3", title: "O escribe lo que quieres oír",
                      detail: "Sonidos → Escribir lo que diga. Escribes el texto, eliges voz —grave y pausada, o cálida y lenta— y velocidad, lo escuchas y queda guardado como un sonido más.")
-                Step(number: "4", title: "¿Está dentro de un vídeo?",
+                Step(number: "4", title: "Descarga voces mejores",
+                     detail: "Las que trae el iPhone de serie suenan a robot. En Ajustes → Accesibilidad → Contenido hablado → Voces → Español hay muchas más: toca la ⬇︎ de las que ponga «Mejorada» o «Premium» y quedan instaladas. Jorge o Álvaro para la masculina, Mónica o Marisol para la femenina. Sin una voz masculina instalada, la app tira de una femenina con el tono bajado y se nota.")
+                Step(number: "5", title: "¿Está dentro de un vídeo?",
                      detail: "Guarda el vídeo en Fotos y monta un atajo con «Codificar contenido multimedia» y «Sólo audio» activado: deja un .m4a en Archivos listo para importar.")
-                Step(number: "5", title: "Ajusta el volumen",
+                Step(number: "6", title: "Ajusta el volumen",
                      detail: "Ajustes → Volumen, y «Probar ahora» para oírlo sin salir de casa.")
                 InfoNote("Los temas comprados o descargados de Apple Music llevan DRM y no se pueden importar: tiene que ser un archivo suelto en la app Archivos.")
             } header: {

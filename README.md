@@ -49,9 +49,10 @@ y un clip masterizado a 0 dBFS es un susto a las siete de la mañana.
 **Texto a voz.** Escribes lo que quieres oír y el iPhone lo dice, con dos caracteres:
 una voz **grave y pausada** y otra **cálida y lenta**. Las dos van por debajo de la
 velocidad del sistema a propósito — un sonido de arranque se oye una vez y sobre ruido
-de motor, y correr es lo que lo hace ininteligible. El tono hace el resto: pasado ~1.2
-un pitch alto no suena sensual, suena a ardilla, así que el carácter lo lleva la
-lentitud y no el agudo. El resultado se nivela y se guarda como un sonido más.
+de motor, y correr es lo que lo hace ininteligible. El resultado se nivela y se guarda
+como un sonido más. Conviene instalar voces buenas (*Ajustes → Accesibilidad →
+Contenido hablado → Voces → Español*); la app lo recuerda y avisa cuando le falta la
+voz del género que le pides.
 
 **Mezclador de dos pistas**, por si el clip hay que montarlo: una principal sobre una base
 de música, con *ducking* y fundidos.
@@ -127,11 +128,20 @@ un respiro después del *handshake* o se come las primeras notas.
 
 `AVSpeechSynthesizer.write` devuelve PCM en vez de reproducirlo, y eso es lo que
 permite que un texto hablado pase por la misma cadena que cualquier importación:
-recorte, fundidos y −12 dBFS. Qué voz suene depende de las que tenga instalado el
-iPhone: se elige la mejor voz española del género pedido —calidad primero, castellano
-antes que las variantes latinoamericanas— y si no hay ninguna de ese género, se usa la
-que haya y el tono hace el trabajo. La app lo avisa cuando eso pasa, y dice dónde
-instalar más: *Ajustes → Accesibilidad → Contenido hablado → Voces*.
+recorte, fundidos y −12 dBFS.
+
+Qué voz suene depende de las que tenga instaladas el iPhone: se elige la mejor voz
+española del género pedido —calidad primero, castellano antes que las variantes
+latinoamericanas— y si no hay ninguna de ese género se usa la que haya.
+
+**El tono no es fijo, depende de la voz que salga.** Midiendo la frecuencia
+fundamental del audio ya renderizado: bajar una voz femenina para que suene masculina
+se queda en unos 138 Hz aun forzando el `pitchMultiplier` a su mínimo de 0.5 —zona
+ambigua—, mientras que ese mismo 0.5 aplicado a una voz masculina de verdad, que ya
+ronda los 115 Hz, la manda al terreno del dibujo animado. Así que una voz del género
+correcto recibe un empujón (0.90 / 0.97) y una sustituta recibe todo lo disponible
+(0.50 / 1.25). En la femenina el objetivo son ~180 Hz: pasado 1.2 —medido, 245 Hz—
+deja de sonar cálida y empieza a sonar a ardilla.
 
 ### Los chimes están sintetizados, no grabados
 

@@ -44,18 +44,10 @@ enum SpeechSynth {
             self == .masculine ? .male : .female
         }
 
-        /// Deep and unhurried for the masculine one; for the feminine, warm rather
-        /// than high. Pitch alone past ~1.2 does not read as sultry, it reads as a
-        /// chipmunk — what carries that is the slower delivery, so each voice brings
-        /// its own rate rather than sharing a neutral one.
-        var pitch: Float {
-            self == .masculine ? 0.65 : 1.12
-        }
-
         /// Default speed, below the system's 0.5 in both cases: a startup sound is
         /// heard once, over engine noise, and rushing it is what makes it unintelligible.
         var defaultRate: Float {
-            self == .masculine ? 0.46 : 0.42
+            self == .masculine ? 0.44 : 0.40
         }
 
         var character: String {
@@ -97,10 +89,31 @@ enum SpeechSynth {
         return quality * 2 + (voice.language == "es-ES" ? 1 : 0)
     }
 
+    /// How far to shift the pitch — which depends on the voice that actually got
+    /// picked, not on the one that was asked for.
+    ///
+    /// Measured on rendered audio: shifting a female voice down to sound male tops
+    /// out around 138 Hz even at the 0.5 floor, still ambiguous. But applying that
+    /// same 0.5 to a real male voice, already near 115 Hz, drops it into a cartoon.
+    /// So a matching voice gets a nudge and a substitute gets everything available.
+    ///
+    /// The feminine side sits near 180 Hz on purpose: past ~1.2 (≈245 Hz measured)
+    /// it stops reading as warm and starts reading as a chipmunk.
+    static func pitch(for kind: VoiceKind, voice: AVSpeechSynthesisVoice?) -> Float {
+        let matches = voice?.gender == kind.gender
+        switch (kind, matches) {
+        case (.masculine, true):  return 0.90
+        case (.masculine, false): return 0.50
+        case (.feminine, true):   return 0.97
+        case (.feminine, false):  return 1.25
+        }
+    }
+
     static func utterance(text: String, kind: VoiceKind, rate: Float) -> AVSpeechUtterance {
+        let picked = voice(for: kind)
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voice(for: kind)
-        utterance.pitchMultiplier = kind.pitch
+        utterance.voice = picked
+        utterance.pitchMultiplier = pitch(for: kind, voice: picked)
         utterance.rate = rate
         // A beat of silence at the end: without it the last word can get clipped by
         // the fade the normaliser puts on the tail.
