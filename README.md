@@ -47,10 +47,8 @@ caprichoso: las unidades de a bordo reproducen los avisos bastante más alto que
 y un clip masterizado a 0 dBFS es un susto a las siete de la mañana.
 
 **Texto a voz.** Escribes lo que quieres oír y el iPhone lo dice, con dos caracteres:
-una voz **grave y pausada** y otra **cálida y lenta**. Las dos van por debajo de la
-velocidad del sistema a propósito — un sonido de arranque se oye una vez y sobre ruido
-de motor, y correr es lo que lo hace ininteligible. El resultado se nivela y se guarda
-como un sonido más. Conviene instalar voces buenas (*Ajustes → Accesibilidad →
+una **grave y pausada** y otra **aguda y despierta**. El resultado se nivela y se
+guarda como un sonido más. Conviene instalar voces buenas (*Ajustes → Accesibilidad →
 Contenido hablado → Voces → Español*); la app lo recuerda y avisa cuando le falta la
 voz del género que le pides.
 
@@ -139,9 +137,12 @@ fundamental del audio ya renderizado: bajar una voz femenina para que suene masc
 se queda en unos 138 Hz aun forzando el `pitchMultiplier` a su mínimo de 0.5 —zona
 ambigua—, mientras que ese mismo 0.5 aplicado a una voz masculina de verdad, que ya
 ronda los 115 Hz, la manda al terreno del dibujo animado. Así que una voz del género
-correcto recibe un empujón (0.90 / 0.97) y una sustituta recibe todo lo disponible
-(0.50 / 1.25). En la femenina el objetivo son ~180 Hz: pasado 1.2 —medido, 245 Hz—
-deja de sonar cálida y empieza a sonar a ardilla.
+correcto recibe un empujón (0.90 / 1.34) y una sustituta recibe todo lo disponible
+(0.50 / 1.60).
+
+Los valores se eligieron de oído sobre una tanda de variantes renderizadas y medidas.
+La femenina son ≈245 Hz: la versión aterciopelada de ≈180 Hz se descartó porque, sobre
+ruido de motor, la brillante se abre paso mejor.
 
 ### Los chimes están sintetizados, no grabados
 

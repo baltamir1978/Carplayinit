@@ -47,13 +47,13 @@ enum SpeechSynth {
         /// Default speed, below the system's 0.5 in both cases: a startup sound is
         /// heard once, over engine noise, and rushing it is what makes it unintelligible.
         var defaultRate: Float {
-            self == .masculine ? 0.44 : 0.40
+            self == .masculine ? 0.44 : 0.50
         }
 
         var character: String {
             switch self {
             case .masculine: return "Grave y pausada."
-            case .feminine:  return "Cálida y lenta."
+            case .feminine:  return "Aguda y despierta."
             }
         }
     }
@@ -97,15 +97,16 @@ enum SpeechSynth {
     /// same 0.5 to a real male voice, already near 115 Hz, drops it into a cartoon.
     /// So a matching voice gets a nudge and a substitute gets everything available.
     ///
-    /// The feminine side sits near 180 Hz on purpose: past ~1.2 (≈245 Hz measured)
-    /// it stops reading as warm and starts reading as a chipmunk.
+    /// The feminine 1.34 measures ≈245 Hz — bright and wide awake, picked by ear
+    /// over the warmer ≈180 Hz the first draft used. Through a car speaker at seven
+    /// in the morning, over engine noise, the brighter one cuts through.
     static func pitch(for kind: VoiceKind, voice: AVSpeechSynthesisVoice?) -> Float {
         let matches = voice?.gender == kind.gender
         switch (kind, matches) {
         case (.masculine, true):  return 0.90
         case (.masculine, false): return 0.50
-        case (.feminine, true):   return 0.97
-        case (.feminine, false):  return 1.25
+        case (.feminine, true):   return 1.34
+        case (.feminine, false):  return 1.60
         }
     }
 
