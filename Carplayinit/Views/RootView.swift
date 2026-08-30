@@ -18,6 +18,11 @@ struct RootView: View {
                 SettingsView()
             }
         }
+        // Irse de la pestaña calla lo que sonara: con clips de hasta un minuto,
+        // seguir oyéndolo desde otra pantalla es desconcertante.
+        .onChange(of: selection) { _, _ in
+            StartupSoundPlayer.shared.stop()
+        }
     }
 }
 

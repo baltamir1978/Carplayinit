@@ -104,7 +104,10 @@ struct SpeechSoundView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar") { dismiss() }
+                    Button("Cancelar") {
+                        stopPreview()
+                        dismiss()
+                    }
                 }
             }
             .task { voiceID = SpeechSynth.preferredIdentifier(for: kind) ?? "" }

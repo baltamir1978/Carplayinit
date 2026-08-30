@@ -17,8 +17,7 @@ struct TrimSoundView: View {
     @State private var length: Double = 3
     @State private var isSaving = false
     @State private var error: String?
-    @State private var previewPlayer: AVAudioPlayer?
-    @State private var previewTask: Task<Void, Never>?
+    @State private var player = StartupSoundPlayer.shared
     @State private var hasScope = false
 
     init(sourceURL: URL) {
@@ -81,9 +80,9 @@ struct TrimSoundView: View {
                             .font(.caption.monospacedDigit())
                             .foregroundStyle(.secondary)
 
-                        Button(previewPlayer == nil ? "Escuchar el trozo" : "Parar",
-                               systemImage: previewPlayer == nil ? "play.circle" : "stop.circle") {
-                            previewPlayer == nil ? preview() : stopPreview()
+                        Button(player.isPlayingExcerpt ? "Parar" : "Escuchar el trozo",
+                               systemImage: player.isPlayingExcerpt ? "stop.circle" : "play.circle") {
+                            player.isPlayingExcerpt ? stopPreview() : preview()
                         }
                     }
                 }
@@ -107,7 +106,10 @@ struct TrimSoundView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar") { dismiss() }
+                    Button("Cancelar") {
+                        stopPreview()
+                        dismiss()
+                    }
                 }
             }
             .task { await load() }
@@ -140,28 +142,11 @@ struct TrimSoundView: View {
     }
 
     private func preview() {
-        stopPreview()
-        do {
-            let player = try AVAudioPlayer(contentsOf: sourceURL)
-            try AVAudioSession.sharedInstance().setCategory(.playback, options: [.duckOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
-            player.currentTime = start
-            player.play()
-            previewPlayer = player
-            previewTask = Task {
-                try? await Task.sleep(for: .seconds(length))
-                stopPreview()
-            }
-        } catch {
-            self.error = error.localizedDescription
-        }
+        player.playExcerpt(of: sourceURL, from: start, seconds: length)
     }
 
     private func stopPreview() {
-        previewTask?.cancel()
-        previewTask = nil
-        previewPlayer?.stop()
-        previewPlayer = nil
+        player.stop()
     }
 
     private func save() {
