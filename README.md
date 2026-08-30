@@ -161,6 +161,19 @@ asset, `BrandMark` dibuja un monograma con las iniciales sobre el color corporat
 es lo que se ve ahora mismo. Para ponerlos basta con arrastrar un PNG al catálogo, sin
 tocar código: instrucciones en `Brands/README.md`.
 
+## El icono
+
+No está dibujado a mano: lo genera `Tools/make_icon.swift`, por la misma razón
+que los chimes se sintetizan — afinar el color o la composición es cambiar un número.
+
+```bash
+swift Tools/make_icon.swift Carplayinit/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+```
+
+Un 1024×1024 en sRGB **sin canal alfa**, que App Store no admite transparencia. De ese
+único PNG salen todos los tamaños del catálogo. Necesita el Xcode completo delante
+(`DEVELOPER_DIR`), no las Command Line Tools.
+
 ---
 
 ## Estructura
@@ -191,7 +204,7 @@ Carplayinit/
 │   ├── CarWidgetCard.swift            # la vista del widget, compartida con la previa
 │   └── ColorHex.swift  SelectDesignIntent.swift
 ├── Brands/Brands.xcassets       # huecos para los emblemas
-└── Tools/                       # generate_project.rb · prepare_clip.sh
+└── Tools/                       # generate_project.rb · prepare_clip.sh · make_icon.swift
 ```
 
 `Shared/` se compila en los dos targets porque una extensión no puede leer los recursos de
