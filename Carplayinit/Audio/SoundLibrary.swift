@@ -30,7 +30,19 @@ final class SoundLibrary {
     /// Set while the synthesised chimes are being rendered for the first time.
     private(set) var isPreparing = false
 
+    /// The picked chime, mirrored here as observable state.
+    ///
+    /// `SharedStore` is the store of record — the widget and the intent read it from
+    /// the App Group — but `UserDefaults` tells SwiftUI nothing when it changes, so a
+    /// view reading it straight had no reason to redraw and the tick never moved.
+    private(set) var selectedID: String?
+    var isEnabled: Bool { didSet { SharedStore.startupSoundEnabled = isEnabled } }
+    var playsOnDisconnect: Bool { didSet { SharedStore.playsOnDisconnect = playsOnDisconnect } }
+
     private init() {
+        selectedID = SharedStore.selectedSoundID
+        isEnabled = SharedStore.startupSoundEnabled
+        playsOnDisconnect = SharedStore.playsOnDisconnect
         packs = buildPacks()
     }
 
@@ -47,10 +59,11 @@ final class SoundLibrary {
     }
 
     var selected: StartupSound? {
-        SharedStore.selectedSoundID.flatMap(soundOrBundled(id:))
+        selectedID.flatMap(soundOrBundled(id:))
     }
 
     func select(_ sound: StartupSound) {
+        selectedID = sound.id
         SharedStore.selectedSoundID = sound.id
     }
 
@@ -75,7 +88,10 @@ final class SoundLibrary {
         }.value
 
         packs = buildPacks()
-        if SharedStore.selectedSoundID == nil {
+        // Read it back: Shortcuts can wake the app cold and pick a sound of its own.
+        selectedID = SharedStore.selectedSoundID
+        if selectedID == nil {
+            selectedID = Self.fallbackSoundID
             SharedStore.selectedSoundID = Self.fallbackSoundID
         }
     }
@@ -103,7 +119,8 @@ final class SoundLibrary {
     func deleteImported(_ sound: StartupSound) {
         if let url = sound.url { try? FileManager.default.removeItem(at: url) }
         SharedStore.importedSounds.removeAll { $0.id == sound.id }
-        if SharedStore.selectedSoundID == sound.id {
+        if selectedID == sound.id {
+            selectedID = Self.fallbackSoundID
             SharedStore.selectedSoundID = Self.fallbackSoundID
         }
         packs = buildPacks()

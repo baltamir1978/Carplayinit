@@ -13,14 +13,8 @@ struct SoundsView: View {
         NavigationStack {
             List {
                 Section {
-                    Toggle("Sonido al conectar", isOn: Binding(
-                        get: { SharedStore.startupSoundEnabled },
-                        set: { SharedStore.startupSoundEnabled = $0 }
-                    ))
-                    Toggle("También al desconectar", isOn: Binding(
-                        get: { SharedStore.playsOnDisconnect },
-                        set: { SharedStore.playsOnDisconnect = $0 }
-                    ))
+                    Toggle("Sonido al conectar", isOn: $library.isEnabled)
+                    Toggle("También al desconectar", isOn: $library.playsOnDisconnect)
                 } footer: {
                     Text("CarPlay siempre hace sonar primero su propio aviso: el tuyo entra justo detrás.")
                 }
@@ -37,7 +31,7 @@ struct SoundsView: View {
                         showingMixer = true
                     }
                 } footer: {
-                    Text("Eliges el trozo sobre la onda; máximo 10 s, y se nivela a −12 dBFS para que no pegue un susto en el coche. Los temas de Apple Music con DRM no se pueden importar: usa un archivo de la app Archivos.")
+                    Text("Eliges el trozo sobre la onda; hasta 60 s, y se nivela a −12 dBFS para que no pegue un susto en el coche. Los temas de Apple Music con DRM no se pueden importar: usa un archivo de la app Archivos.")
                 }
             }
             .navigationTitle("Sonidos")
@@ -71,7 +65,7 @@ struct SoundsView: View {
             ForEach(pack.sounds) { sound in
                 SoundRow(
                     sound: sound,
-                    isSelected: SharedStore.selectedSoundID == sound.id,
+                    isSelected: library.selectedID == sound.id,
                     isPlaying: player.playingSoundID == sound.id,
                     onPlay: { player.play(sound) },
                     onSelect: { library.select(sound) }
@@ -165,7 +159,7 @@ struct MixerView: View {
                 } header: {
                     Text("Pista principal")
                 } footer: {
-                    Text("Manda sobre la mezcla: su duración fija la del resultado (máx. 10 s).")
+                    Text("Manda sobre la mezcla: su duración fija la del resultado (máx. 60 s).")
                 }
 
                 Section {

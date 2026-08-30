@@ -7,7 +7,10 @@ import AVFoundation
 /// music, so a clip mastered at 0 dBFS is a fright at seven in the morning.
 enum AudioNormalizer {
     static let targetPeakDB: Float = -12
-    static let maxDuration: TimeInterval = 10
+    /// Tope del importador. Son 60 s y no un número redondo cualquiera: es lo que
+    /// el intent de Atajos mantiene vivo mientras suena, y un clip que Atajos
+    /// cortaría por la mitad sería un mal regalo.
+    static let maxDuration: TimeInterval = 60
 
     enum ImportError: LocalizedError {
         case unreadable

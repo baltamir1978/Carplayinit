@@ -66,9 +66,18 @@ struct TrimSoundView: View {
                             .foregroundStyle(.secondary)
 
                         LabeledContent("Dura") {
-                            Slider(value: $length, in: 0.3...maxLength)
+                            // Recorrido cuadrático: con el tope en 60 s, un slider
+                            // lineal deja los tres primeros segundos —que es lo que
+                            // suele durar un sonido de arranque— en un pelo del
+                            // extremo izquierdo. Así la mitad del dedo son 15 s.
+                            Slider(value: Binding(
+                                get: { sqrt(min(length, maxLength) / maxLength) },
+                                set: { length = max(0.3, $0 * $0 * maxLength) }
+                            ), in: 0...1)
                         }
-                        Text(String(format: "%.1f s", length))
+                        Text(length < 60
+                             ? String(format: "%.1f s", length)
+                             : timecode(length))
                             .font(.caption.monospacedDigit())
                             .foregroundStyle(.secondary)
 

@@ -32,7 +32,7 @@ struct PlayStartupSoundIntent: AudioPlaybackIntent {
         // Hold the intent alive while the clip plays; Shortcuts tears the process
         // down as soon as `perform` returns. The cap is a safety net, not a policy:
         // a clip bundled with the app can be far longer than an imported one.
-        try? await Task.sleep(for: .seconds(min(chime.duration + 0.4, 60)))
+        try? await Task.sleep(for: .seconds(min(chime.duration + 0.4, 90)))
         return .result()
     }
 }

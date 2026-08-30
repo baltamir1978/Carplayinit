@@ -38,7 +38,7 @@ coche distinto.
 repartidos en seis packs, y puedes traer el tuyo desde la app Archivos.
 
 **Recorte sobre la forma de onda.** Al importar eliges el fragmento arrastrando sobre la
-onda, hasta 10 s, en vez de quedarte con el principio del archivo — el segundo bueno de
+onda, hasta 60 s, en vez de quedarte con el principio del archivo — el segundo bueno de
 un clip sacado de un vídeo casi nunca es el primero. Los bordes llevan fundido, que es lo
 que evita el chasquido de cortar por el medio.
 
@@ -143,7 +143,7 @@ Tools/prepare_clip.sh ~/Downloads/mi-audio.mp3 [inicio] [duración]
 
 Lo pasa a mono, recorta, pone fundidos, lo nivela a −12 dBFS y lo deja en
 `Carplayinit/Resources/startup-clip.m4a`. Sin inicio ni duración coge el archivo **entero**:
-el límite de 10 s del importador de la app no aplica a un clip que viaja dentro del bundle.
+el límite de 60 s del importador de la app no aplica a un clip que viaja dentro del bundle.
 Con `Tools/prepare_clip.sh mi-audio.mp3 3 4` te quedas con cuatro segundos a partir del
 tercero.
 
