@@ -8,12 +8,11 @@ struct SpeechSoundView: View {
     @State private var library = SoundLibrary.shared
 
     @State private var text = "Enciende motores"
-    @State private var kind: SpeechSynth.VoiceKind = .masculine
-    @State private var rate: Double = Double(SpeechSynth.VoiceKind.masculine.defaultRate)
     @State private var isSaving = false
     @State private var error: String?
     @State private var previewer = AVSpeechSynthesizer()
-    /// "" = automática. Guardado por voz, así que cada una recuerda la suya.
+    /// "" = la voz que el iPhone ya usa para español. Cualquier otra es una de las
+    /// instaladas, tal cual la sirve Apple.
     @State private var voiceID: String = ""
 
     private var trimmed: String { text.trimmingCharacters(in: .whitespacesAndNewlines) }
@@ -31,43 +30,21 @@ struct SpeechSoundView: View {
                 }
 
                 Section {
-                    Picker("Voz", selection: $kind) {
-                        ForEach(SpeechSynth.VoiceKind.allCases) { kind in
-                            Label(kind.localizedName, systemImage: kind.symbol).tag(kind)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .onChange(of: kind) { _, newValue in
-                        // Cada voz trae su propia velocidad: es la mitad de su carácter.
-                        stopPreview()
-                        rate = Double(newValue.defaultRate)
-                        voiceID = SpeechSynth.preferredIdentifier(for: newValue) ?? ""
-                    }
-
-                    Text(kind.character)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-
-                    Picker("Cuál", selection: $voiceID) {
-                        Text("Automática").tag("")
+                    Picker("Voz", selection: $voiceID) {
+                        Text("La del sistema").tag("")
                         ForEach(SpeechSynth.spanishVoices(), id: \.identifier) { voice in
                             Text(SpeechSynth.describe(voice)).tag(voice.identifier)
                         }
                     }
                     .onChange(of: voiceID) { _, newValue in
                         stopPreview()
-                        SpeechSynth.setPreferredIdentifier(newValue.isEmpty ? nil : newValue, for: kind)
+                        SpeechSynth.preferredIdentifier = newValue.isEmpty ? nil : newValue
                     }
 
-                    if let sonando = SpeechSynth.voice(for: kind) {
+                    if let sonando = SpeechSynth.voice(for: voiceID.isEmpty ? nil : voiceID) {
                         LabeledContent("Suena", value: SpeechSynth.describe(sonando))
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                    }
-
-                    LabeledContent("Velocidad") {
-                        Slider(value: $rate,
-                               in: Double(AVSpeechUtteranceMinimumSpeechRate)...Double(AVSpeechUtteranceMaximumSpeechRate))
                     }
 
                     Button(previewer.isSpeaking ? "Parar" : "Escuchar",
@@ -78,11 +55,7 @@ struct SpeechSoundView: View {
                 } header: {
                     Text("Voz")
                 } footer: {
-                    if SpeechSynth.isSubstituting(kind) {
-                        Text("Tu iPhone no tiene instalada ninguna voz \(kind.localizedName.lowercased()) en español, así que suena la que hay con el tono forzado — y se nota. Instálala en Ajustes → Accesibilidad → Contenido hablado → Voces → Español: Jorge o Álvaro para la masculina, Mónica o Marisol para la femenina.")
-                    } else {
-                        Text("Las voces de serie suenan a robot. En Ajustes → Accesibilidad → Contenido hablado → Voces → Español puedes descargar las «Mejorada» o «Premium», que son otra cosa.")
-                    }
+                    Text("Suena tal como la sirve Apple, con el tono y la velocidad que traiga. En Ajustes → Accesibilidad → Contenido hablado → Voces → Español puedes descargar más — las «Mejorada» o «Premium» son otra cosa — y ahí mismo se ajusta la velocidad para todo el sistema.")
                 }
 
                 Section {
@@ -110,7 +83,7 @@ struct SpeechSoundView: View {
                     }
                 }
             }
-            .task { voiceID = SpeechSynth.preferredIdentifier(for: kind) ?? "" }
+            .task { voiceID = SpeechSynth.preferredIdentifier ?? "" }
             .onDisappear(perform: stopPreview)
             .alert("No se pudo crear", isPresented: Binding(
                 get: { error != nil }, set: { if !$0 { error = nil } }
@@ -130,7 +103,8 @@ struct SpeechSoundView: View {
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default,
                                                          options: [.duckOthers])
         try? AVAudioSession.sharedInstance().setActive(true)
-        previewer.speak(SpeechSynth.utterance(text: trimmed, kind: kind, rate: Float(rate)))
+        previewer.speak(SpeechSynth.utterance(text: trimmed,
+                                              identifier: voiceID.isEmpty ? nil : voiceID))
     }
 
     private func stopPreview() {
@@ -142,7 +116,8 @@ struct SpeechSoundView: View {
         isSaving = true
         Task {
             do {
-                try await library.makeSpokenSound(text: trimmed, kind: kind, rate: Float(rate))
+                try await library.makeSpokenSound(text: trimmed,
+                                                  voiceIdentifier: voiceID.isEmpty ? nil : voiceID)
                 dismiss()
             } catch {
                 self.error = error.localizedDescription

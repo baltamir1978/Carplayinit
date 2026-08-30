@@ -6,6 +6,10 @@ import AVFoundation
 /// what lets the result go through the same normalising pipeline as any import:
 /// trimmed, faded and levelled to −12 dBFS, so a spoken clip does not shout over
 /// the chimes it sits next to in the list.
+///
+/// The voice itself is left exactly as Apple ships it — no pitch shifting, no rate
+/// tweaking. Which voice speaks is the user's pick in Ajustes, or one of the
+/// installed Spanish voices chosen here.
 enum SpeechSynth {
     enum SpeechError: LocalizedError {
         case noVoice
@@ -19,90 +23,46 @@ enum SpeechSynth {
         }
     }
 
-    /// The two voices offered. Which actual system voice lands here depends on what
-    /// the phone has installed, so the pitch does the rest of the work.
-    enum VoiceKind: String, CaseIterable, Identifiable {
-        case masculine, feminine
-
-        var id: String { rawValue }
-
-        var localizedName: String {
-            switch self {
-            case .masculine: return "Masculina"
-            case .feminine:  return "Femenina"
-            }
-        }
-
-        var symbol: String {
-            switch self {
-            case .masculine: return "person.wave.2.fill"
-            case .feminine:  return "person.wave.2"
-            }
-        }
-
-        fileprivate var gender: AVSpeechSynthesisVoiceGender {
-            self == .masculine ? .male : .female
-        }
-
-        /// Default speed, below the system's 0.5 in both cases: a startup sound is
-        /// heard once, over engine noise, and rushing it is what makes it unintelligible.
-        var defaultRate: Float {
-            self == .masculine ? 0.44 : 0.50
-        }
-
-        var character: String {
-            switch self {
-            case .masculine: return "Grave y pausada."
-            case .feminine:  return "Aguda y despierta."
-            }
-        }
-    }
-
     // MARK: - Voice picking
 
-    /// Every Spanish voice installed, best first — what the picker offers.
+    /// Every Spanish voice installed, by name — what the picker offers.
     static func spanishVoices() -> [AVSpeechSynthesisVoice] {
         AVSpeechSynthesisVoice.speechVoices()
             .filter { $0.language.hasPrefix("es") }
-            .sorted { rank($0) > rank($1) }
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
     }
 
-    /// A voice the user pinned by hand, if any. Beats every heuristic below:
-    /// which voice sounds right is a matter of taste, not of ranking.
-    static func preferredIdentifier(for kind: VoiceKind) -> String? {
-        UserDefaults.standard.string(forKey: "voice_\(kind.rawValue)")
-    }
-
-    static func setPreferredIdentifier(_ identifier: String?, for kind: VoiceKind) {
-        let key = "voice_\(kind.rawValue)"
-        if let identifier {
-            UserDefaults.standard.set(identifier, forKey: key)
-        } else {
-            UserDefaults.standard.removeObject(forKey: key)
+    /// The voice the user pinned, if any. Empty means the one the system already
+    /// uses for Spanish, whichever that is.
+    static var preferredIdentifier: String? {
+        get { UserDefaults.standard.string(forKey: "speech_voice") }
+        set {
+            if let newValue {
+                UserDefaults.standard.set(newValue, forKey: "speech_voice")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "speech_voice")
+            }
         }
     }
 
-    /// The best Spanish voice of that gender the phone actually has.
-    ///
-    /// Quality first, then Castilian over the Latin American variants — and if the
-    /// phone has no voice of the asked gender, any Spanish voice will do: the pitch
-    /// is what carries the difference anyway.
-    static func voice(for kind: VoiceKind) -> AVSpeechSynthesisVoice? {
-        if let identifier = preferredIdentifier(for: kind),
-           let pinned = AVSpeechSynthesisVoice(identifier: identifier) {
+    /// The voice that will actually talk: the pinned one, or the system's own for
+    /// Spanish. `nil` only when the phone has no Spanish voice at all.
+    static func voice(for identifier: String? = preferredIdentifier) -> AVSpeechSynthesisVoice? {
+        if let identifier, let pinned = AVSpeechSynthesisVoice(identifier: identifier) {
             return pinned
         }
-        let spanish = spanishVoices()
-        guard !spanish.isEmpty else { return nil }
-        let matching = spanish.filter { $0.gender == kind.gender }
-        return (matching.isEmpty ? spanish : matching).first
+        return AVSpeechSynthesisVoice(language: nil) ?? spanishVoices().first
     }
 
-    /// True when the phone has no voice of that gender and the pitch is doing all
-    /// the work — worth telling the user, who can install more voices.
-    static func isSubstituting(_ kind: VoiceKind) -> Bool {
-        guard let voice = voice(for: kind) else { return false }
-        return voice.gender != kind.gender
+    /// Clears what the two-voice build left behind: it pinned a voice per gender,
+    /// under keys nobody reads any more. Cheap and self-limiting — once the keys
+    /// are gone the guard makes every later launch a no-op.
+    static func discardLegacyPreferences() {
+        let defaults = UserDefaults.standard
+        for key in ["voice_masculine", "voice_feminine"]
+        where defaults.object(forKey: key) != nil {
+            defaults.removeObject(forKey: key)
+        }
     }
 
     /// "Paulina · es-MX · Mejorada" — so it is never a mystery which voice is talking.
@@ -116,43 +76,9 @@ enum SpeechSynth {
         return "\(voice.name) · \(voice.language) · \(quality)"
     }
 
-    private static func rank(_ voice: AVSpeechSynthesisVoice) -> Int {
-        let quality: Int
-        switch voice.quality {
-        case .premium:  quality = 3
-        case .enhanced: quality = 2
-        default:        quality = 1
-        }
-        return quality * 2 + (voice.language == "es-ES" ? 1 : 0)
-    }
-
-    /// How far to shift the pitch — which depends on the voice that actually got
-    /// picked, not on the one that was asked for.
-    ///
-    /// Measured on rendered audio: shifting a female voice down to sound male tops
-    /// out around 138 Hz even at the 0.5 floor, still ambiguous. But applying that
-    /// same 0.5 to a real male voice, already near 115 Hz, drops it into a cartoon.
-    /// So a matching voice gets a nudge and a substitute gets everything available.
-    ///
-    /// The feminine 1.34 measures ≈245 Hz — bright and wide awake, picked by ear
-    /// over the warmer ≈180 Hz the first draft used. Through a car speaker at seven
-    /// in the morning, over engine noise, the brighter one cuts through.
-    static func pitch(for kind: VoiceKind, voice: AVSpeechSynthesisVoice?) -> Float {
-        let matches = voice?.gender == kind.gender
-        switch (kind, matches) {
-        case (.masculine, true):  return 0.90
-        case (.masculine, false): return 0.50
-        case (.feminine, true):   return 1.34
-        case (.feminine, false):  return 1.60
-        }
-    }
-
-    static func utterance(text: String, kind: VoiceKind, rate: Float) -> AVSpeechUtterance {
-        let picked = voice(for: kind)
+    static func utterance(text: String, identifier: String? = preferredIdentifier) -> AVSpeechUtterance {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = picked
-        utterance.pitchMultiplier = pitch(for: kind, voice: picked)
-        utterance.rate = rate
+        utterance.voice = voice(for: identifier)
         // A beat of silence at the end: without it the last word can get clipped by
         // the fade the normaliser puts on the tail.
         utterance.postUtteranceDelay = 0.15
@@ -162,8 +88,8 @@ enum SpeechSynth {
     // MARK: - Rendering
 
     /// Renders the text to a temporary `.caf`. The caller owns the file.
-    static func render(text: String, kind: VoiceKind, rate: Float) async throws -> URL {
-        guard voice(for: kind) != nil else { throw SpeechError.noVoice }
+    static func render(text: String, identifier: String? = preferredIdentifier) async throws -> URL {
+        guard voice(for: identifier) != nil else { throw SpeechError.noVoice }
 
         let url = FileManager.default.temporaryDirectory
             .appendingPathComponent("speech-\(UUID().uuidString).caf")
@@ -171,7 +97,7 @@ enum SpeechSynth {
         let writer = Writer(url: url)
 
         return try await withCheckedThrowingContinuation { continuation in
-            synthesizer.write(utterance(text: text, kind: kind, rate: rate)) { buffer in
+            synthesizer.write(utterance(text: text, identifier: identifier)) { buffer in
                 // `synthesizer` is captured so it outlives the callbacks; letting it
                 // go early stops the render halfway through the sentence.
                 _ = synthesizer

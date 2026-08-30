@@ -11,6 +11,7 @@ struct CarplayinitApp: App {
                     // Antes del seed: si hay garaje que rescatar, no se planta nada.
                     LegacyMigration.runIfNeeded()
                     GarageSeed.installIfNeeded()
+                    SpeechSynth.discardLegacyPreferences()
                     Garage.shared.reload()
                     // Renders the built-in chimes once, then it is a no-op.
                     await SoundLibrary.shared.prepareIfNeeded()

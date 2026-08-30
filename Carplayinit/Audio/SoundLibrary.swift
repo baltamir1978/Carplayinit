@@ -118,8 +118,8 @@ final class SoundLibrary {
 
     /// Speaks `text` and stores it like any other import: same trim, same fades,
     /// same −12 dBFS, so it sits at the level of everything else in the list.
-    func makeSpokenSound(text: String, kind: SpeechSynth.VoiceKind, rate: Float) async throws {
-        let rendered = try await SpeechSynth.render(text: text, kind: kind, rate: rate)
+    func makeSpokenSound(text: String, voiceIdentifier: String?) async throws {
+        let rendered = try await SpeechSynth.render(text: text, identifier: voiceIdentifier)
         defer { try? FileManager.default.removeItem(at: rendered) }
 
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
