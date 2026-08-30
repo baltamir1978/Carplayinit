@@ -17,16 +17,31 @@ final class StartupSoundPlayer: NSObject, ObservableObject {
     }
 
     func play(_ sound: StartupSound) {
-        guard let url = sound.url, FileManager.default.fileExists(atPath: url.path) else {
-            NSLog("[Carplayinit] missing audio for \(sound.id)")
+        guard let url = sound.url else {
+            NSLog("[Carplayinit] sin ruta para \(sound.id)")
             return
         }
+        // A synthesised chime whose file went missing can just be made again.
+        if !FileManager.default.fileExists(atPath: url.path),
+           let recipe = ChimeRecipes.recipe(id: sound.id) {
+            _ = try? ChimeSynth.file(for: recipe)
+        }
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            NSLog("[Carplayinit] falta el audio de \(sound.id)")
+            return
+        }
+
+        // Configuring the session and playing are two separate failures: a session
+        // that refuses to configure is no reason not to try to make a sound.
         do {
             let session = AVAudioSession.sharedInstance()
-            try session.setCategory(.playback, mode: .default,
-                                    options: [.duckOthers, .allowBluetoothHFP, .allowBluetoothA2DP])
+            try session.setCategory(.playback, mode: .default, options: [.duckOthers])
             try session.setActive(true)
+        } catch {
+            NSLog("[Carplayinit] audio session error: \(error)")
+        }
 
+        do {
             let player = try AVAudioPlayer(contentsOf: url)
             player.delegate = self
             // Clips are normalised to −12 dBFS on import; this is the user's trim.
@@ -36,7 +51,7 @@ final class StartupSoundPlayer: NSObject, ObservableObject {
             self.player = player
             playingSoundID = sound.id
         } catch {
-            NSLog("[Carplayinit] playback error: \(error.localizedDescription)")
+            NSLog("[Carplayinit] playback error: \(error)")
         }
     }
 

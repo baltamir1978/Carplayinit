@@ -55,6 +55,12 @@ enum ChimeRecipes {
 
     // MARK: - Packs
 
+    /// Finds a recipe by the id its `StartupSound` carries, so a chime whose file
+    /// is missing can be rendered again on the spot instead of staying silent.
+    static func recipe(id: String) -> ChimeSynth.Recipe? {
+        all.lazy.flatMap(\.recipes).first { $0.id == id }
+    }
+
     static let all: [(pack: String, name: String, subtitle: String, symbol: String, recipes: [ChimeSynth.Recipe])] = [
         ("classic", "Clásicos", "Campanas limpias, como las de fábrica", "bell.fill", classic),
         ("sport", "Deportivos", "Barridos de escape y subidas de vueltas", "flame.fill", sport),

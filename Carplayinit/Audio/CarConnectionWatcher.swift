@@ -118,11 +118,17 @@ final class CarConnectionWatcher: ObservableObject {
         do {
             // `.duckOthers` lets the chime sit on top of whatever is already playing
             // instead of stopping the user's music.
-            try session.setCategory(.playback, mode: .default,
-                                    options: [.duckOthers, .allowBluetoothHFP, .allowBluetoothA2DP])
+            //
+            // Only `.duckOthers` here on purpose. `.allowBluetoothHFP` is valid only
+            // with `.playAndRecord` or `.record`, and asking for it with `.playback`
+            // makes `setCategory` throw — which left the session in its default
+            // `.soloAmbient`, the one category the ring/silent switch does mute.
+            // That is how an app whose whole point is making noise ended up silent.
+            // A2DP needs no flag: `.playback` already routes there.
+            try session.setCategory(.playback, mode: .default, options: [.duckOthers])
             try session.setActive(true)
         } catch {
-            NSLog("[Carplayinit] audio session error: \(error.localizedDescription)")
+            NSLog("[Carplayinit] audio session error: \(error)")
         }
     }
 
