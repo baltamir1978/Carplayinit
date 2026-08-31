@@ -17,6 +17,10 @@ struct PlayStartupSoundIntent: AudioPlaybackIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
+        // El interruptor de Ajustes manda sobre todas las vías, también sobre esta:
+        // apagado quiere decir apagado aunque la automatización siga en su sitio.
+        guard SharedStore.startupSoundEnabled else { return .result() }
+
         let library = SoundLibrary.shared
         await library.prepareIfNeeded()
 

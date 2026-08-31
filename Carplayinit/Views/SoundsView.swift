@@ -14,10 +14,12 @@ struct SoundsView: View {
         NavigationStack {
             List {
                 Section {
-                    Toggle("Sonido al conectar", isOn: $library.isEnabled)
                     Toggle("También al desconectar", isOn: $library.playsOnDisconnect)
+                        .disabled(!library.isEnabled)
                 } footer: {
-                    Text("CarPlay siempre hace sonar primero su propio aviso: el tuyo entra justo detrás.")
+                    Text(library.isEnabled
+                         ? "CarPlay siempre hace sonar primero su propio aviso: el tuyo entra justo detrás."
+                         : "El sonido de arranque está apagado en Ajustes: aquí puedes elegir y escuchar, pero no sonará solo.")
                 }
 
                 ForEach(library.packs) { pack in

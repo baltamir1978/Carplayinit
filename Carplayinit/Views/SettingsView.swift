@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var watcher = CarConnectionWatcher.shared
+    @State private var library = SoundLibrary.shared
     @State private var volume: Double = SharedStore.outputVolume
 
     var body: some View {
@@ -13,6 +14,15 @@ struct SettingsView: View {
                     } label: {
                         Label("Cómo se usa", systemImage: "book.fill")
                     }
+                }
+
+                Section {
+                    Toggle("Sonido de arranque", isOn: $library.isEnabled)
+                } footer: {
+                    Text("""
+                    El interruptor de todo: apagado, no suena nada al entrar ni al salir del coche, \
+                    ni cuando lo dispara una automatización de Atajos. «Probar ahora» sigue sonando — es una escucha que pides tú.
+                    """)
                 }
 
                 Section("Reproducción") {

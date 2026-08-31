@@ -35,7 +35,9 @@ desde el propio widget: mantén pulsado → *Editar widget*. Cada widget puede l
 coche distinto.
 
 **Sonido de arranque al conectar**, y opcionalmente al desconectar. Vienen 24 chimes
-repartidos en seis packs, y puedes traer el tuyo desde la app Archivos.
+repartidos en seis packs, y puedes traer el tuyo desde la app Archivos. Un solo
+interruptor en **Ajustes → Sonido de arranque** lo apaga entero: ni al conectar, ni al
+desconectar, ni desde la automatización de Atajos.
 
 **Recorte sobre la forma de onda.** Al importar eliges el fragmento arrastrando sobre la
 onda, hasta 60 s, en vez de quedarte con el principio del archivo — el segundo bueno de
@@ -101,6 +103,10 @@ Hay dos vías y conviene tener las dos:
 - **Ajustes → Automatización con Atajos**: una automatización *Al conectar CarPlay →
   Reproducir sonido de arranque*. Se dispara aunque Carplayinit lleve días sin abrirse.
   Es la opción a prueba de balas.
+
+Las dos obedecen al interruptor de **Ajustes → Sonido de arranque**: apagado no suena
+nada, y no hace falta desmontar la automatización para tener unos días de silencio. Lo
+único que sigue sonando es *Probar ahora*, porque esa escucha la pides tú.
 
 ---
 
